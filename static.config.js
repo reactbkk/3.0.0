@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 import { renderStaticOptimized } from 'glamor/server'
 
 export default {
-  siteRoot: 'https://reactbkk.com/3.0.0/',
+  siteRoot: 'https://reactbkk.com',
+  basePath: '3.0.0',
   getRoutes: async () => [
     {
       path: '/',
