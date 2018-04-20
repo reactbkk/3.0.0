@@ -8,8 +8,16 @@ jobs:
       - checkout
       - add_ssh_keys
       # @todo #1 Cache `node_modules` to speed up CircleCI.
+      - restore_cache:
+          keys:
+            - yarn-v1-{{ checksum "yarn.lock" }}
+            - yarn-v1-
       - run: |
           yarn
+      - save_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn/v1
       - run: |
           yarn run build
       - run: |
