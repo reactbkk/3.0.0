@@ -8,12 +8,13 @@ export default withSiteData(() => (
   <div>
     <HeadingSection />
     <CTA
-      title="Call for Proposal"
-      disabled
+      title="Call for Speakers"
+      href="https://airtable.com/shrBXb9PwscRDSJdm"
     >
       We encourage everyone to share your knowledge with the community!
-      First timers are welcome!
-      Our call for proposal will open soon.
+      First-time speakers are welcome; you don’t have to be an expert.
+      If you have something cool to share, please submit a proposal!
+      Please submit by May 4th, 2018.
     </CTA>
     <CTA
       title="Recommend a Speaker"
