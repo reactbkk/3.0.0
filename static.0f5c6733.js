@@ -282,9 +282,9 @@ exports.default = (0, _reactStatic.withSiteData)(function () {
       CTA,
       {
         title: 'Call for Speakers',
-        href: 'https://airtable.com/shrBXb9PwscRDSJdm'
+        href: 'https://www.facebook.com/groups/react.th/permalink/1831386766882071/'
       },
-      'We encourage everyone to share your knowledge with the community! First-time speakers are welcome; you don\u2019t have to be an expert. If you have something cool to share, please submit a proposal! Please submit by May 4th, 2018.'
+      'We encourage everyone to share your knowledge with the community! First-time speakers are welcome; you don\u2019t have to be an expert. People outside Bangkok are also welcome; we can provide travel and accomodation support. If you have something cool to share, please submit a proposal by May 4th, 2018.'
     ),
     _react2.default.createElement(
       CTA,
@@ -292,7 +292,7 @@ exports.default = (0, _reactStatic.withSiteData)(function () {
         title: 'Recommend a Speaker',
         disabled: true
       },
-      'Know someone who\u2019s got a story to tell? Recommend them to us!'
+      'Know someone who\u2019s got a story to tell? Recommend them to us! More info soon!'
     ),
     _react2.default.createElement(
       CTA,
@@ -1483,4 +1483,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACq
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.ea06abaf.js.map
+//# sourceMappingURL=static.0f5c6733.js.map
