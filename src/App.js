@@ -10,7 +10,6 @@ css.global('html, body', tw('font-sans font-light text-base text-white m-0 p-0 b
 css.global('a', tw('no-underline text-react-blue'))
 
 const Content = glamorous.div(tw('p-4'))
-
 const App = () => (
   <Router>
     <div>

@@ -53,8 +53,8 @@ const HeadingSectionContainer = glamorous.h1({
   },
   '& > div': {
     ...tw('md:text-left md:pl-8'),
-    '& > h1': tw('text-3xl md:text-4xl text-react-blue font-normal'),
-    '& > p': tw('text-2xl md:text-3xl font-normal'),
+    '& > h1': tw('text-3xl md:text-4xl tracking-wide text-react-blue font-semibold'),
+    '& > p': tw('text-2xl md:text-3xl font-normal tracking-wide'),
   },
 })
 // endregion
