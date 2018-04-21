@@ -351,8 +351,9 @@ var HeadingSectionContainer = _glamorous2.default.h1(_extends({}, {
   }, {
     '& > h1': {
       'fontSize': '1.875rem',
+      'letterSpacing': '0.05em',
       'color': '#00d8ff',
-      'fontWeight': '400',
+      'fontWeight': '600',
       '@media (min-width: 768px)': {
         'fontSize': '2.25rem'
       }
@@ -360,6 +361,7 @@ var HeadingSectionContainer = _glamorous2.default.h1(_extends({}, {
     '& > p': {
       'fontSize': '1.5rem',
       'fontWeight': '400',
+      'letterSpacing': '0.05em',
       '@media (min-width: 768px)': {
         'fontSize': '1.875rem'
       }
@@ -597,7 +599,7 @@ var _favicon2 = _interopRequireDefault(_favicon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _glamor.css.global('html, body', {
-  'fontFamily': '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+  'fontFamily': 'Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
   'fontWeight': '300',
   'fontSize': '1rem',
   'color': '#ffffff',
@@ -613,7 +615,6 @@ _glamor.css.global('a', {
 var Content = _glamorous2.default.div({
   'padding': '1rem'
 });
-
 var App = function App() {
   return _react2.default.createElement(
     _reactStatic.Router,
@@ -1483,4 +1484,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACq
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.0f5c6733.js.map
+//# sourceMappingURL=static.2b65e46b.js.map
