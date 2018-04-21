@@ -9,19 +9,19 @@ export default withSiteData(() => (
     <HeadingSection />
     <CTA
       title="Call for Speakers"
-      href="https://airtable.com/shrBXb9PwscRDSJdm"
+      href="https://www.facebook.com/groups/react.th/permalink/1831386766882071/"
     >
       We encourage everyone to share your knowledge with the community!
       First-time speakers are welcome; you don’t have to be an expert.
-      If you have something cool to share, please submit a proposal!
-      Please submit by May 4th, 2018.
+      People outside Bangkok are also welcome; we can provide travel and accomodation support.
+      If you have something cool to share, please submit a proposal by May 4th, 2018.
     </CTA>
     <CTA
       title="Recommend a Speaker"
       disabled
     >
       Know someone who’s got a story to tell?
-      Recommend them to us!
+      Recommend them to us! More info soon!
     </CTA>
     <CTA
       title="Call for Staffs"
