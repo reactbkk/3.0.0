@@ -281,10 +281,10 @@ exports.default = (0, _reactStatic.withSiteData)(function () {
     _react2.default.createElement(
       CTA,
       {
-        title: 'Call for Proposal',
-        disabled: true
+        title: 'Call for Speakers',
+        href: 'https://airtable.com/shrBXb9PwscRDSJdm'
       },
-      'We encourage everyone to share your knowledge with the community! First timers are welcome! Our call for proposal will open soon.'
+      'We encourage everyone to share your knowledge with the community! First-time speakers are welcome; you don\u2019t have to be an expert. If you have something cool to share, please submit a proposal! Please submit by May 4th, 2018.'
     ),
     _react2.default.createElement(
       CTA,
@@ -1483,4 +1483,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACq
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.4f9705d2.js.map
+//# sourceMappingURL=static.ea06abaf.js.map
