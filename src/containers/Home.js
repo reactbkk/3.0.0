@@ -9,7 +9,7 @@ export default withSiteData(() => (
     <HeadingSection />
     <CTA
       title="Call for Speakers"
-      href="https://www.facebook.com/groups/react.th/permalink/1831386766882071/"
+      href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/161749411164955/?type=3"
     >
       We encourage everyone to share your knowledge with the community!
       First-time speakers are welcome; you don’t have to be an expert.
