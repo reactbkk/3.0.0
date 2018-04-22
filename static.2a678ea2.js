@@ -282,7 +282,7 @@ exports.default = (0, _reactStatic.withSiteData)(function () {
       CTA,
       {
         title: 'Call for Speakers',
-        href: 'https://www.facebook.com/groups/react.th/permalink/1831386766882071/'
+        href: 'https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/161749411164955/?type=3'
       },
       'We encourage everyone to share your knowledge with the community! First-time speakers are welcome; you don\u2019t have to be an expert. People outside Bangkok are also welcome; we can provide travel and accomodation support. If you have something cool to share, please submit a proposal by May 4th, 2018.'
     ),
@@ -1484,4 +1484,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACq
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.2b65e46b.js.map
+//# sourceMappingURL=static.2a678ea2.js.map
