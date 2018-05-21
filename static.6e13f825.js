@@ -325,7 +325,7 @@ var HeadingSection = function HeadingSection() {
       _react2.default.createElement(
         'p',
         null,
-        'June 23rd (tentative)'
+        'June 24th, EnCo'
       )
     )
   );
@@ -1484,4 +1484,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACq
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.2a678ea2.js.map
+//# sourceMappingURL=static.6e13f825.js.map
