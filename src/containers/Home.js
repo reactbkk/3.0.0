@@ -41,7 +41,7 @@ const HeadingSection = () => (
     <img src={logoImg} alt="" />
     <div>
       <h1>React Bangkok 3.0.0</h1>
-      <p>June 23rd (tentative)</p>
+      <p>June 24th, EnCo</p>
     </div>
   </HeadingSectionContainer>
 )
