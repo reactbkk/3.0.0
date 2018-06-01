@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React, { Component } from 'react'
-import { renderStaticOptimized } from 'glamor/server'
+import { renderStylesToString } from 'emotion-server'
 
 const WEB_FONT_LOADER = `
 WebFontConfig = {
@@ -29,28 +29,22 @@ export default {
     },
   ],
   renderToHtml: async (render, Comp, meta) => {
-    const html = render(<Comp />)
-    const { css } = renderStaticOptimized(() => html)
-    meta.glamStyles = css
+    const html = renderStylesToString(render(<Comp />))
     return html
   },
   Document: class CustomDocument extends Component {
     render () {
       const {
-        Html, Head, Body, children, renderMeta,
-      } = this.props
+        Html, Head, Body, children /* renderMeta, */ } = this.props
 
       return (
         <Html>
           <Head>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <style dangerouslySetInnerHTML={{ __html: renderMeta.glamStyles }} />
             <script dangerouslySetInnerHTML={{ __html: WEB_FONT_LOADER }} />
           </Head>
-          <Body>
-            {children}
-          </Body>
+          <Body>{children}</Body>
         </Html>
       )
     }

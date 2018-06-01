@@ -1,4 +1,7 @@
 {
   "extends": "react-static/.babelrc",
-  "plugins": ["babel-plugin-tailwind"]
+  "plugins": [
+    "babel-plugin-emotion",
+    "babel-plugin-tailwind"
+  ]
 }

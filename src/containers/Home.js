@@ -1,6 +1,6 @@
 import React from 'react'
 import { withSiteData } from 'react-static'
-import glamorous from 'glamorous'
+import styled from 'react-emotion'
 //
 import logoImg from '../reactbkk-logo.png'
 
@@ -45,7 +45,7 @@ const HeadingSection = () => (
     </div>
   </HeadingSectionContainer>
 )
-const HeadingSectionContainer = glamorous.h1({
+const HeadingSectionContainer = styled.h1({
   ...tw('text-center md:flex items-center justify-center'),
   '& img': {
     ...tw('flex-none'),
@@ -67,7 +67,7 @@ const CTA = ({
     <p>{children}</p>
   </CTASection>
 )
-const CTASection = glamorous.section({
+const CTASection = styled.section({
   ...tw('text-center md:flex items-center md:min-h-16 md:text-xl mx-auto max-w-xl'),
   '& a': tw('bg-react-blue text-white p-3 inline-block md:w-64 font-bold flex-none'),
   '& p': tw('md:pl-8 md:text-left leading-normal'),
@@ -95,5 +95,5 @@ const CommunitySection = () => (
 )
 // endregion
 
-const SectionHeader = glamorous.h2(tw('text-react-blue text-5xl font-bold text-center'))
-const ContentSection = glamorous.section(tw('mt-8 pt-4'))
+const SectionHeader = styled.h2(tw('text-react-blue text-5xl font-bold text-center'))
+const ContentSection = styled.section(tw('mt-8 pt-4'))
