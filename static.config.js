@@ -4,7 +4,10 @@ import { renderStylesToString } from 'emotion-server'
 
 const WEB_FONT_LOADER = `
 WebFontConfig = {
-  google: { families: [ 'Montserrat:300,400,600' ] }
+  // google: { families: [ 'Montserrat:300,400,600' ] }
+  custom: {
+    families: ['Metropolis']
+  }
 };
 
 (function(d) {
