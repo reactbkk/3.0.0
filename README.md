@@ -2,4 +2,4 @@
 
 React Bangkok 3.0.0 website.
 
-Using React Static with Glamorous and Tailwind CSS.
+Using React Static with Emotion.
