@@ -1,7 +1,12 @@
 {
   "extends": "react-static/.babelrc",
   "plugins": [
-    "babel-plugin-emotion",
+    [
+      "babel-plugin-emotion",
+      {
+        "autoLabel": true
+      }
+    ],
     "babel-plugin-tailwind"
   ]
 }
