@@ -117,7 +117,7 @@ module.exports = require("react-static");
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("glamorous");
+module.exports = require("react-emotion");
 
 /***/ }),
 /* 4 */
@@ -263,9 +263,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStatic = __webpack_require__(2);
 
-var _glamorous = __webpack_require__(3);
+var _reactEmotion = __webpack_require__(3);
 
-var _glamorous2 = _interopRequireDefault(_glamorous);
+var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
 var _reactbkkLogo = __webpack_require__(22);
 
@@ -330,7 +330,9 @@ var HeadingSection = function HeadingSection() {
     )
   );
 };
-var HeadingSectionContainer = _glamorous2.default.h1(_extends({}, {
+var HeadingSectionContainer = /*#__PURE__*/(0, _reactEmotion2.default)('h1', {
+  target: 'e1i7qznj0'
+})(_extends({}, {
   'textAlign': 'center',
   'alignItems': 'center',
   'justifyContent': 'center',
@@ -390,7 +392,9 @@ var CTA = function CTA(_ref) {
     )
   );
 };
-var CTASection = _glamorous2.default.section(_extends({}, {
+var CTASection = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
+  target: 'e1i7qznj1'
+})(_extends({}, {
   'textAlign': 'center',
   'alignItems': 'center',
   'marginLeft': 'auto',
@@ -472,13 +476,17 @@ var CommunitySection = function CommunitySection() {
 };
 // endregion
 
-var SectionHeader = _glamorous2.default.h2({
+var SectionHeader = /*#__PURE__*/(0, _reactEmotion2.default)('h2', {
+  target: 'e1i7qznj2'
+})({
   'color': '#00d8ff',
   'fontSize': '3rem',
   'fontWeight': '700',
   'textAlign': 'center'
 });
-var ContentSection = _glamorous2.default.section({
+var ContentSection = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
+  target: 'e1i7qznj3'
+})({
   'marginTop': '2rem',
   'paddingTop': '1rem'
 });
@@ -580,11 +588,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStatic = __webpack_require__(2);
 
-var _glamor = __webpack_require__(11);
+var _emotion = __webpack_require__(11);
 
-var _glamorous = __webpack_require__(3);
+var _reactEmotion = __webpack_require__(3);
 
-var _glamorous2 = _interopRequireDefault(_glamorous);
+var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
 var _reactHotLoader = __webpack_require__(12);
 
@@ -598,21 +606,25 @@ var _favicon2 = _interopRequireDefault(_favicon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_glamor.css.global('html, body', {
-  'fontFamily': 'Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
-  'fontWeight': '300',
-  'fontSize': '1rem',
-  'color': '#ffffff',
-  'margin': '0',
-  'padding': '0',
-  'backgroundColor': '#222'
-});
-_glamor.css.global('a', {
-  'textDecoration': 'none',
-  'color': '#00d8ff'
+(0, _emotion.injectGlobal)({
+  'html, body': {
+    'fontFamily': 'Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+    'fontWeight': '300',
+    'fontSize': '1rem',
+    'color': '#ffffff',
+    'margin': '0',
+    'padding': '0',
+    'backgroundColor': '#222'
+  },
+  a: {
+    'textDecoration': 'none',
+    'color': '#00d8ff'
+  }
 });
 
-var Content = _glamorous2.default.div({
+var Content = /*#__PURE__*/(0, _reactEmotion2.default)('div', {
+  target: 'e1fu5myv0'
+})({
   'padding': '1rem'
 });
 var App = function App() {
@@ -646,7 +658,9 @@ var App = function App() {
   );
 };
 
-var Footer = _glamorous2.default.footer({
+var Footer = /*#__PURE__*/(0, _reactEmotion2.default)('footer', {
+  target: 'e1fu5myv1'
+})({
   'paddingTop': '1rem',
   'paddingBottom': '1rem',
   'textAlign': 'center',
@@ -660,7 +674,7 @@ exports.default = (0, _reactHotLoader.hot)(module)(App);
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = require("glamor");
+module.exports = require("emotion");
 
 /***/ }),
 /* 12 */
@@ -1484,4 +1498,4 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACq
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.6e13f825.js.map
+//# sourceMappingURL=static.5c3a2ff6.js.map
