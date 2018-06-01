@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "https://reactbkk.com/3.0.0/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -117,10 +117,16 @@ module.exports = require("react-static");
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-emotion");
+module.exports = require("emotion");
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-emotion");
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -237,13 +243,13 @@ var cacheProm = exports.cacheProm = function cacheProm(pr, chunkName, props, pro
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)(module)))
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = require("prop-types");
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -252,6 +258,8 @@ module.exports = require("prop-types");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _emotion = __webpack_require__(3);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 //
@@ -263,7 +271,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStatic = __webpack_require__(2);
 
-var _reactEmotion = __webpack_require__(3);
+var _reactEmotion = __webpack_require__(4);
 
 var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
@@ -288,18 +296,12 @@ exports.default = (0, _reactStatic.withSiteData)(function () {
     ),
     _react2.default.createElement(
       CTA,
-      {
-        title: 'Recommend a Speaker',
-        disabled: true
-      },
+      { title: 'Recommend a Speaker', disabled: true },
       'Know someone who\u2019s got a story to tell? Recommend them to us! More info soon!'
     ),
     _react2.default.createElement(
       CTA,
-      {
-        title: 'Call for Staffs',
-        disabled: true
-      },
+      { title: 'Call for Staffs', disabled: true },
       'You can also contribute to our event by volunteering to become an event staff. More info soon!'
     ),
     _react2.default.createElement(SpeakersSection, null),
@@ -311,66 +313,64 @@ exports.default = (0, _reactStatic.withSiteData)(function () {
 
 var HeadingSection = function HeadingSection() {
   return _react2.default.createElement(
-    HeadingSectionContainer,
-    null,
-    _react2.default.createElement('img', { src: _reactbkkLogo2.default, alt: '' }),
+    'h1',
+    {
+      className: (0, _emotion.css)({
+        'textAlign': 'center',
+        'alignItems': 'center',
+        'justifyContent': 'center',
+        '@media (min-width: 768px)': {
+          'display': 'flex'
+        }
+      })
+    },
+    _react2.default.createElement('img', {
+      className: (0, _emotion.css)({ flex: 'none', maxWidth: '10rem' }),
+      src: _reactbkkLogo2.default, alt: '' }),
     _react2.default.createElement(
       'div',
-      null,
+      {
+        className: (0, _emotion.css)({
+          '@media (min-width: 768px)': {
+            'textAlign': 'left',
+            'paddingLeft': '2rem'
+          }
+        })
+      },
       _react2.default.createElement(
         'h1',
-        null,
+        {
+          className: (0, _emotion.css)({
+            'fontSize': '1.875rem',
+            'letterSpacing': '0.05em',
+            'color': '#00d8ff',
+            'fontWeight': '600',
+            '@media (min-width: 768px)': {
+              'fontSize': '2.25rem'
+            }
+          })
+        },
         'React Bangkok 3.0.0'
       ),
       _react2.default.createElement(
         'p',
-        null,
+        {
+          className: (0, _emotion.css)({
+            'fontSize': '1.5rem',
+            'fontWeight': '400',
+            'letterSpacing': '0.05em',
+            '@media (min-width: 768px)': {
+              'fontSize': '1.875rem'
+            }
+          })
+        },
         'June 24th, EnCo'
       )
     )
   );
 };
-var HeadingSectionContainer = /*#__PURE__*/(0, _reactEmotion2.default)('h1', {
-  target: 'e1i7qznj0'
-})(_extends({}, {
-  'textAlign': 'center',
-  'alignItems': 'center',
-  'justifyContent': 'center',
-  '@media (min-width: 768px)': {
-    'display': 'flex'
-  }
-}, {
-  '& img': _extends({}, {
-    'flex': 'none'
-  }, {
-    maxWidth: '10rem'
-  }),
-  '& > div': _extends({}, {
-    '@media (min-width: 768px)': {
-      'textAlign': 'left',
-      'paddingLeft': '2rem'
-    }
-  }, {
-    '& > h1': {
-      'fontSize': '1.875rem',
-      'letterSpacing': '0.05em',
-      'color': '#00d8ff',
-      'fontWeight': '600',
-      '@media (min-width: 768px)': {
-        'fontSize': '2.25rem'
-      }
-    },
-    '& > p': {
-      'fontSize': '1.5rem',
-      'fontWeight': '400',
-      'letterSpacing': '0.05em',
-      '@media (min-width: 768px)': {
-        'fontSize': '1.875rem'
-      }
-    }
-  })
-}));
 // endregion
+
 // region CTA
 var CTA = function CTA(_ref) {
   var title = _ref.title,
@@ -378,59 +378,57 @@ var CTA = function CTA(_ref) {
       disabled = _ref.disabled,
       children = _ref.children;
   return _react2.default.createElement(
-    CTASection,
-    { disabled: disabled },
+    'section',
+    {
+      className: (0, _emotion.css)({
+        'textAlign': 'center',
+        'alignItems': 'center',
+        'marginLeft': 'auto',
+        'marginRight': 'auto',
+        'maxWidth': '60rem',
+        '@media (min-width: 768px)': {
+          'display': 'flex',
+          'minHeight': '4rem',
+          'fontSize': '1.25rem'
+        }
+      })
+    },
     _react2.default.createElement(
       'a',
-      { href: href || 'javascript' + ':' },
+      {
+        href: href || 'javascript' + ':',
+        className: (0, _emotion.css)(_extends({}, {
+          'backgroundColor': '#00d8ff',
+          'color': '#ffffff',
+          'padding': '0.75rem',
+          'display': 'inline-block',
+          'fontWeight': '700',
+          'flex': 'none',
+          '@media (min-width: 768px)': {
+            'width': '16rem'
+          }
+        }, {
+          opacity: disabled ? 0.25 : 1
+        }))
+      },
       title
     ),
     _react2.default.createElement(
       'p',
-      null,
+      {
+        className: (0, _emotion.css)({
+          'lineHeight': '1.5',
+          '@media (min-width: 768px)': {
+            'paddingLeft': '2rem',
+            'textAlign': 'left'
+          }
+        })
+      },
       children
     )
   );
 };
-var CTASection = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-  target: 'e1i7qznj1'
-})(_extends({}, {
-  'textAlign': 'center',
-  'alignItems': 'center',
-  'marginLeft': 'auto',
-  'marginRight': 'auto',
-  'maxWidth': '60rem',
-  '@media (min-width: 768px)': {
-    'display': 'flex',
-    'minHeight': '4rem',
-    'fontSize': '1.25rem'
-  }
-}, {
-  '& a': {
-    'backgroundColor': '#00d8ff',
-    'color': '#ffffff',
-    'padding': '0.75rem',
-    'display': 'inline-block',
-    'fontWeight': '700',
-    'flex': 'none',
-    '@media (min-width: 768px)': {
-      'width': '16rem'
-    }
-  },
-  '& p': {
-    'lineHeight': '1.5',
-    '@media (min-width: 768px)': {
-      'paddingLeft': '2rem',
-      'textAlign': 'left'
-    }
-  }
-}), function (props) {
-  return {
-    '& a': {
-      opacity: props.disabled ? 0.25 : 1
-    }
-  };
-});
+
 // endregion
 // region SpeakersSection
 var SpeakersSection = function SpeakersSection() {
@@ -477,7 +475,8 @@ var CommunitySection = function CommunitySection() {
 // endregion
 
 var SectionHeader = /*#__PURE__*/(0, _reactEmotion2.default)('h2', {
-  target: 'e1i7qznj2'
+  target: 'e1i7qznj0',
+  label: 'SectionHeader'
 })({
   'color': '#00d8ff',
   'fontSize': '3rem',
@@ -485,14 +484,15 @@ var SectionHeader = /*#__PURE__*/(0, _reactEmotion2.default)('h2', {
   'textAlign': 'center'
 });
 var ContentSection = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-  target: 'e1i7qznj3'
+  target: 'e1i7qznj1',
+  label: 'ContentSection'
 })({
   'marginTop': '2rem',
   'paddingTop': '1rem'
 });
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -523,7 +523,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -537,11 +537,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(9);
+var _reactDom = __webpack_require__(10);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(10);
+var _App = __webpack_require__(11);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -566,13 +566,13 @@ if (typeof document !== 'undefined') {
 }
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -588,9 +588,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStatic = __webpack_require__(2);
 
-var _emotion = __webpack_require__(11);
+var _emotion = __webpack_require__(3);
 
-var _reactEmotion = __webpack_require__(3);
+var _reactEmotion = __webpack_require__(4);
 
 var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
@@ -606,9 +606,14 @@ var _favicon2 = _interopRequireDefault(_favicon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function fontFace(src, family, weight) {
+  return '@font-face {\n    font-family: "' + family + '";\n    font-weight: ' + weight + ';\n    src: url(' + src + ') format(\'woff2\');\n  }';
+}
+(0, _emotion.injectGlobal)(fontFace(__webpack_require__(24), 'Metropolis', 200), '\n  ', fontFace(__webpack_require__(25), 'Metropolis', 300), '\n  ', fontFace(__webpack_require__(26), 'Metropolis', 400), '\n  ', fontFace(__webpack_require__(27), 'Metropolis', 500), '\n  ', fontFace(__webpack_require__(28), 'Metropolis', 600), '\n  ', fontFace(__webpack_require__(29), 'Metropolis', 700), '\n  ', fontFace(__webpack_require__(30), 'Metropolis', 800), '\n  ', fontFace(__webpack_require__(31), 'Metropolis', 900));
+
 (0, _emotion.injectGlobal)({
   'html, body': {
-    'fontFamily': 'Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+    'fontFamily': 'Metropolis, Proxima Nova, Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
     'fontWeight': '300',
     'fontSize': '1rem',
     'color': '#ffffff',
@@ -623,7 +628,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 var Content = /*#__PURE__*/(0, _reactEmotion2.default)('div', {
-  target: 'e1fu5myv0'
+  target: 'e1fu5myv0',
+  label: 'Content'
 })({
   'padding': '1rem'
 });
@@ -659,7 +665,8 @@ var App = function App() {
 };
 
 var Footer = /*#__PURE__*/(0, _reactEmotion2.default)('footer', {
-  target: 'e1fu5myv1'
+  target: 'e1fu5myv1',
+  label: 'Footer'
 })({
   'paddingTop': '1rem',
   'paddingBottom': '1rem',
@@ -669,12 +676,6 @@ var Footer = /*#__PURE__*/(0, _reactEmotion2.default)('footer', {
 
 exports.default = (0, _reactHotLoader.hot)(module)(App);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)(module)))
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-module.exports = require("emotion");
 
 /***/ }),
 /* 12 */
@@ -749,7 +750,7 @@ var t_0 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
   id: '../src/containers/Home',
   file: '/home/circleci/reactbkk3/dist/react-static-routes.js',
   load: function load() {
-    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 6)), (0, _importCss3.default)('src/containers/Home', {
+    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 7)), (0, _importCss3.default)('src/containers/Home', {
       disableWarnings: true
     })]).then(function (proms) {
       return proms[0];
@@ -759,7 +760,7 @@ var t_0 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
     return _path3.default.join(__dirname, '../src/containers/Home');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(6);
+    return /*require.resolve*/(7);
   },
   chunkName: function chunkName() {
     return 'src/containers/Home';
@@ -769,7 +770,7 @@ var t_1 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
   id: '../src/containers/404',
   file: '/home/circleci/reactbkk3/dist/react-static-routes.js',
   load: function load() {
-    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 7)), (0, _importCss3.default)('src/containers/404', {
+    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 8)), (0, _importCss3.default)('src/containers/404', {
       disableWarnings: true
     })]).then(function (proms) {
       return proms[0];
@@ -779,7 +780,7 @@ var t_1 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
     return _path3.default.join(__dirname, '../src/containers/404');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(7);
+    return /*require.resolve*/(8);
   },
   chunkName: function chunkName() {
     return 'src/containers/404';
@@ -933,7 +934,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(6);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -943,7 +944,7 @@ var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
 var _requireUniversalModule2 = _interopRequireDefault(_requireUniversalModule);
 
-var _utils = __webpack_require__(4);
+var _utils = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1245,7 +1246,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.clearChunks = exports.flushModuleIds = exports.flushChunkNames = exports.MODULE_IDS = exports.CHUNK_NAMES = undefined;
 exports.default = requireUniversalModule;
 
-var _utils = __webpack_require__(4);
+var _utils = __webpack_require__(5);
 
 var CHUNK_NAMES = exports.CHUNK_NAMES = new Set();
 var MODULE_IDS = exports.MODULE_IDS = new Set();
@@ -1431,7 +1432,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(5);
+var _propTypes = __webpack_require__(6);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1495,7 +1496,55 @@ module.exports = __webpack_require__.p + "static/reactbkk-logo.206eb45a.png";
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiYmRlMjE2Yi05NGRlLTQ5MmMtYmEwYi1mMWE4MDEyNGMwYjUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODFCREE0QTEzM0ZFMTFFNzg5NDVCMzM2ODZDREY3NzkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODFCREE0QTAzM0ZFMTFFNzg5NDVCMzM2ODZDREY3NzkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhFOEE5QkZEMzNFNzExRTdBQzU4RUY5MUE5MUJFNkNGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhFOEE5QkZFMzNFNzExRTdBQzU4RUY5MUE5MUJFNkNGIi8+IDwv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"
 
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/Metropolis-Thin.c56ec085.woff2";
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/Metropolis-Light.dabe320a.woff2";
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/Metropolis-Regular.4a405762.woff2";
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/Metropolis-Medium.97c97a09.woff2";
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/Metropolis-SemiBold.b89d50b5.woff2";
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/Metropolis-Bold.6a80125e.woff2";
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/Metropolis-ExtraBold.d7fe6da3.woff2";
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/Metropolis-Black.b7b5bb93.woff2";
+
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.5c3a2ff6.js.map
+//# sourceMappingURL=static.2cbe049e.js.map
