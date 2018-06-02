@@ -1,7 +1,6 @@
 import React from 'react'
 import { withSiteData } from 'react-static'
 import styled from 'react-emotion'
-//
 import logoImg from '../reactbkk-logo.png'
 
 export default withSiteData(() => (
