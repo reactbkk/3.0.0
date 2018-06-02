@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router, Head } from 'react-static'
-import { css, injectGlobal } from 'emotion'
+import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'

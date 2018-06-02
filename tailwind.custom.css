@@ -2302,7 +2302,7 @@ button,
 }
 
 .font-body {
-  font-family: Helvetica Neue W31, Helvetica Neue, sans-serif;
+  font-family: HelveticaNeueW31-Light, Helvetica Neue, sans-serif;
 }
 
 .font-serif {
@@ -6124,7 +6124,7 @@ button,
   }
 
   .sm\:font-body {
-    font-family: Helvetica Neue W31, Helvetica Neue, sans-serif;
+    font-family: HelveticaNeueW31-Light, Helvetica Neue, sans-serif;
   }
 
   .sm\:font-serif {
@@ -9935,7 +9935,7 @@ button,
   }
 
   .md\:font-body {
-    font-family: Helvetica Neue W31, Helvetica Neue, sans-serif;
+    font-family: HelveticaNeueW31-Light, Helvetica Neue, sans-serif;
   }
 
   .md\:font-serif {
@@ -13746,7 +13746,7 @@ button,
   }
 
   .lg\:font-body {
-    font-family: Helvetica Neue W31, Helvetica Neue, sans-serif;
+    font-family: HelveticaNeueW31-Light, Helvetica Neue, sans-serif;
   }
 
   .lg\:font-serif {
@@ -17557,7 +17557,7 @@ button,
   }
 
   .xl\:font-body {
-    font-family: Helvetica Neue W31, Helvetica Neue, sans-serif;
+    font-family: HelveticaNeueW31-Light, Helvetica Neue, sans-serif;
   }
 
   .xl\:font-serif {
