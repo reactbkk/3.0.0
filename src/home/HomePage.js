@@ -57,17 +57,36 @@ const TicketsSection = () => (
       <ActionButton href="javascript:alert('Coming soon!')">Information</ActionButton>
     </p>
     <p>
-      <Interaction>
-        {({ interactive, running, onClick }) => (
-          <ActionButton
-            disabled={!interactive || running}
-            href="javascript://redeem"
-            onClick={onClick}
-          >
-            {running ? 'Loading…' : interactive ? 'Redeem ticket' : '(Loading page)'}
-          </ActionButton>
+      <DynamicContent>
+        {(dialogElement, setDialogElement) => (
+          <React.Fragment>
+            <Interaction
+              action={async () => {
+                const promise = import('../redeem')
+                const redeem = await promise
+                setDialogElement(
+                  redeem.renderDialog({
+                    onClose () {
+                      setDialogElement(null)
+                    },
+                  })
+                )
+              }}
+            >
+              {({ interactive, running, onClick }) => (
+                <ActionButton
+                  disabled={!interactive || running}
+                  href="javascript://redeem"
+                  onClick={onClick}
+                >
+                  {running ? 'Loading…' : interactive ? 'Redeem ticket' : '(Loading page)'}
+                </ActionButton>
+              )}
+            </Interaction>
+            {dialogElement}
+          </React.Fragment>
         )}
-      </Interaction>
+      </DynamicContent>
     </p>
   </ContentSection>
 )
@@ -131,12 +150,14 @@ class Interaction extends React.Component {
       this.setState({ interactive: true })
     })
   }
-  onClick = e => {
+  onClick = async e => {
     if (this.state.running) return
     this.setState({ running: true })
-    setTimeout(() => {
+    try {
+      await this.props.action(e)
+    } finally {
       this.setState({ running: false })
-    }, 1000)
+    }
   }
   render () {
     const { interactive, running } = this.state
@@ -146,5 +167,15 @@ class Interaction extends React.Component {
       running,
       onClick,
     })
+  }
+}
+
+class DynamicContent extends React.Component {
+  state = {
+    value: this.props.defaultValue,
+  }
+  setValue = value => this.setState({ value })
+  render () {
+    return this.props.children(this.state.value, this.setValue)
   }
 }
