@@ -7,7 +7,7 @@ then
 yarn build
 rm -rf .netlify/dist
 mkdir -p .netlify/dist
-cp -r dist .netlify/dist/3.0.0
+cp -r public .netlify/dist/3.0.0
 cat > .netlify/dist/_redirects <<'EOF'
 / /3.0.0/
 EOF
