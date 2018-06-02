@@ -42,7 +42,7 @@ const TicketsSection = () => (
       Tickets will be available on <strong>June 11th, 2018</strong> at <strong>18:00</strong>
     </p>
     <p>
-      <ActionButton href="https://www.eventpop.me/e/3607-react-bangkok-3-0-0">
+      <ActionButton primary href="https://www.eventpop.me/e/3607-react-bangkok-3-0-0">
         Tickets on Event Pop
       </ActionButton>
     </p>
@@ -52,6 +52,22 @@ const TicketsSection = () => (
       Win a free ticket by contributing to open-source community!
       <br />
       Details will be available soon!
+    </p>
+    <p>
+      <ActionButton href="javascript:alert('Coming soon!')">Information</ActionButton>
+    </p>
+    <p>
+      <Interaction>
+        {({ interactive, running, onClick }) => (
+          <ActionButton
+            disabled={!interactive || running}
+            href="javascript://redeem"
+            onClick={onClick}
+          >
+            {running ? 'Loading…' : interactive ? 'Redeem ticket' : '(Loading page)'}
+          </ActionButton>
+        )}
+      </Interaction>
     </p>
   </ContentSection>
 )
@@ -85,16 +101,50 @@ const SectionHeader = styled.h2(tw('text-react-blue text-5xl font-bold'))
 const SectionSubheader = styled.h3(tw('text-react-blue text-3xl font-bold mt-6 pt-6'))
 const ContentSection = styled.section(tw('mt-8 pt-4 text-center'))
 
-function ActionButton ({ href, disabled, children }) {
+function ActionButton ({
+  href, disabled, primary, children, onClick,
+}) {
   return (
     <a
       href={href || `javascript${':'}`}
+      onClick={onClick}
       css={{
-        ...tw('bg-react-blue text-white p-3 inline-block md:w-64 font-bold flex-none'),
+        ...tw('p-3 inline-block md:w-64 flex-none border border-solid'),
+        ...(primary
+          ? tw('bg-react-blue text-white font-bold border-react-blue')
+          : tw('bg-grey-darkest text-react-blue border-grey-darker')),
         opacity: disabled ? 0.25 : 1,
       }}
     >
       {children}
     </a>
   )
+}
+
+class Interaction extends React.Component {
+  state = {
+    interactive: false,
+    running: false,
+  }
+  componentDidMount () {
+    setTimeout(() => {
+      this.setState({ interactive: true })
+    })
+  }
+  onClick = e => {
+    if (this.state.running) return
+    this.setState({ running: true })
+    setTimeout(() => {
+      this.setState({ running: false })
+    }, 1000)
+  }
+  render () {
+    const { interactive, running } = this.state
+    const { onClick } = this
+    return this.props.children({
+      interactive,
+      running,
+      onClick,
+    })
+  }
 }

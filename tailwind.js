@@ -46,6 +46,9 @@ const colors = {
   transparent: 'transparent',
 
   black: '#222',
+  'grey-darkest': '#333',
+  'grey-darker': '#666',
+  'grey-dark': '#888',
   grey: '#9babb4',
   white: '#ffffff',
 

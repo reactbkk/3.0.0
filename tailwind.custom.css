@@ -639,6 +639,18 @@ button,
   background-color: #222;
 }
 
+.bg-grey-darkest {
+  background-color: #333;
+}
+
+.bg-grey-darker {
+  background-color: #666;
+}
+
+.bg-grey-dark {
+  background-color: #888;
+}
+
 .bg-grey {
   background-color: #9babb4;
 }
@@ -909,6 +921,18 @@ button,
 
 .hover\:bg-black:hover {
   background-color: #222;
+}
+
+.hover\:bg-grey-darkest:hover {
+  background-color: #333;
+}
+
+.hover\:bg-grey-darker:hover {
+  background-color: #666;
+}
+
+.hover\:bg-grey-dark:hover {
+  background-color: #888;
 }
 
 .hover\:bg-grey:hover {
@@ -1247,6 +1271,18 @@ button,
   border-color: #222;
 }
 
+.border-grey-darkest {
+  border-color: #333;
+}
+
+.border-grey-darker {
+  border-color: #666;
+}
+
+.border-grey-dark {
+  border-color: #888;
+}
+
 .border-grey {
   border-color: #9babb4;
 }
@@ -1517,6 +1553,18 @@ button,
 
 .hover\:border-black:hover {
   border-color: #222;
+}
+
+.hover\:border-grey-darkest:hover {
+  border-color: #333;
+}
+
+.hover\:border-grey-darker:hover {
+  border-color: #666;
+}
+
+.hover\:border-grey-dark:hover {
+  border-color: #888;
 }
 
 .hover\:border-grey:hover {
@@ -3559,6 +3607,18 @@ button,
   color: #222;
 }
 
+.text-grey-darkest {
+  color: #333;
+}
+
+.text-grey-darker {
+  color: #666;
+}
+
+.text-grey-dark {
+  color: #888;
+}
+
 .text-grey {
   color: #9babb4;
 }
@@ -3829,6 +3889,18 @@ button,
 
 .hover\:text-black:hover {
   color: #222;
+}
+
+.hover\:text-grey-darkest:hover {
+  color: #333;
+}
+
+.hover\:text-grey-darker:hover {
+  color: #666;
+}
+
+.hover\:text-grey-dark:hover {
+  color: #888;
 }
 
 .hover\:text-grey:hover {
@@ -4483,6 +4555,18 @@ button,
     background-color: #222;
   }
 
+  .sm\:bg-grey-darkest {
+    background-color: #333;
+  }
+
+  .sm\:bg-grey-darker {
+    background-color: #666;
+  }
+
+  .sm\:bg-grey-dark {
+    background-color: #888;
+  }
+
   .sm\:bg-grey {
     background-color: #9babb4;
   }
@@ -4753,6 +4837,18 @@ button,
 
   .sm\:hover\:bg-black:hover {
     background-color: #222;
+  }
+
+  .sm\:hover\:bg-grey-darkest:hover {
+    background-color: #333;
+  }
+
+  .sm\:hover\:bg-grey-darker:hover {
+    background-color: #666;
+  }
+
+  .sm\:hover\:bg-grey-dark:hover {
+    background-color: #888;
   }
 
   .sm\:hover\:bg-grey:hover {
@@ -5091,6 +5187,18 @@ button,
     border-color: #222;
   }
 
+  .sm\:border-grey-darkest {
+    border-color: #333;
+  }
+
+  .sm\:border-grey-darker {
+    border-color: #666;
+  }
+
+  .sm\:border-grey-dark {
+    border-color: #888;
+  }
+
   .sm\:border-grey {
     border-color: #9babb4;
   }
@@ -5361,6 +5469,18 @@ button,
 
   .sm\:hover\:border-black:hover {
     border-color: #222;
+  }
+
+  .sm\:hover\:border-grey-darkest:hover {
+    border-color: #333;
+  }
+
+  .sm\:hover\:border-grey-darker:hover {
+    border-color: #666;
+  }
+
+  .sm\:hover\:border-grey-dark:hover {
+    border-color: #888;
   }
 
   .sm\:hover\:border-grey:hover {
@@ -7395,6 +7515,18 @@ button,
     color: #222;
   }
 
+  .sm\:text-grey-darkest {
+    color: #333;
+  }
+
+  .sm\:text-grey-darker {
+    color: #666;
+  }
+
+  .sm\:text-grey-dark {
+    color: #888;
+  }
+
   .sm\:text-grey {
     color: #9babb4;
   }
@@ -7665,6 +7797,18 @@ button,
 
   .sm\:hover\:text-black:hover {
     color: #222;
+  }
+
+  .sm\:hover\:text-grey-darkest:hover {
+    color: #333;
+  }
+
+  .sm\:hover\:text-grey-darker:hover {
+    color: #666;
+  }
+
+  .sm\:hover\:text-grey-dark:hover {
+    color: #888;
   }
 
   .sm\:hover\:text-grey:hover {
@@ -8316,6 +8460,18 @@ button,
     background-color: #222;
   }
 
+  .md\:bg-grey-darkest {
+    background-color: #333;
+  }
+
+  .md\:bg-grey-darker {
+    background-color: #666;
+  }
+
+  .md\:bg-grey-dark {
+    background-color: #888;
+  }
+
   .md\:bg-grey {
     background-color: #9babb4;
   }
@@ -8586,6 +8742,18 @@ button,
 
   .md\:hover\:bg-black:hover {
     background-color: #222;
+  }
+
+  .md\:hover\:bg-grey-darkest:hover {
+    background-color: #333;
+  }
+
+  .md\:hover\:bg-grey-darker:hover {
+    background-color: #666;
+  }
+
+  .md\:hover\:bg-grey-dark:hover {
+    background-color: #888;
   }
 
   .md\:hover\:bg-grey:hover {
@@ -8924,6 +9092,18 @@ button,
     border-color: #222;
   }
 
+  .md\:border-grey-darkest {
+    border-color: #333;
+  }
+
+  .md\:border-grey-darker {
+    border-color: #666;
+  }
+
+  .md\:border-grey-dark {
+    border-color: #888;
+  }
+
   .md\:border-grey {
     border-color: #9babb4;
   }
@@ -9194,6 +9374,18 @@ button,
 
   .md\:hover\:border-black:hover {
     border-color: #222;
+  }
+
+  .md\:hover\:border-grey-darkest:hover {
+    border-color: #333;
+  }
+
+  .md\:hover\:border-grey-darker:hover {
+    border-color: #666;
+  }
+
+  .md\:hover\:border-grey-dark:hover {
+    border-color: #888;
   }
 
   .md\:hover\:border-grey:hover {
@@ -11228,6 +11420,18 @@ button,
     color: #222;
   }
 
+  .md\:text-grey-darkest {
+    color: #333;
+  }
+
+  .md\:text-grey-darker {
+    color: #666;
+  }
+
+  .md\:text-grey-dark {
+    color: #888;
+  }
+
   .md\:text-grey {
     color: #9babb4;
   }
@@ -11498,6 +11702,18 @@ button,
 
   .md\:hover\:text-black:hover {
     color: #222;
+  }
+
+  .md\:hover\:text-grey-darkest:hover {
+    color: #333;
+  }
+
+  .md\:hover\:text-grey-darker:hover {
+    color: #666;
+  }
+
+  .md\:hover\:text-grey-dark:hover {
+    color: #888;
   }
 
   .md\:hover\:text-grey:hover {
@@ -12149,6 +12365,18 @@ button,
     background-color: #222;
   }
 
+  .lg\:bg-grey-darkest {
+    background-color: #333;
+  }
+
+  .lg\:bg-grey-darker {
+    background-color: #666;
+  }
+
+  .lg\:bg-grey-dark {
+    background-color: #888;
+  }
+
   .lg\:bg-grey {
     background-color: #9babb4;
   }
@@ -12419,6 +12647,18 @@ button,
 
   .lg\:hover\:bg-black:hover {
     background-color: #222;
+  }
+
+  .lg\:hover\:bg-grey-darkest:hover {
+    background-color: #333;
+  }
+
+  .lg\:hover\:bg-grey-darker:hover {
+    background-color: #666;
+  }
+
+  .lg\:hover\:bg-grey-dark:hover {
+    background-color: #888;
   }
 
   .lg\:hover\:bg-grey:hover {
@@ -12757,6 +12997,18 @@ button,
     border-color: #222;
   }
 
+  .lg\:border-grey-darkest {
+    border-color: #333;
+  }
+
+  .lg\:border-grey-darker {
+    border-color: #666;
+  }
+
+  .lg\:border-grey-dark {
+    border-color: #888;
+  }
+
   .lg\:border-grey {
     border-color: #9babb4;
   }
@@ -13027,6 +13279,18 @@ button,
 
   .lg\:hover\:border-black:hover {
     border-color: #222;
+  }
+
+  .lg\:hover\:border-grey-darkest:hover {
+    border-color: #333;
+  }
+
+  .lg\:hover\:border-grey-darker:hover {
+    border-color: #666;
+  }
+
+  .lg\:hover\:border-grey-dark:hover {
+    border-color: #888;
   }
 
   .lg\:hover\:border-grey:hover {
@@ -15061,6 +15325,18 @@ button,
     color: #222;
   }
 
+  .lg\:text-grey-darkest {
+    color: #333;
+  }
+
+  .lg\:text-grey-darker {
+    color: #666;
+  }
+
+  .lg\:text-grey-dark {
+    color: #888;
+  }
+
   .lg\:text-grey {
     color: #9babb4;
   }
@@ -15331,6 +15607,18 @@ button,
 
   .lg\:hover\:text-black:hover {
     color: #222;
+  }
+
+  .lg\:hover\:text-grey-darkest:hover {
+    color: #333;
+  }
+
+  .lg\:hover\:text-grey-darker:hover {
+    color: #666;
+  }
+
+  .lg\:hover\:text-grey-dark:hover {
+    color: #888;
   }
 
   .lg\:hover\:text-grey:hover {
@@ -15982,6 +16270,18 @@ button,
     background-color: #222;
   }
 
+  .xl\:bg-grey-darkest {
+    background-color: #333;
+  }
+
+  .xl\:bg-grey-darker {
+    background-color: #666;
+  }
+
+  .xl\:bg-grey-dark {
+    background-color: #888;
+  }
+
   .xl\:bg-grey {
     background-color: #9babb4;
   }
@@ -16252,6 +16552,18 @@ button,
 
   .xl\:hover\:bg-black:hover {
     background-color: #222;
+  }
+
+  .xl\:hover\:bg-grey-darkest:hover {
+    background-color: #333;
+  }
+
+  .xl\:hover\:bg-grey-darker:hover {
+    background-color: #666;
+  }
+
+  .xl\:hover\:bg-grey-dark:hover {
+    background-color: #888;
   }
 
   .xl\:hover\:bg-grey:hover {
@@ -16590,6 +16902,18 @@ button,
     border-color: #222;
   }
 
+  .xl\:border-grey-darkest {
+    border-color: #333;
+  }
+
+  .xl\:border-grey-darker {
+    border-color: #666;
+  }
+
+  .xl\:border-grey-dark {
+    border-color: #888;
+  }
+
   .xl\:border-grey {
     border-color: #9babb4;
   }
@@ -16860,6 +17184,18 @@ button,
 
   .xl\:hover\:border-black:hover {
     border-color: #222;
+  }
+
+  .xl\:hover\:border-grey-darkest:hover {
+    border-color: #333;
+  }
+
+  .xl\:hover\:border-grey-darker:hover {
+    border-color: #666;
+  }
+
+  .xl\:hover\:border-grey-dark:hover {
+    border-color: #888;
   }
 
   .xl\:hover\:border-grey:hover {
@@ -18894,6 +19230,18 @@ button,
     color: #222;
   }
 
+  .xl\:text-grey-darkest {
+    color: #333;
+  }
+
+  .xl\:text-grey-darker {
+    color: #666;
+  }
+
+  .xl\:text-grey-dark {
+    color: #888;
+  }
+
   .xl\:text-grey {
     color: #9babb4;
   }
@@ -19164,6 +19512,18 @@ button,
 
   .xl\:hover\:text-black:hover {
     color: #222;
+  }
+
+  .xl\:hover\:text-grey-darkest:hover {
+    color: #333;
+  }
+
+  .xl\:hover\:text-grey-darker:hover {
+    color: #666;
+  }
+
+  .xl\:hover\:text-grey-dark:hover {
+    color: #888;
   }
 
   .xl\:hover\:text-grey:hover {

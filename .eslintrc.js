@@ -1,6 +1,9 @@
 module.exports = {
   extends: 'react-tools',
   globals: {
-  	'tw': true,
-  }
+    tw: true,
+  },
+  rules: {
+    'no-script-url': 'off',
+  },
 }
