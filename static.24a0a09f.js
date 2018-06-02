@@ -287,23 +287,25 @@ exports.default = (0, _reactStatic.withSiteData)(function () {
     null,
     _react2.default.createElement(HeadingSection, null),
     _react2.default.createElement(
-      CTA,
+      'p',
       {
-        title: 'Call for Speakers',
-        href: 'https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/161749411164955/?type=3'
+        className: (0, _emotion.css)({
+          'textAlign': 'center',
+          'fontFamily': 'HelveticaNeueW31-Light, Helvetica Neue, sans-serif',
+          'fontSize': '1.25rem',
+          'lineHeight': '1.5',
+          'letterSpacing': '0.05em'
+        })
       },
-      'We encourage everyone to share your knowledge with the community! First-time speakers are welcome; you don\u2019t have to be an expert. People outside Bangkok are also welcome; we can provide travel and accomodation support. If you have something cool to share, please submit a proposal by May 4th, 2018.'
+      '\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E2D\u0E35\u0E01\u0E04\u0E23\u0E31\u0E49\u0E07\u0E01\u0E31\u0E1A\u0E07\u0E32\u0E19 Conference \u0E1B\u0E23\u0E30\u0E08\u0E33\u0E1B\u0E35',
+      _react2.default.createElement('br', null),
+      '\u0E02\u0E2D\u0E07\u0E42\u0E1B\u0E23\u0E41\u0E01\u0E23\u0E21\u0E40\u0E21\u0E2D\u0E23\u0E4C\u0E2A\u0E32\u0E22 React \u0E17\u0E38\u0E01\u0E04\u0E19',
+      _react2.default.createElement('br', null),
+      '\u0E01\u0E31\u0E1A\u0E07\u0E32\u0E19 \u201CReact Bangkok 3.0.0\u201D',
+      _react2.default.createElement('br', null),
+      '\u0E17\u0E35\u0E48\u0E43\u0E19\u0E1B\u0E35\u0E19\u0E35\u0E49\u0E08\u0E30\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E22\u0E34\u0E48\u0E07\u0E43\u0E2B\u0E0D\u0E48\u0E01\u0E27\u0E48\u0E32\u0E40\u0E14\u0E34\u0E21'
     ),
-    _react2.default.createElement(
-      CTA,
-      { title: 'Recommend a Speaker', disabled: true },
-      'Know someone who\u2019s got a story to tell? Recommend them to us! More info soon!'
-    ),
-    _react2.default.createElement(
-      CTA,
-      { title: 'Call for Staffs', disabled: true },
-      'You can also contribute to our event by volunteering to become an event staff. More info soon!'
-    ),
+    _react2.default.createElement(TicketsSection, null),
     _react2.default.createElement(SpeakersSection, null),
     _react2.default.createElement(CommunitySection, null)
   );
@@ -364,72 +366,73 @@ var HeadingSection = function HeadingSection() {
             }
           })
         },
-        'June 24th, EnCo'
+        'June 24th, Synergy Hall, EnCo'
       )
     )
   );
 };
 // endregion
 
-// region CTA
-var CTA = function CTA(_ref) {
-  var title = _ref.title,
-      href = _ref.href,
-      disabled = _ref.disabled,
-      children = _ref.children;
+// region SpeakersSection
+var TicketsSection = function TicketsSection() {
   return _react2.default.createElement(
-    'section',
-    {
-      className: (0, _emotion.css)({
-        'textAlign': 'center',
-        'alignItems': 'center',
-        'marginLeft': 'auto',
-        'marginRight': 'auto',
-        'maxWidth': '60rem',
-        '@media (min-width: 768px)': {
-          'display': 'flex',
-          'minHeight': '4rem',
-          'fontSize': '1.25rem'
-        }
-      })
-    },
+    ContentSection,
+    null,
     _react2.default.createElement(
-      'a',
-      {
-        href: href || 'javascript' + ':',
-        className: (0, _emotion.css)(_extends({}, {
-          'backgroundColor': '#00d8ff',
-          'color': '#ffffff',
-          'padding': '0.75rem',
-          'display': 'inline-block',
-          'fontWeight': '700',
-          'flex': 'none',
-          '@media (min-width: 768px)': {
-            'width': '16rem'
-          }
-        }, {
-          opacity: disabled ? 0.25 : 1
-        }))
-      },
-      title
+      SectionHeader,
+      null,
+      'Tickets'
     ),
     _react2.default.createElement(
       'p',
       {
         className: (0, _emotion.css)({
-          'lineHeight': '1.5',
-          '@media (min-width: 768px)': {
-            'paddingLeft': '2rem',
-            'textAlign': 'left'
-          }
+          'fontSize': '1.25rem',
+          'lineHeight': '1.25'
         })
       },
-      children
+      'Tickets will be available on ',
+      _react2.default.createElement(
+        'strong',
+        null,
+        'June 11th, 2018'
+      ),
+      ' at ',
+      _react2.default.createElement(
+        'strong',
+        null,
+        '18:00'
+      )
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      _react2.default.createElement(
+        ActionButton,
+        { href: 'https://www.eventpop.me/e/3607-react-bangkok-3-0-0' },
+        'Tickets on Event Pop'
+      )
+    ),
+    _react2.default.createElement(
+      SectionSubheader,
+      null,
+      'Get free tickets'
+    ),
+    _react2.default.createElement(
+      'p',
+      {
+        className: (0, _emotion.css)({
+          'lineHeight': '1.5'
+        })
+      },
+      'Win a free ticket by contributing to open-source community!',
+      _react2.default.createElement('br', null),
+      'Details will be available soon!'
     )
   );
 };
-
 // endregion
+
 // region SpeakersSection
 var SpeakersSection = function SpeakersSection() {
   return _react2.default.createElement(
@@ -442,14 +445,16 @@ var SpeakersSection = function SpeakersSection() {
     ),
     _react2.default.createElement(
       'p',
-      { style: { textAlign: 'center' } },
+      null,
       'TBA'
     )
   );
 };
 // endregion
+
 // region CommunitySection
 var FACEBOOK_GROUP_URL = 'https://www.facebook.com/groups/react.th/';
+var FACEBOOK_PAGE_URL = 'https://www.facebook.com/reactbkk';
 var CommunitySection = function CommunitySection() {
   return _react2.default.createElement(
     ContentSection,
@@ -461,14 +466,33 @@ var CommunitySection = function CommunitySection() {
     ),
     _react2.default.createElement(
       'p',
-      { style: { textAlign: 'center' } },
+      {
+        className: (0, _emotion.css)({
+          'textAlign': 'center',
+          'lineHeight': '1.5'
+        })
+      },
       'Stay connected. Join our ',
       _react2.default.createElement(
         'a',
         { href: FACEBOOK_GROUP_URL },
         'Facebook Group'
       ),
-      '.'
+      '. Like our',
+      ' ',
+      _react2.default.createElement(
+        'a',
+        { href: FACEBOOK_PAGE_URL },
+        'Facebook Page'
+      ),
+      '. Follow',
+      ' ',
+      _react2.default.createElement(
+        'a',
+        { href: 'https://twitter.com/reactbkk' },
+        '@reactbkk'
+      ),
+      ' on Twitter.'
     )
   );
 };
@@ -480,16 +504,53 @@ var SectionHeader = /*#__PURE__*/(0, _reactEmotion2.default)('h2', {
 })({
   'color': '#00d8ff',
   'fontSize': '3rem',
+  'fontWeight': '700'
+});
+var SectionSubheader = /*#__PURE__*/(0, _reactEmotion2.default)('h3', {
+  target: 'e1i7qznj1',
+  label: 'SectionSubheader'
+})({
+  'color': '#00d8ff',
+  'fontSize': '1.875rem',
   'fontWeight': '700',
-  'textAlign': 'center'
+  'marginTop': '1.5rem',
+  'paddingTop': '1.5rem'
 });
 var ContentSection = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-  target: 'e1i7qznj1',
+  target: 'e1i7qznj2',
   label: 'ContentSection'
 })({
   'marginTop': '2rem',
-  'paddingTop': '1rem'
+  'paddingTop': '1rem',
+  'textAlign': 'center'
 });
+
+function ActionButton(_ref) {
+  var href = _ref.href,
+      disabled = _ref.disabled,
+      children = _ref.children;
+
+  return _react2.default.createElement(
+    'a',
+    {
+      href: href || 'javascript' + ':',
+      className: (0, _emotion.css)(_extends({}, {
+        'backgroundColor': '#00d8ff',
+        'color': '#ffffff',
+        'padding': '0.75rem',
+        'display': 'inline-block',
+        'fontWeight': '700',
+        'flex': 'none',
+        '@media (min-width: 768px)': {
+          'width': '16rem'
+        }
+      }, {
+        opacity: disabled ? 0.25 : 1
+      }))
+    },
+    children
+  );
+}
 
 /***/ }),
 /* 8 */
@@ -1547,4 +1608,4 @@ module.exports = __webpack_require__.p + "static/Metropolis-Black.b7b5bb93.woff2
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.2cbe049e.js.map
+//# sourceMappingURL=static.24a0a09f.js.map
