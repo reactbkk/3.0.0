@@ -3,8 +3,9 @@ import styled from 'react-emotion'
 import logoImg from '../reactbkk-logo.png'
 
 /* global tw */
+/* eslint no-script-url: off */
 
-export default function HomePage () {
+export function HomePage () {
   return (
     <div>
       <HeadingSection />
@@ -65,7 +66,7 @@ const TicketsSection = () => (
           <React.Fragment>
             <Interaction
               action={async () => {
-                const promise = import('../redeem')
+                const promise = import(/* webpackChunkName: "redeem" */ '../redeem')
                 const redeem = await promise
                 setDialogElement(
                   redeem.renderDialog({
