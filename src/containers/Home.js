@@ -7,6 +7,12 @@ import logoImg from '../reactbkk-logo.png'
 export default withSiteData(() => (
   <div>
     <HeadingSection />
+    <p css={tw('text-center font-body text-xl leading-normal tracking-wide')}>
+      กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
+      ของโปรแกรมเมอร์สาย React ทุกคน<br />
+      กับงาน “React Bangkok 3.0.0”<br />
+      ที่ในปีนี้จะกลับมาอย่างยิ่งใหญ่กว่าเดิม
+    </p>
     <TicketsSection />
     <SpeakersSection />
     <CommunitySection />

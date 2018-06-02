@@ -7,6 +7,10 @@ WebFontConfig = {
   // google: { families: [ 'Montserrat:300,400,600' ] }
   custom: {
     families: ['Metropolis']
+  },
+  monotype: {
+    projectId: '38a2f0dd-bef3-4c2f-9b6f-215296f9d856',
+    loadAllFonts: true
   }
 };
 
