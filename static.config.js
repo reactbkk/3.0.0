@@ -28,11 +28,11 @@ export default {
   getRoutes: async () => [
     {
       path: '/',
-      component: 'src/containers/Home',
+      component: 'src/home/HomePage',
     },
     {
       is404: true,
-      component: 'src/containers/404',
+      component: 'src/404/404Page',
     },
   ],
   renderToHtml: async (render, Comp, meta) => {
