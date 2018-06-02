@@ -157,10 +157,13 @@ class RedeemDialogContent extends React.Component {
         .firestore()
         .collection('github_users')
         .doc(String(id))
-        .update({
-          code: redemptionCode,
-          username,
-        })
+        .set(
+          {
+            code: redemptionCode,
+            username,
+          },
+          { merge: true }
+        )
       window.alert(`OK done.\n\nusername=${username}\nid=${id}\ncode=${redemptionCode}`)
     } catch (e) {
       window.alert(`Cannot giveCode: ${e}.`)
