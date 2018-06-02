@@ -1,6 +1,7 @@
 {
   "extends": "react-static/.babelrc",
   "plugins": [
+    "react-hot-loader/babel",
     [
       "babel-plugin-emotion",
       {
