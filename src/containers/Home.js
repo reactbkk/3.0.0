@@ -7,21 +7,13 @@ import logoImg from '../reactbkk-logo.png'
 export default withSiteData(() => (
   <div>
     <HeadingSection />
-    <CTA
-      title="Call for Speakers"
-      href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/161749411164955/?type=3"
-    >
-      We encourage everyone to share your knowledge with the community! First-time speakers are
-      welcome; you don’t have to be an expert. People outside Bangkok are also welcome; we can
-      provide travel and accomodation support. If you have something cool to share, please submit a
-      proposal by May 4th, 2018.
-    </CTA>
-    <CTA title="Recommend a Speaker" disabled>
-      Know someone who’s got a story to tell? Recommend them to us! More info soon!
-    </CTA>
-    <CTA title="Call for Staffs" disabled>
-      You can also contribute to our event by volunteering to become an event staff. More info soon!
-    </CTA>
+    <p css={tw('text-center font-body text-xl leading-normal tracking-wide')}>
+      กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
+      ของโปรแกรมเมอร์สาย React ทุกคน<br />
+      กับงาน “React Bangkok 3.0.0”<br />
+      ที่ในปีนี้จะกลับมาอย่างยิ่งใหญ่กว่าเดิม
+    </p>
+    <TicketsSection />
     <SpeakersSection />
     <CommunitySection />
   </div>
@@ -35,17 +27,67 @@ const HeadingSection = () => (
       <h1 css={tw('text-3xl md:text-4xl tracking-wide text-react-blue font-semibold')}>
         React Bangkok 3.0.0
       </h1>
-      <p css={tw('text-2xl md:text-3xl font-normal tracking-wide')}>June 24th, EnCo</p>
+      <p css={tw('text-2xl md:text-3xl font-normal tracking-wide')}>
+        June 24th, Synergy Hall, EnCo
+      </p>
     </div>
   </h1>
 )
 // endregion
 
-// region CTA
-const CTA = ({
-  title, href, disabled, children,
-}) => (
-  <section css={tw('text-center md:flex items-center md:min-h-16 md:text-xl mx-auto max-w-xl')}>
+// region SpeakersSection
+const TicketsSection = () => (
+  <ContentSection>
+    <SectionHeader>Tickets</SectionHeader>
+    <p css={tw('text-xl leading-tight')}>
+      Tickets will be available on <strong>June 11th, 2018</strong> at <strong>18:00</strong>
+    </p>
+    <p>
+      <ActionButton href="https://www.eventpop.me/e/3607-react-bangkok-3-0-0">
+        Tickets on Event Pop
+      </ActionButton>
+    </p>
+
+    <SectionSubheader>Get free tickets</SectionSubheader>
+    <p css={tw('leading-normal')}>
+      Win a free ticket by contributing to open-source community!
+      <br />
+      Details will be available soon!
+    </p>
+  </ContentSection>
+)
+// endregion
+
+// region SpeakersSection
+const SpeakersSection = () => (
+  <ContentSection>
+    <SectionHeader>Speakers</SectionHeader>
+    <p>TBA</p>
+  </ContentSection>
+)
+// endregion
+
+// region CommunitySection
+const FACEBOOK_GROUP_URL = 'https://www.facebook.com/groups/react.th/'
+const FACEBOOK_PAGE_URL = 'https://www.facebook.com/reactbkk'
+const CommunitySection = () => (
+  <ContentSection>
+    <SectionHeader>Community</SectionHeader>
+    <p css={tw('text-center leading-normal')}>
+      Stay connected. Join our <a href={FACEBOOK_GROUP_URL}>Facebook Group</a>. Like our{' '}
+      <a href={FACEBOOK_PAGE_URL}>Facebook Page</a>. Follow{' '}
+      <a href="https://twitter.com/reactbkk">@reactbkk</a> on Twitter.
+    </p>
+  </ContentSection>
+)
+// endregion
+
+const SectionHeader = styled.h2(tw('text-react-blue text-5xl font-bold'))
+const SectionSubheader = styled.h3(tw('text-react-blue text-3xl font-bold mt-6 pt-6'))
+const ContentSection = styled.section(tw('mt-8 pt-4 text-center'))
+
+function ActionButton ({ href, disabled, children }) {
+  return (
     <a
       href={href || `javascript${':'}`}
       css={{
@@ -53,32 +95,7 @@ const CTA = ({
         opacity: disabled ? 0.25 : 1,
       }}
     >
-      {title}
+      {children}
     </a>
-    <p css={tw('md:pl-8 md:text-left leading-normal')}>{children}</p>
-  </section>
-)
-
-// endregion
-// region SpeakersSection
-const SpeakersSection = () => (
-  <ContentSection>
-    <SectionHeader>Speakers</SectionHeader>
-    <p style={{ textAlign: 'center' }}>TBA</p>
-  </ContentSection>
-)
-// endregion
-// region CommunitySection
-const FACEBOOK_GROUP_URL = 'https://www.facebook.com/groups/react.th/'
-const CommunitySection = () => (
-  <ContentSection>
-    <SectionHeader>Community</SectionHeader>
-    <p style={{ textAlign: 'center' }}>
-      Stay connected. Join our <a href={FACEBOOK_GROUP_URL}>Facebook Group</a>.
-    </p>
-  </ContentSection>
-)
-// endregion
-
-const SectionHeader = styled.h2(tw('text-react-blue text-5xl font-bold text-center'))
-const ContentSection = styled.section(tw('mt-8 pt-4'))
+  )
+}
