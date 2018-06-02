@@ -1,1 +1,3 @@
 extends: react-tools
+rules:
+  no-script-url: off
