@@ -73,7 +73,7 @@ const TicketsSection = () => (
           <React.Fragment>
             <Interaction
               action={async () => {
-                const promise = import(/* webpackChunkName: "redeem" */ '../redeem')
+                const promise = import(/* webpackChunkName: "redeem", webpackPrefetch: true */ '../redeem')
                 const redeem = await promise
                 setDialogElement(
                   redeem.renderDialog({
