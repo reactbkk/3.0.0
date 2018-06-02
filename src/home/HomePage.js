@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { Helmet } from 'react-helmet'
 import logoImg from '../reactbkk-logo.png'
 
 /* global tw */
@@ -8,6 +9,9 @@ import logoImg from '../reactbkk-logo.png'
 export function HomePage () {
   return (
     <div>
+      <Helmet>
+        <title>React Bangkok 3.0.0</title>
+      </Helmet>
       <HeadingSection />
       <p css={tw('text-center font-body text-xl leading-normal tracking-wide')}>
         กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
