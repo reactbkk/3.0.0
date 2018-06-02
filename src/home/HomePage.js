@@ -1,22 +1,25 @@
 import React from 'react'
-import { withSiteData } from 'react-static'
 import styled from 'react-emotion'
 import logoImg from '../reactbkk-logo.png'
 
-export default withSiteData(() => (
-  <div>
-    <HeadingSection />
-    <p css={tw('text-center font-body text-xl leading-normal tracking-wide')}>
-      กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
-      ของโปรแกรมเมอร์สาย React ทุกคน<br />
-      กับงาน “React Bangkok 3.0.0”<br />
-      ที่ในปีนี้จะกลับมาอย่างยิ่งใหญ่กว่าเดิม
-    </p>
-    <TicketsSection />
-    <SpeakersSection />
-    <CommunitySection />
-  </div>
-))
+/* global tw */
+
+export default function HomePage () {
+  return (
+    <div>
+      <HeadingSection />
+      <p css={tw('text-center font-body text-xl leading-normal tracking-wide')}>
+        กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
+        ของโปรแกรมเมอร์สาย React ทุกคน<br />
+        กับงาน “React Bangkok 3.0.0”<br />
+        ที่ในปีนี้จะกลับมาอย่างยิ่งใหญ่กว่าเดิม
+      </p>
+      <TicketsSection />
+      <SpeakersSection />
+      <CommunitySection />
+    </div>
+  )
+}
 
 // region HeadingSection
 const HeadingSection = () => (
