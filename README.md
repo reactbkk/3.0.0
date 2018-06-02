@@ -40,4 +40,4 @@ Using Gatsby with Emotion.
 
     You should see: `You can now view reactbkk3 in the browser.`.
 
-3.  Go to http://localhost:3000 to view your site!
+3.  Go to http://localhost:8000 to view your site!
