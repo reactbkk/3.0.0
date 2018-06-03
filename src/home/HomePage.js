@@ -16,12 +16,7 @@ export function HomePage () {
         <title>React Bangkok 3.0.0</title>
       </Helmet>
       <HeadingSection />
-      <p css={tw('text-center font-body text-xl leading-normal tracking-wide')}>
-        กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
-        ของโปรแกรมเมอร์สาย React ทุกคน<br />
-        กับงาน “React Bangkok 3.0.0”<br />
-        ที่ในปีนี้จะกลับมาอย่างยิ่งใหญ่กว่าเดิม
-      </p>
+      <DescriptionSection />
       <TicketsSection />
       <SpeakersSection />
       <CommunitySection />
@@ -44,6 +39,17 @@ const HeadingSection = () => (
   </h1>
 )
 // endregion
+
+function DescriptionSection () {
+  return (
+    <p css={tw('text-center font-body text-xl leading-normal tracking-wide')}>
+      กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
+      ของโปรแกรมเมอร์สาย React ทุกคน<br />
+      กับงาน “React Bangkok 3.0.0”<br />
+      ที่ในปีนี้จะกลับมาอย่างยิ่งใหญ่กว่าเดิม
+    </p>
+  )
+}
 
 // region SpeakersSection
 const TicketsSection = () => (
