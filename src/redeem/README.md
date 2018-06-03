@@ -4,6 +4,13 @@ Ticket redemption system.
 
 ## To add a ticket to the specified user
 
+### From the UI
+
+If you are an admin, you
+[will see an additional option when you sign in](https://github.com/reactbkk/3.0.0/pull/12).
+
+### Manually from Firestore console
+
 1.  Find the user’s GitHub ID.
 
         https://api.github.com/users/<username>
