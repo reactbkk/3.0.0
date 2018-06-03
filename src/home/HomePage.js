@@ -38,6 +38,7 @@ function HeadingSection () {
       css={{
         textAlign: 'center',
         marginTop: beat(1),
+        fontFamily: Fonts.display,
         [MediaQueries.md]: {
           display: 'flex',
           alignItems: 'center',
