@@ -89,7 +89,6 @@ function DescriptionSection () {
   )
 }
 
-// region SpeakersSection
 function TicketsSection () {
   return (
     <ContentSection>
