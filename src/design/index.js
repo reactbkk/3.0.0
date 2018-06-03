@@ -13,14 +13,13 @@ function fontFace (src, family, weight) {
 }
 
 injectGlobal`
-  ${fontFace(require('./vendor/fonts/Metropolis-Thin.woff2'), 'Metropolis', 200)}
   ${fontFace(require('./vendor/fonts/Metropolis-Light.woff2'), 'Metropolis', 300)}
   ${fontFace(require('./vendor/fonts/Metropolis-Regular.woff2'), 'Metropolis', 400)}
   ${fontFace(require('./vendor/fonts/Metropolis-Medium.woff2'), 'Metropolis', 500)}
   ${fontFace(require('./vendor/fonts/Metropolis-SemiBold.woff2'), 'Metropolis', 600)}
   ${fontFace(require('./vendor/fonts/Metropolis-Bold.woff2'), 'Metropolis', 700)}
-  ${fontFace(require('./vendor/fonts/Metropolis-ExtraBold.woff2'), 'Metropolis', 800)}
-  ${fontFace(require('./vendor/fonts/Metropolis-Black.woff2'), 'Metropolis', 900)}
+  ${fontFace(require('./vendor/fonts/NotoSans-Light-Latin.woff2'), 'Noto Sans', 300)}
+  ${fontFace(require('./vendor/fonts/NotoSansThaiUI-Light.woff2'), 'Noto Sans Thai UI', 300)}
 `
 
 injectGlobal({

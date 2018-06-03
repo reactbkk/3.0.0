@@ -204,7 +204,7 @@ module.exports = {
       'Helvetica Neue',
       'sans-serif',
     ],
-    body: ['HelveticaNeueW31-Light', 'Helvetica Neue', 'sans-serif'],
+    body: ['Noto Sans', 'Noto Sans Thai UI', 'sans-serif'],
     serif: [
       'Constantia',
       'Lucida Bright',
