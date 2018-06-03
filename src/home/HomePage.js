@@ -191,13 +191,14 @@ const SectionHeader = styled.h2({
   fontSize: fontSize(7),
   fontWeight: 600,
   fontFamily: Fonts.display,
+  margin: `${beat(1)} 0`,
 })
 const SectionSubheader = styled.h3({
   color: Colors.reactBlue,
   fontSize: fontSize(4),
   fontWeight: 600,
-  marginTop: beat(2),
   fontFamily: Fonts.display,
+  margin: `${beat(2)} 0`,
 })
 
 function ActionButton ({
