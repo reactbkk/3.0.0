@@ -1,5 +1,6 @@
 import React from 'react'
 import { injectGlobal } from 'emotion'
+import styled from 'react-emotion'
 
 /**
  * Usable fonts in this website.
@@ -15,9 +16,35 @@ export const Fonts = {
 export const Colors = {
   white: 'white',
   black: 'black',
-  greyDark: '#222',
+  grey900: '#222',
+  grey800: '#333',
+  grey700: '#444',
   reactBlue: '#00d8ff',
 }
+
+/**
+ * Breakpoints for responsive design.
+ */
+export const MediaQueries = {
+  /** Horizontal mobile phone and above. */
+  sm: '@media (min-width: 576px)',
+  /** Tablet and above. */
+  md: '@media (min-width: 768px)',
+  /** Landscape tablet and above. */
+  lg: '@media (min-width: 992px)',
+  /** Desktop and above. */
+  xl: '@media (min-width: 1200px)',
+}
+
+/**
+ * The base font size for mobile phones.
+ */
+const BASE_FONT_SIZE_XS = '16px'
+
+/**
+ * The base font size for tablets and above.
+ */
+const BASE_FONT_SIZE_MD = '20px'
 
 /**
  * Convert a "beat" to a CSS size unit. Used to establish a
@@ -25,7 +52,35 @@ export const Colors = {
  * @param {number} beats Number of beats
  */
 export function beat (beats) {
-  return `${beats * 24}px`
+  return `${beats * 1.52}rem`
+}
+
+/**
+ * Computes the absolute font size for
+ * [typographic scale](http://spencermortensen.com/articles/typographic-scale/).
+ *
+ * We use [7 tone equal temperament](https://en.wikipedia.org/wiki/Equal_temperament#5_and_7_tone_temperaments_in_ethnomusicology)
+ * which is the [tuning of Thai traditional instruments](https://en.wikipedia.org/wiki/Ranat_ek#Tuning).
+ *
+ * @param {number} n The font size, where
+ *
+ *   - `-14` = 0.25x normal font size.
+ *   - `-7` = 0.5x normal font size.
+ *   - `0` = normal font size.
+ *   - `7` = 2x normal font size.
+ *   - `14` = 4x normal font size.
+ */
+export function fontSize (n) {
+  return `${(2 ** (n / 7)).toFixed(3)}rem`
+}
+
+/**
+ * Tracking (letter-spacing).
+ */
+export const Tracking = {
+  tight: '-0.05em',
+  normal: '0',
+  wide: '0.05em',
 }
 
 /**
@@ -34,8 +89,8 @@ export function beat (beats) {
 export class Layout extends React.Component {
   render () {
     return (
-      <React.Fragment>
-        {this.props.children}
+      <TypographicContext>
+        <div>{this.props.children}</div>
         <footer
           css={{
             padding: `${beat(1)} 0`,
@@ -45,10 +100,29 @@ export class Layout extends React.Component {
         >
           React Bangkok 3.0.0
         </footer>
-      </React.Fragment>
+      </TypographicContext>
     )
   }
 }
+
+/**
+ * Establishes a typographic context by:
+ *
+ * - resetting font size
+ * - resetting line height
+ * - setting appropriate margins for direct children
+ */
+export const TypographicContext = styled.div({
+  fontSize: '1rem',
+  lineHeight: beat(1),
+  '> p, > blockquote, > ul, > ol, > dl, > table, > pre': {
+    marginTop: beat(1),
+    marginBottom: 0,
+    '&:first-child': {
+      marginTop: 0,
+    },
+  },
+})
 
 function injectGlobalStyles () {
   function fontFace (src, family, weight) {
@@ -73,11 +147,14 @@ function injectGlobalStyles () {
     'html, body': {
       fontFamily: Fonts.body,
       fontWeight: 300,
-      fontSize: '1rem',
+      fontSize: BASE_FONT_SIZE_XS,
       color: Colors.white,
       margin: 0,
       padding: 0,
-      background: Colors.greyDark,
+      background: Colors.grey900,
+      [MediaQueries.md]: {
+        fontSize: BASE_FONT_SIZE_MD,
+      },
     },
     a: {
       textDecoration: 'none',
