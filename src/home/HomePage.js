@@ -104,18 +104,20 @@ function TicketsSection () {
           </ActionButton>
         </p>
       </TypographicContext>
-      <SectionSubheader>Get free tickets</SectionSubheader>
-      <TypographicContext>
-        <p>
-          Win a free ticket by contributing to open-source community!
-          <br />
-          Details will be available soon!
-        </p>
-        <p>
-          <ActionButton href="javascript:alert('Coming soon!')">Information</ActionButton>
-        </p>
-        <p>{renderRedeemTicketButton()}</p>
-      </TypographicContext>
+      <section id="free-tickets">
+        <SectionSubheader>Get free tickets</SectionSubheader>
+        <TypographicContext>
+          <p>
+            Win a free ticket by contributing to open-source community!
+            <br />
+            Details will be available soon!
+          </p>
+          <p>
+            <ActionButton href="https://www.facebook.com/reactbkk">Information</ActionButton>
+          </p>
+          <p>{renderRedeemTicketButton()}</p>
+        </TypographicContext>
+      </section>
     </ContentSection>
   )
 
@@ -198,7 +200,8 @@ const SectionSubheader = styled.h3({
   fontSize: fontSize(4),
   fontWeight: 600,
   fontFamily: Fonts.display,
-  margin: `${beat(2)} 0`,
+  margin: `${beat(1)} 0`,
+  paddingTop: beat(1),
 })
 
 function ActionButton ({
