@@ -162,6 +162,9 @@ function injectGlobalStyles () {
       textDecoration: 'none',
       color: Colors.reactBlue,
     },
+    'button, input, textarea': {
+      fontFamily: 'inherit',
+    },
   })
 }
 

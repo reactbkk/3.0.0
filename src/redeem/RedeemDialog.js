@@ -1,24 +1,23 @@
-import { Dialog, Button, Preloader } from 'reactackle'
 import React from 'react'
 import GitHubIcon from 'react-icons/lib/fa/github'
 import ArrowForward from 'react-icons/lib/fa/angle-right'
+import Button from '@atlaskit/button'
+import ModalDialog from '@atlaskit/modal-dialog'
+import Spinner from '@atlaskit/spinner'
 import axios from 'axios'
 
 import { firebase } from '../firebase'
 
 export function RedeemDialog ({ onClose }) {
   return (
-    <Dialog
-      haveCloseButton
-      backdrop
-      title="Redeem ticket"
-      buttons={[{ text: 'Close', onPress: onClose }]}
-      open
-      closeOnEscape
-      onClose={onClose}
+    <ModalDialog
+      actions={[{ text: 'Close', onClick: onClose }]}
+      heading="Redeem ticket"
+      onCloseComplete={onClose}
+      shouldCloseOnOverlayClick={false}
     >
       <RedeemDialogContent />
-    </Dialog>
+    </ModalDialog>
   )
 }
 
@@ -41,24 +40,17 @@ class RedeemDialogContent extends React.Component {
       )
     }
     if (this.state.status === 'signingIn') {
-      return <Preloader kind="linear" labelAlign="center" subtitle="Signing in..." indeterminate />
+      return this.renderSignInPage({ loading: true })
     }
     if (this.state.status === 'checking') {
-      return (
-        <Preloader
-          kind="linear"
-          labelAlign="center"
-          subtitle="Looking for your ticket..."
-          indeterminate
-        />
-      )
+      return <Preloader text="Looking for your ticket..." />
     }
     if (this.state.status === 'checked') {
       const adminPanel = this.state.admin && (
         <div>
           <p>
             Hey you are an admin! You can{' '}
-            <Button onPress={this.giveCode} text="give redemption codes!" />
+            <Button onClick={this.giveCode}>give redemption codes!</Button>
           </p>
         </div>
       )
@@ -77,27 +69,40 @@ class RedeemDialogContent extends React.Component {
             Use the code <strong>{this.state.code}</strong> to redeem your free ticket.
           </p>
           <Button
-            text="Get your free ticket!"
-            subtitle="Go to Event Pop"
-            colorScheme="primary"
-            iconPositionRight
-            icon={<ArrowForward />}
-            onPress={this.openEventPop}
-          />
+            iconAfter={
+              <Icon>
+                <ArrowForward />
+              </Icon>
+            }
+            appearance="primary"
+            onClick={this.openEventPop}
+          >
+            Get your free ticket! (Go to Event Pop)
+          </Button>
           {adminPanel}
         </div>
       )
     }
+    return this.renderSignInPage({ loading: false })
+  }
+
+  renderSignInPage ({ loading }) {
     return (
       <div>
         <p>To redeem your ticket, please first sign in with GitHub...</p>
         <Button
-          text="Sign in with GitHub"
-          colorScheme="primary"
+          isLoading={loading}
+          appearance="primary"
           size="large"
-          icon={<GitHubIcon />}
-          onPress={this.signIn}
-        />
+          iconBefore={
+            <Icon>
+              <GitHubIcon />
+            </Icon>
+          }
+          onClick={loading ? undefined : this.signIn}
+        >
+          Sign in with GitHub
+        </Button>
       </div>
     )
   }
@@ -169,4 +174,19 @@ class RedeemDialogContent extends React.Component {
       window.alert(`Cannot giveCode: ${e}.`)
     }
   }
+}
+
+function Preloader ({ text }) {
+  return (
+    <div>
+      <span css={{ display: 'inline-block', verticalAlign: 'middle' }}>
+        <Spinner />
+      </span>{' '}
+      {text}
+    </div>
+  )
+}
+
+function Icon ({ children }) {
+  return <span css={{ fontSize: '1rem' }}>{children}</span>
 }
