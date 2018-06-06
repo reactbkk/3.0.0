@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{232:function(n){n.exports={pages:[{componentChunkName:"component---node-modules-gatsby-plugin-offline-app-shell-js",jsonName:"offline-plugin-app-shell-fallback",path:"/offline-plugin-app-shell-fallback/"},{componentChunkName:"component---src-pages-index-jsx",jsonName:"index",path:"/"}],dataPaths:{index:"path---index-YgMVy2JJS5mcQ1JxiGrypWcq9U","offline-plugin-app-shell-fallback":"path---offline-plugin-app-shell-fallback-3qXUuegzLwd1vFa0iU7LDyZSdc"}}}}]);
-//# sourceMappingURL=1-b1f3cac03c55d11854de.js.map
