@@ -4,12 +4,12 @@ module.exports = {
   },
   pathPrefix: '/3.0.0',
   plugins: [
-    // {
-    //   resolve: 'gatsby-plugin-google-analytics',
-    //   options: {
-    //     trackingId: '',
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-99360357-2',
+      },
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
   ],
