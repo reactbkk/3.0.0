@@ -31,6 +31,7 @@
     "eslint-config-react-tools": "1.x.x",
     "gatsby": "^2.0.0-alpha.48",
     "gatsby-link": "^1.6.38-12",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-offline": "^2.0.0-alpha.15",
     "gatsby-plugin-react-helmet": "^2.0.12-7",
     "gh-pages": "^1.2.0",
