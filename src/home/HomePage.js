@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'react-emotion'
 import { Helmet } from 'react-helmet'
 
-import logoImg from '../reactbkk-logo.png'
 import { DynamicContent } from './DynamicContent'
 import { Interaction } from './Interaction'
 import {
@@ -13,6 +12,7 @@ import {
   MediaQueries,
   Tracking,
   TypographicContext,
+  LOGOMARK,
 } from '../design'
 
 /* eslint no-script-url: off */
@@ -46,7 +46,7 @@ function HeadingSection () {
         },
       }}
     >
-      <img css={{ flex: 'none', maxWidth: beat(4) }} src={logoImg} alt="" />
+      <img css={{ flex: 'none', maxWidth: beat(4) }} src={LOGOMARK} alt="" />
       <div
         css={{
           [MediaQueries.md]: {

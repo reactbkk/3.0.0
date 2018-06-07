@@ -2,6 +2,12 @@ import React from 'react'
 import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
 
+import LOGOMARK from './logomark.svg'
+import REACT from './react.svg'
+import BANGKOK from './bangkok.svg'
+
+export { LOGOMARK, REACT, BANGKOK }
+
 /**
  * Usable fonts in this website.
  */
