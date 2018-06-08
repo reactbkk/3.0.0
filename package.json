@@ -7,7 +7,9 @@
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "deploy": "gh-pages -d public -m \"Deploy $(git rev-parse HEAD) to GitHub pages [ci skip]\"",
-    "serve": "serve public -p 3000"
+    "serve": "serve public -p 3000",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@atlaskit/button": "^8.0.1",
@@ -37,6 +39,12 @@
     "gatsby-plugin-offline": "^2.0.0-alpha.15",
     "gatsby-plugin-react-helmet": "^2.0.12-7",
     "gh-pages": "^1.2.0",
-    "serve": "^7.2.0"
+    "serve": "^7.2.0",
+    "@storybook/react": "^3.4.6",
+    "@storybook/addon-actions": "^3.4.6",
+    "@storybook/addon-links": "^3.4.6",
+    "@storybook/addons": "^3.4.6",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0"
   }
 }
