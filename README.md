@@ -1,8 +1,12 @@
 # 3.0.0
 
-React Bangkok 3.0.0 website.
+[React Bangkok 3.0.0 website.](https://reactbkk.com/3.0.0/)
 
 Using Gatsby with Emotion.
+
+## Free tickets?!
+
+**Want a free ticket to React Bangkok 3.0.0?** [Check this out!](https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3)
 
 ## Development
 
