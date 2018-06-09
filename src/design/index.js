@@ -3,10 +3,11 @@ import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
 
 import LOGOMARK from './logomark.svg'
-import REACT from './react.svg'
-import BANGKOK from './bangkok.svg'
+import REACT_LOGO from './react.svg'
+import BANGKOK_LOGO from './bangkok.svg'
+import BACKGROUND from './evan-krause-443485-unsplash.jpg'
 
-export { LOGOMARK, REACT, BANGKOK }
+export { LOGOMARK, REACT_LOGO, BANGKOK_LOGO, BACKGROUND }
 
 /**
  * Usable fonts in this website.
