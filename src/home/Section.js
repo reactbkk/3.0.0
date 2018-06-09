@@ -30,6 +30,7 @@ export default function Section ({ cssExtension, title, children }) {
       boxSizing: 'border-box',
       display: 'flex',
       flexDirection: 'column',
+      justifyContent: 'center',
       alignItems: 'center',
       overflow: 'hidden',
       ...cssExtension,

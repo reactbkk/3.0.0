@@ -3,12 +3,13 @@ import { Helmet } from 'react-helmet'
 import { beat, fontSize } from '../design'
 
 import HeaderSection from './HeaderSection'
+import TicketsSection from './TicketsSection'
 import SpeakersSection from './SpeakersSection'
 import SponsorsSection from './SponsorsSection'
 
 const SECTIONS = [
   HeaderSection,
-  // TODO: Description and Tickets Section,
+  TicketsSection,
   SpeakersSection,
   SponsorsSection,
 ]
