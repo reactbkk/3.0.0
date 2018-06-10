@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  Colors,
-  beat,
-  MediaQueries,
-} from '../design'
+import { Colors, beat, MediaQueries } from '../design'
 
 export default function ActionButton ({
   href, disabled, primary, children, onClick,

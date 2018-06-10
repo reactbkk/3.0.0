@@ -28,16 +28,20 @@ const GOLD_SPONSORS = [
   {
     logo: PttDigital,
     website: null,
-  }, {
+  },
+  {
     logo: ThoughtWorks,
     website: null,
-  }, {
+  },
+  {
     logo: Taskworld,
     website: null,
-  }, {
+  },
+  {
     logo: Odds,
     website: null,
-  }, {
+  },
+  {
     logo: AppMan,
     website: null,
   },
@@ -47,25 +51,32 @@ const SILVER_SPONSORS = [
   {
     logo: SixNetwork,
     website: null,
-  }, {
+  },
+  {
     logo: Tencent,
     website: null,
-  }, {
+  },
+  {
     logo: Nextzy,
     website: null,
-  }, {
+  },
+  {
     logo: ProntoTools,
     website: null,
-  }, {
+  },
+  {
     logo: Skooldio,
     website: null,
-  }, {
+  },
+  {
     logo: Metromerce,
     website: null,
-  }, {
+  },
+  {
     logo: EventPop,
     website: null,
-  }, {
+  },
+  {
     logo: ThaiProgrammer,
     website: null,
   },
@@ -73,30 +84,39 @@ const SILVER_SPONSORS = [
 
 export default class SponsorsSection extends React.Component {
   renderSponsor = (sponsor, size) => (
-    <div key={sponsor.logo} css={{
-      padding: `${beat(0.25)} ${beat(1)}`,
-      cursor: 'pointer',
-    }}>
-      <img css={{
-        maxHeight: beat(size),
-        maxWidth: beat(size*3),
-        transition: 'all ease 0.2s',
-        '&:hover': {
-          transform: 'scale(1.2)',
-        },
-      }} src={sponsor.logo} alt="" />
+    <div
+      key={sponsor.logo}
+      css={{
+        padding: `${beat(0.25)} ${beat(1)}`,
+        cursor: 'pointer',
+      }}
+    >
+      <img
+        css={{
+          maxHeight: beat(size),
+          maxWidth: beat(size * 3),
+          transition: 'all ease 0.2s',
+          '&:hover': {
+            transform: 'scale(1.2)',
+          },
+        }}
+        src={sponsor.logo}
+        alt=""
+      />
     </div>
   )
 
   renderSponsorGroup = (sponsors, size) => (
-    <div css={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      maxWidth: beat(25),
-      justifyContent: 'center',
-      alignItems: 'center',
-      margin: `${beat(1)} 0`,
-    }}>
+    <div
+      css={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        maxWidth: beat(25),
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: `${beat(1)} 0`,
+      }}
+    >
       {sponsors.map(sponsor => this.renderSponsor(sponsor, size))}
     </div>
   )

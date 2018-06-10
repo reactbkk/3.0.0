@@ -42,9 +42,7 @@ export class HomePage extends React.Component {
         <Helmet>
           <title>React Bangkok 3.0.0</title>
         </Helmet>
-        <div>
-          {SECTIONS.map(Component => <Component key={Component} />)}
-        </div>
+        <div>{SECTIONS.map(Component => <Component key={Component} />)}</div>
         {this.renderSocial()}
       </div>
     )
