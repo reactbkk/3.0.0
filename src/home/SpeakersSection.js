@@ -163,20 +163,9 @@ export class SpeakersSection extends React.Component {
           background: `linear-gradient(${Colors.grey800}, ${Colors.grey900})`,
         }}
       >
-        <div
-          css={{
-            paddingTop: beat(4),
-          }}
-        >
+        <div css={{ paddingTop: beat(4) }} >
           {sliceArrayRepeatedly(SPEAKERS, 3).map((row, i) => (
-            <div
-              key={i}
-              css={{
-                display: 'flex',
-                justifyContent: 'center',
-                maxWidth: beat(25),
-              }}
-            >
+            <div key={i} css={{ display: 'flex' }} >
               {row.map(speaker => this.renderSpeaker(speaker))}
             </div>
           ))}
