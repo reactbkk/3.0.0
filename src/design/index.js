@@ -160,14 +160,14 @@ function injectGlobalStyles () {
       color: Colors.white,
       margin: 0,
       padding: 0,
-      background: Colors.grey900,
+      background: Colors.grey800,
       [MediaQueries.md]: {
         fontSize: BASE_FONT_SIZE_MD,
       },
     },
     a: {
       textDecoration: 'none',
-      color: Colors.reactBlue,
+      color: Colors.white,
     },
     'button, input, textarea': {
       fontFamily: 'inherit',
