@@ -97,16 +97,7 @@ export class Layout extends React.Component {
   render () {
     return (
       <TypographicContext>
-        <div>{this.props.children}</div>
-        <footer
-          css={{
-            padding: `${beat(1)} 0`,
-            textAlign: 'center',
-            opacity: 0.5,
-          }}
-        >
-          React Bangkok 3.0.0
-        </footer>
+        {this.props.children}
       </TypographicContext>
     )
   }
@@ -160,14 +151,14 @@ function injectGlobalStyles () {
       color: Colors.white,
       margin: 0,
       padding: 0,
-      background: Colors.grey900,
+      background: Colors.grey800,
       [MediaQueries.md]: {
         fontSize: BASE_FONT_SIZE_MD,
       },
     },
     a: {
       textDecoration: 'none',
-      color: Colors.reactBlue,
+      color: Colors.white,
     },
     'button, input, textarea': {
       fontFamily: 'inherit',

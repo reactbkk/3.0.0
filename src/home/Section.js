@@ -9,8 +9,8 @@ function Header ({ title }) {
         letterSpacing: Tracking.wide,
         fontFamily: Fonts.display,
         fontWeight: 600,
-        fontSize: fontSize(8),
-        marginBottom: beat(2),
+        fontSize: fontSize(6),
+        marginBottom: beat(1.5),
       }}
     >
       {title}
@@ -22,7 +22,7 @@ export default function Section ({ cssExtension, title, children }) {
   return (
     <section
       css={{
-        minHeight: '100%',
+        minHeight: '100vh',
         width: '100%',
         padding: '10vh 0',
         boxSizing: 'border-box',

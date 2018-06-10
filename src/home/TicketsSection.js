@@ -17,29 +17,7 @@ export class TicketsSection extends React.Component {
       ที่ในปีนี้จะกลับมาอย่างยิ่งใหญ่กว่าเดิม
     </p>
   )
-  render () {
-    return (
-      <Section title="Get Tickets" cssExtension={{ background: 'black' }}>
-        {this.renderDescription()}
-        <p>
-          Tickets will be available on <strong>June 11th, 2018</strong> at <strong>18:00</strong>
-        </p>
-        <ActionButton primary href="https://www.eventpop.me/e/3607-react-bangkok-3-0-0">
-          Tickets on Event Pop
-        </ActionButton>
-        <section id="free-tickets">
-          <p css={{ marginTop: beat(2), textAlign: 'center', color: Colors.grey700 }}>
-            Win a free ticket by contributing to open-source community!<br />
-            Details will be available soon!
-          </p>
-          <ActionButton href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3">
-            Information
-          </ActionButton>
-          {this.renderRedeemTicketButton()}
-        </section>
-      </Section>
-    )
-  }
+
   renderRedeemTicketButton () {
     return (
       <DynamicContent>
@@ -72,6 +50,30 @@ export class TicketsSection extends React.Component {
           </React.Fragment>
         )}
       </DynamicContent>
+    )
+  }
+
+  render () {
+    return (
+      <Section title="Get Tickets" cssExtension={{ background: 'black' }}>
+        {this.renderDescription()}
+        <p>
+          Tickets will be available on <strong>June 11th, 2018</strong> at <strong>18:00</strong>
+        </p>
+        <ActionButton primary href="https://www.eventpop.me/e/3607-react-bangkok-3-0-0">
+          Tickets on Event Pop
+        </ActionButton>
+        <section id="free-tickets">
+          <p css={{ marginTop: beat(2), textAlign: 'center', color: Colors.grey700 }}>
+            Win a free ticket by contributing to open-source community!<br />
+            Details will be available soon!
+          </p>
+          <ActionButton href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3">
+            Information
+          </ActionButton>
+          {this.renderRedeemTicketButton()}
+        </section>
+      </Section>
     )
   }
 }
