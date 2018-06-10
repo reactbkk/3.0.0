@@ -6,142 +6,10 @@ import LinkedinIcon from 'react-icons/lib/fa/linkedin'
 import MediumIcon from 'react-icons/lib/fa/medium'
 import WebsiteIcon from 'react-icons/lib/fa/chain'
 
-import AUN from './speakers/aun.jpg'
-import BABE from './speakers/babe.jpg'
-import BENZ from './speakers/benz.jpg'
-import CAL from './speakers/cal.jpg'
-import CHRIS from './speakers/chris.jpg'
-import HAM from './speakers/ham.jpg'
-import HOLLY from './speakers/holly.jpg'
-import KEYA from './speakers/keya.jpg'
-import PHOOM from './speakers/phoom.jpg'
-import VEHA from './speakers/veha.jpg'
-import WIN from './speakers/win.jpg'
-import NET from './speakers/net.jpg'
-import POND from './speakers/pond.jpg'
-import Section from './Section'
+import { SPEAKERS } from './Speakers'
+import { Section } from './Section'
 import { Colors, Fonts, fontSize, beat } from '../design'
 import { ActionButton } from './ActionButton'
-
-const SPEAKERS = [
-  {
-    name: 'Suwitcha Sugthana',
-    photo: POND,
-    from: 'GuCode',
-    links: {
-      github: 'https://github.com/gucodelive',
-      facebook: 'https://www.facebook.com/gucodelive/',
-    },
-  },
-  {
-    name: 'Jirat Kijlerdpornpailoj',
-    photo: NET,
-    from: 'GuCode',
-    links: {
-      github: 'https://github.com/gucodelive',
-      facebook: 'https://www.facebook.com/gucodelive/',
-    },
-  },
-  {
-    name: 'Keya Desai',
-    photo: KEYA,
-    from: 'Lead Consultant Developer @ThoughtWorks',
-    links: {
-      github: 'https://github.com/keyadesai',
-      website: 'https://keyadesai.com',
-    },
-  },
-  {
-    name: 'Manatsawin Hanmongkolchai',
-    photo: WIN,
-    from: 'Junior Architect @Wongnai',
-    links: {
-      github: 'https://github.com/whs',
-      facebook: 'https://www.facebook.com/whs.in.th',
-    },
-  },
-  {
-    name: 'Phoomparin Mano',
-    photo: PHOOM,
-    from: 'Developer @iTAX',
-    links: {
-      github: 'https://github.com/phoomparin',
-      website: 'https://phoom.in.th',
-    },
-  },
-  {
-    name: 'Jessada Trirongkit',
-    photo: AUN,
-    from: 'Software Engineer @Oozou',
-    links: {
-      github: 'https://github.com/dekdekbaloo',
-      facebook: 'https://www.facebook.com/JessaAun',
-    },
-  },
-  {
-    name: 'Veha Suwatphisankij',
-    photo: VEHA,
-    from: 'Full Stack Engineer @AppSmiths Thailand ',
-    links: {
-      github: 'https://github.com/vehas',
-      facebook: 'https://www.facebook.com/vehas',
-    },
-  },
-  {
-    name: 'Christopher Ng',
-    photo: BABE,
-    from: 'Mobile Developer @EventPop',
-    links: {
-      github: 'https://github.com/babedev',
-      facebook: 'https://www.facebook.com/babedev',
-    },
-  },
-  {
-    name: 'Komkanit Sujautra',
-    photo: CAL,
-    from: 'Intern @Jitta',
-    links: {
-      github: 'https://github.com/komcal',
-      facebook: 'https://www.facebook.com/komcal',
-    },
-  },
-  {
-    name: 'Rujira Aksornsin',
-    photo: HOLLY,
-    from: 'Frontend Web Lead @ AppMan',
-    links: {
-      linkedin: 'https://www.linkedin.com/in/rujira-aksornsin-632b5224',
-      medium: 'https://medium.com/@HollyJira',
-    },
-  },
-  {
-    name: 'Chakrit Likitkhajorn',
-    photo: CHRIS,
-    from: 'Vice President @Taskworld',
-    links: {
-      github: 'https://github.com/chrisza4',
-      facebook: 'https://www.facebook.com/chakrit.likitkhajorn',
-    },
-  },
-  {
-    name: 'Pallop Chaoputhipuchong',
-    photo: HAM,
-    from: 'Software Engineer @Jitta',
-    links: {
-      github: 'https://github.com/vannizer',
-      facebook: 'https://www.facebook.com/pallop.chao',
-    },
-  },
-  {
-    name: 'Tananan Tangthanachaikul',
-    photo: BENZ,
-    from: 'Full-stack Developer @TakeMeTour',
-    links: {
-      github: 'https://github.com/MicroBenz',
-      facebook: 'https://www.facebook.com/MicroBenz',
-    },
-  },
-]
 
 export class SpeakersSection extends React.Component {
   getIcon = type => {
@@ -165,7 +33,6 @@ export class SpeakersSection extends React.Component {
         css={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
           width: beat(0),
           overflow: 'hidden',
           opacity: 0,
@@ -186,25 +53,25 @@ export class SpeakersSection extends React.Component {
             <a href={link}>
               <div
                 css={{
-                  width: beat(2.5),
-                  height: beat(2.5),
+                  width: beat(2),
+                  height: beat(2),
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
                   background: Colors.white,
                   color: Colors.grey800,
-                  fontSize: fontSize(5),
+                  fontSize: type === 'github' ? fontSize(5) : fontSize(4),
                   transition: 'all ease 0.2s',
                   borderTopLeftRadius: beat(0.25),
                   borderBottomRightRadius: beat(0.25),
                   opacity: 0.9,
                   '.icon': {
+                    transition: 'all linear 0.2s',
                     transform: 'scale(0.8)',
                   },
                   '&:hover, &:focus': {
                     opacity: 1,
                     '.icon': {
-                      transition: 'all ease-out 0.2s',
                       transform: 'scale(1)',
                     },
                   },
@@ -297,20 +164,9 @@ export class SpeakersSection extends React.Component {
           background: `linear-gradient(${Colors.grey800}, ${Colors.grey900})`,
         }}
       >
-        <div
-          css={{
-            paddingTop: beat(4),
-          }}
-        >
+        <div css={{ paddingTop: beat(4) }} >
           {sliceArrayRepeatedly(SPEAKERS, 3).map((row, i) => (
-            <div
-              key={i}
-              css={{
-                display: 'flex',
-                justifyContent: 'center',
-                maxWidth: beat(25),
-              }}
-            >
+            <div key={i} css={{ display: 'flex' }} >
               {row.map(speaker => this.renderSpeaker(speaker))}
             </div>
           ))}
