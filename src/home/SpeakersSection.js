@@ -175,7 +175,7 @@ export class SpeakersSection extends React.Component {
             marginLeft: beat(0.25),
             marginBottom: beat(0.25),
           },
-          [`.${_.kebabCase(name)}:hover &`]: {
+          '.speaker-item:hover &, .speaker-item:focus-within &': {
             width: beat(3),
             opacity: 1,
           },
@@ -202,7 +202,7 @@ export class SpeakersSection extends React.Component {
                   '.icon': {
                     transform: 'scale(0.8)',
                   },
-                  '&:hover': {
+                  '&:hover, &:focus': {
                     opacity: 1,
                     '.icon': {
                       transition: 'all ease-out 0.2s',
@@ -256,7 +256,7 @@ export class SpeakersSection extends React.Component {
   renderSpeaker = speaker => (
     <div
       key={speaker.name}
-      className={_.kebabCase(speaker.name)}
+      className="speaker-item"
       css={{
         position: 'relative',
         height: beat(6),
@@ -272,7 +272,7 @@ export class SpeakersSection extends React.Component {
           marginTop: beat(-2),
         },
         transition: 'all ease 0.2s',
-        '&:hover': {
+        '&:hover, &:focus-within': {
           width: _.isEmpty(speaker.links) ? beat(7) : beat(10),
           textAlign: 'left',
         },
@@ -292,17 +292,27 @@ export class SpeakersSection extends React.Component {
           background: `linear-gradient(${Colors.grey800}, ${Colors.grey900})`,
         }}
       >
-        <div
-          css={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            maxWidth: beat(25),
-          }}
-        >
-          {SPEAKERS.map(speaker => this.renderSpeaker(speaker))}
-        </div>
+        {sliceArrayRepeatedly(SPEAKERS, 3).map((row, i) => (
+          <div
+            key={i}
+            css={{
+              display: 'flex',
+              justifyContent: 'center',
+              maxWidth: beat(25),
+            }}
+          >
+            {row.map(speaker => this.renderSpeaker(speaker))}
+          </div>
+        ))}
       </Section>
     )
   }
+}
+
+function sliceArrayRepeatedly (a, n) {
+  const out = []
+  for (let i = 0; i < a.length; i += n) {
+    out.push(a.slice(i, i + n))
+  }
+  return out
 }
