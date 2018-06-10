@@ -55,7 +55,7 @@ export class TicketsSection extends React.Component {
 
   render () {
     return (
-      <Section title="Get Tickets" cssExtension={{ background: 'black', textAlign: 'center' }}>
+      <Section title="Get Tickets" cssExtension={{ background: Colors.grey900, textAlign: 'center' }}>
         {this.renderDescription()}
         <p>
           Tickets will be available on <strong>June 11th, 2018</strong> at <strong>18:00</strong>

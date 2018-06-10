@@ -24,7 +24,24 @@ import Section from './Section'
 import { Colors, Fonts, fontSize, beat } from '../design'
 
 const SPEAKERS = [
-  // GUCODE TEAM,
+  {
+    name: 'Suwitcha Sugthana',
+    photo: POND,
+    from: 'GuCode',
+    links: {
+      github: 'https://github.com/gucodelive',
+      facebook: 'https://www.facebook.com/gucodelive/',
+    },
+  },
+  {
+    name: 'Jirat Kijlerdpornpailoj',
+    photo: NAT,
+    from: 'GuCode',
+    links: {
+      github: 'https://github.com/gucodelive',
+      facebook: 'https://www.facebook.com/gucodelive/',
+    },
+  },
   {
     name: 'Keya Desai',
     photo: KEYA,
@@ -107,12 +124,6 @@ const SPEAKERS = [
     },
   },
   {
-    name: 'Pichet Itngam',
-    photo: NOTSU,
-    from: 'Head of R&D @Dek-D',
-    links: {},
-  },
-  {
     name: 'Pallop Chaoputhipuchong',
     photo: HAM,
     from: 'Software Engineer @Jitta',
@@ -128,24 +139,6 @@ const SPEAKERS = [
     links: {
       github: 'https://github.com/MicroBenz',
       facebook: 'https://www.facebook.com/MicroBenz',
-    },
-  },
-  {
-    name: 'Suwitcha Sugthana',
-    photo: POND,
-    from: 'GuCode',
-    links: {
-      github: 'https://github.com/gucodelive',
-      facebook: 'https://www.facebook.com/gucodelive/',
-    },
-  },
-  {
-    name: 'Jirat Kijlerdpornpailoj',
-    photo: NAT,
-    from: 'GuCode',
-    links: {
-      github: 'https://github.com/gucodelive',
-      facebook: 'https://www.facebook.com/gucodelive/',
     },
   },
 ]
@@ -264,19 +257,22 @@ export class SpeakersSection extends React.Component {
         position: 'relative',
         height: beat(6),
         width: beat(7),
-        marginBottom: '1px',
+        marginBottom: beat(0.25),
         display: 'flex',
         justifyContent: 'center',
         textAlign: 'right',
-        '&:nth-child(3n+1)': {
-          marginTop: beat(2),
+        '&:nth-child(3n+2)': {
+          marginTop: beat(-2),
         },
         '&:nth-child(3n+3)': {
+          marginTop: beat(-4),
+        },
+        '&:last-child': {
           marginTop: beat(-2),
         },
         transition: 'all ease 0.2s',
         '&:hover': {
-          width: _.isEmpty(speaker.links) ? beat(7) : beat(10),
+          width: beat(10),
           textAlign: 'left',
         },
       }}
@@ -301,6 +297,7 @@ export class SpeakersSection extends React.Component {
             flexWrap: 'wrap',
             justifyContent: 'center',
             maxWidth: beat(25),
+            paddingTop: beat(4),
           }}
         >
           {SPEAKERS.map(speaker => this.renderSpeaker(speaker))}
