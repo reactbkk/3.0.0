@@ -165,7 +165,7 @@ export class SpeakersSection extends React.Component {
       >
         <div css={{ paddingTop: beat(4) }} >
           {sliceArrayRepeatedly(SPEAKERS, 3).map((row, i) => (
-            <div key={i} css={{ display: 'flex' }} >
+            <div key={i} css={{ display: 'flex', justifyContent: 'center' }} >
               {row.map(speaker => this.renderSpeaker(speaker))}
             </div>
           ))}
