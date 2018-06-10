@@ -49,6 +49,9 @@ function show (x, y) {
       requestAnimationFrame(() => {
         el.style.transform = transform(tX, tY, rotation)
         el.style.opacity = 0
+        setTimeout(() => {
+          document.body.removeChild(el)
+        }, 500)
       })
     }
   })
