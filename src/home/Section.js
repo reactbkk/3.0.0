@@ -18,7 +18,7 @@ function Header ({ title }) {
   )
 }
 
-export default function Section ({ cssExtension, title, children }) {
+export function Section ({ cssExtension, title, children }) {
   return (
     <section
       css={{
@@ -39,3 +39,5 @@ export default function Section ({ cssExtension, title, children }) {
     </section>
   )
 }
+
+export default Section
