@@ -7,7 +7,8 @@
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "deploy": "gh-pages -d public -m \"Deploy $(git rev-parse HEAD) to GitHub pages [ci skip]\"",
-    "serve": "serve public -p 3000"
+    "serve": "serve public -p 3000",
+    "format": "prettier-eslint --write 'src/**/*.js'"
   },
   "dependencies": {
     "@atlaskit/button": "^8.0.1",
