@@ -18,6 +18,8 @@ import NOTSU from './speakers/notsu.jpg'
 import PHOOM from './speakers/phoom.jpg'
 import VEHA from './speakers/veha.jpg'
 import WIN from './speakers/win.jpg'
+import NAT from './speakers/nat.jpg'
+import POND from './speakers/pond.jpg'
 import Section from './Section'
 import { Colors, Fonts, fontSize, beat } from '../design'
 
@@ -126,6 +128,24 @@ const SPEAKERS = [
     links: {
       github: 'https://github.com/MicroBenz',
       facebook: 'https://www.facebook.com/MicroBenz',
+    },
+  },
+  {
+    name: 'Suwitcha Sugthana',
+    photo: POND,
+    from: 'GuCode',
+    links: {
+      github: 'https://github.com/gucodelive',
+      facebook: 'https://www.facebook.com/gucodelive/',
+    },
+  },
+  {
+    name: 'Jirat Kijlerdpornpailoj',
+    photo: NAT,
+    from: 'GuCode',
+    links: {
+      github: 'https://github.com/gucodelive',
+      facebook: 'https://www.facebook.com/gucodelive/',
     },
   },
 ]
