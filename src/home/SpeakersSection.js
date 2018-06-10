@@ -14,7 +14,6 @@ import CHRIS from './speakers/chris.jpg'
 import HAM from './speakers/ham.jpg'
 import HOLLY from './speakers/holly.jpg'
 import KEYA from './speakers/keya.jpg'
-import NOTSU from './speakers/notsu.jpg'
 import PHOOM from './speakers/phoom.jpg'
 import VEHA from './speakers/veha.jpg'
 import WIN from './speakers/win.jpg'
@@ -24,7 +23,24 @@ import Section from './Section'
 import { Colors, Fonts, fontSize, beat } from '../design'
 
 const SPEAKERS = [
-  // GUCODE TEAM,
+  {
+    name: 'Suwitcha Sugthana',
+    photo: POND,
+    from: 'GuCode',
+    links: {
+      github: 'https://github.com/gucodelive',
+      facebook: 'https://www.facebook.com/gucodelive/',
+    },
+  },
+  {
+    name: 'Jirat Kijlerdpornpailoj',
+    photo: NET,
+    from: 'GuCode',
+    links: {
+      github: 'https://github.com/gucodelive',
+      facebook: 'https://www.facebook.com/gucodelive/',
+    },
+  },
   {
     name: 'Keya Desai',
     photo: KEYA,
@@ -122,24 +138,6 @@ const SPEAKERS = [
     links: {
       github: 'https://github.com/MicroBenz',
       facebook: 'https://www.facebook.com/MicroBenz',
-    },
-  },
-  {
-    name: 'Suwitcha Sugthana',
-    photo: POND,
-    from: 'GuCode',
-    links: {
-      github: 'https://github.com/gucodelive',
-      facebook: 'https://www.facebook.com/gucodelive/',
-    },
-  },
-  {
-    name: 'Jirat Kijlerdpornpailoj',
-    photo: NET,
-    from: 'GuCode',
-    links: {
-      github: 'https://github.com/gucodelive',
-      facebook: 'https://www.facebook.com/gucodelive/',
     },
   },
 ]
@@ -261,19 +259,25 @@ export class SpeakersSection extends React.Component {
         position: 'relative',
         height: beat(6),
         width: beat(7),
-        marginBottom: '1px',
+        marginBottom: beat(0.25),
         display: 'flex',
         justifyContent: 'center',
         textAlign: 'right',
-        '&:nth-child(3n+1)': {
-          marginTop: beat(2),
+        '&:nth-child(1)': {
+          marginTop: beat(0),
         },
-        '&:nth-child(3n+3)': {
+        '&:nth-child(2)': {
+          marginTop: beat(-2),
+        },
+        '&:nth-child(3)': {
+          marginTop: beat(-4),
+        },
+        '&:only-child': {
           marginTop: beat(-2),
         },
         transition: 'all ease 0.2s',
         '&:hover, &:focus-within': {
-          width: _.isEmpty(speaker.links) ? beat(7) : beat(10),
+          width: beat(10),
           textAlign: 'left',
         },
       }}
@@ -292,18 +296,24 @@ export class SpeakersSection extends React.Component {
           background: `linear-gradient(${Colors.grey800}, ${Colors.grey900})`,
         }}
       >
-        {sliceArrayRepeatedly(SPEAKERS, 3).map((row, i) => (
-          <div
-            key={i}
-            css={{
-              display: 'flex',
-              justifyContent: 'center',
-              maxWidth: beat(25),
-            }}
-          >
-            {row.map(speaker => this.renderSpeaker(speaker))}
-          </div>
-        ))}
+        <div
+          css={{
+            paddingTop: beat(4),
+          }}
+        >
+          {sliceArrayRepeatedly(SPEAKERS, 3).map((row, i) => (
+            <div
+              key={i}
+              css={{
+                display: 'flex',
+                justifyContent: 'center',
+                maxWidth: beat(25),
+              }}
+            >
+              {row.map(speaker => this.renderSpeaker(speaker))}
+            </div>
+          ))}
+        </div>
       </Section>
     )
   }
