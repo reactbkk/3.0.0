@@ -82,7 +82,7 @@ const SILVER_SPONSORS = [
   },
 ]
 
-export default class SponsorsSection extends React.Component {
+export class SponsorsSection extends React.Component {
   renderSponsor = (sponsor, size) => (
     <div
       key={sponsor.logo}

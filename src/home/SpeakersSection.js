@@ -78,7 +78,7 @@ const SPEAKERS = [
   },
 ]
 
-export default class SpeakersSection extends React.Component {
+export class SpeakersSection extends React.Component {
   renderSpeaker = speaker => (
     <div
       key={speaker.name}

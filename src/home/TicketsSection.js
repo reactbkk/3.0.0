@@ -2,13 +2,13 @@ import React from 'react'
 import { Colors, beat } from '../design'
 
 import Section from './Section'
-import ActionButton from './ActionButton'
+import { ActionButton } from './ActionButton'
 import { DynamicContent } from './DynamicContent'
 import { Interaction } from './Interaction'
 
 /* eslint no-script-url: off */
 
-export default class TicketsSection extends React.Component {
+export class TicketsSection extends React.Component {
   renderDescription = () => (
     <p css={{ textAlign: 'center' }}>
       กลับมาอีกครั้งกับงาน Conference ประจำปี<br />

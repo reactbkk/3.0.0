@@ -12,7 +12,7 @@ import {
 } from '../design'
 import Section from './Section'
 
-export default class HeaderSection extends React.Component {
+export class HeaderSection extends React.Component {
   renderContent = () => [
     <img key="left-logo" css={{ height: beat(5) }} src={LOGOMARK} alt="" />,
     <img key="react-logo" css={{ height: beat(1.5) }} src={REACT_LOGO} alt="" />,
