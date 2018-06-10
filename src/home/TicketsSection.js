@@ -70,7 +70,7 @@ export class TicketsSection extends React.Component {
           id="free-tickets"
           css={{
             marginTop: beat(2),
-            color: Colors.grey700,
+            color: Colors.grey200,
             '& > p:not(:first-child)': { marginTop: beat(0.5) },
           }}
         >

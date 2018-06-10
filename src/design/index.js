@@ -26,6 +26,13 @@ export const Colors = {
   grey900: '#222',
   grey800: '#333',
   grey700: '#444',
+  grey600: '#555',
+  grey500: '#666',
+  grey400: '#888',
+  grey300: '#aaa',
+  grey200: '#bbb',
+  grey100: '#ddd',
+  grey50: '#eee',
   reactBlue: '#00d8ff',
 }
 

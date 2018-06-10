@@ -11,11 +11,11 @@ export function ActionButton ({
       css={{
         padding: `${beat(0.5)} ${beat(1)}`,
         display: 'inline-block',
-        border: `1px solid ${primary ? Colors.reactBlue : Colors.grey700}`,
+        border: `1px solid ${primary ? Colors.reactBlue : Colors.grey600}`,
         borderTopLeftRadius: beat(0.25),
         borderBottomRightRadius: beat(0.25),
-        color: Colors.white, // TODO: brighter grey
-        fontWeight: primary ? 600 : 400,
+        color: primary ? Colors.white : Colors.grey200,
+        fontWeight: 600,
         opacity: disabled ? 0.25 : 1,
         pointerEvents: disabled ? 'none' : undefined,
         [MediaQueries.md]: {
@@ -23,7 +23,7 @@ export function ActionButton ({
         },
         transition: 'all ease 0.2s',
         '&:hover': {
-          background: primary ? Colors.reactBlue : Colors.grey700,
+          background: primary ? Colors.reactBlue : Colors.grey600,
         },
       }}
     >
