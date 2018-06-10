@@ -146,15 +146,23 @@ export class SpeakersSection extends React.Component {
     }
   }
 
-  renderLinks = links => (
+  renderLinks = (name, links) => !_.isEmpty(links) ? (
     <div
       css={{
         display: 'flex',
         flexDirection: 'column',
-        width: beat(2),
+        alignItems: 'center',
+        width: beat(0),
+        overflow: 'hidden',
+        opacity: 0,
+        transition: 'all ease 0.2s',
         '>*': {
           marginLeft: beat(0.25),
           marginBottom: beat(0.25),
+        },
+        [`.${_.kebabCase(name)}:hover &`]: {
+          width: beat(3),
+          opacity: 1,
         },
       }}
     >
@@ -162,12 +170,37 @@ export class SpeakersSection extends React.Component {
         const Icon = this.getIcon(type)
         return (
           <a href={link}>
-            <Icon key={link} />
+            <div css={{
+              width: beat(2.5),
+              height: beat(2.5),
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              background: Colors.white,
+              color: Colors.grey800,
+              fontSize: fontSize(5),
+              transition: 'all ease 0.2s',
+              borderTopLeftRadius: beat(0.25),
+              borderBottomRightRadius: beat(0.25),
+              opacity: 0.9,
+              '.icon': {
+                transform: 'scale(0.8)',
+              },
+              '&:hover': {
+                opacity: 1,
+                '.icon': {
+                  transition: 'all ease-out 0.2s',
+                  transform: 'scale(1)',
+                },
+              },
+            }}>
+              <Icon key={link} className="icon" />
+            </div>
           </a>
         )
       })}
     </div>
-  )
+  ) : null
 
   renderSpeakerPhoto = photo => (
     <div
@@ -206,6 +239,7 @@ export class SpeakersSection extends React.Component {
   renderSpeaker = speaker => (
     <div
       key={speaker.name}
+      className={_.kebabCase(speaker.name)}
       css={{
         position: 'relative',
         height: beat(6),
@@ -222,16 +256,16 @@ export class SpeakersSection extends React.Component {
         },
         transition: 'all ease 0.2s',
         '&:hover': {
-          width: beat(10),
+          width: _.isEmpty(speaker.links) ? beat(7) : beat(10),
           textAlign: 'left',
         },
       }}
     >
       {this.renderSpeakerPhoto(speaker.photo)}
       {this.renderSpeakerInfo(speaker.name, speaker.from)}
+      {this.renderLinks(speaker.name, speaker.links)}
     </div>
   )
-  // {this.renderLinks(speaker.links)}
 
   render () {
     return (
