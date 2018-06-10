@@ -8,10 +8,11 @@ import { beat, fontSize } from '../design'
 
 import { HeaderSection } from './HeaderSection'
 import { TicketsSection } from './TicketsSection'
-import { SpeakersSection } from './SpeakersSection'
+// import { SpeakersSection } from './SpeakersSection'
+import { MobileSpeakersSection } from './MobileSpeakersSection'
 import { SponsorsSection } from './SponsorsSection'
 
-const SECTIONS = [HeaderSection, TicketsSection, SpeakersSection, SponsorsSection]
+const SECTIONS = [HeaderSection, TicketsSection, MobileSpeakersSection, SponsorsSection]
 
 export class HomePage extends React.Component {
   renderSocial = () => {
