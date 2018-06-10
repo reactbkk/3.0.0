@@ -1,7 +1,7 @@
 import React from 'react'
-import { Colors, beat, TypographicContext } from '../design'
+import { Colors, beat, fontSize, TypographicContext } from '../design'
 
-import Section from './Section'
+import { Section } from './Section'
 import { ActionButton } from './ActionButton'
 import { DynamicContent } from './DynamicContent'
 import { Interaction } from './Interaction'
@@ -57,7 +57,7 @@ export class TicketsSection extends React.Component {
     return (
       <Section
         title="Get Tickets"
-        cssExtension={{ background: Colors.grey900, textAlign: 'center' }}
+        cssExtension={{ background: Colors.grey900, textAlign: 'center', fontSize: fontSize(-2) }}
       >
         {this.renderDescription()}
         <p>
