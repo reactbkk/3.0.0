@@ -1,5 +1,15 @@
 import React from 'react'
 import { Colors, beat, fontSize, MediaQueries } from '../design'
+import { showSparklesEffectOnElement } from '../sparkles-effect'
+
+/**
+ * @param {MouseEvent} e
+ */
+function sparkle (e) {
+  if (e.target) {
+    showSparklesEffectOnElement(e.target)
+  }
+}
 
 export function ActionButton ({
   href, disabled, primary, children, onClick,
@@ -8,6 +18,9 @@ export function ActionButton ({
     <a
       href={href || `javascript${':'}`}
       onClick={onClick}
+      onMouseOver={sparkle}
+      onTouchStart={sparkle}
+      onFocus={sparkle}
       css={{
         padding: beat(0.5),
         display: 'inline-block',
