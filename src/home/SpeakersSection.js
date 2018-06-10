@@ -130,7 +130,7 @@ const SPEAKERS = [
   },
 ]
 
-export default class SpeakersSection extends React.Component {
+export class SpeakersSection extends React.Component {
   getIcon = type => {
     switch (type) {
       case 'facebook':

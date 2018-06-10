@@ -1,11 +1,7 @@
 import React from 'react'
-import {
-  Colors,
-  beat,
-  MediaQueries,
-} from '../design'
+import { Colors, beat, MediaQueries } from '../design'
 
-export default function ActionButton ({
+export function ActionButton ({
   href, disabled, primary, children, onClick,
 }) {
   return (
@@ -21,6 +17,7 @@ export default function ActionButton ({
         color: Colors.white, // TODO: brighter grey
         fontWeight: primary ? 600 : 400,
         opacity: disabled ? 0.25 : 1,
+        pointerEvents: disabled ? 'none' : undefined,
         [MediaQueries.md]: {
           width: beat(10),
         },

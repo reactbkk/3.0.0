@@ -113,7 +113,9 @@ function TicketsSection () {
             Details will be available soon!
           </p>
           <p>
-            <ActionButton href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3">Information</ActionButton>
+            <ActionButton href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3">
+              Information
+            </ActionButton>
           </p>
           <p>{renderRedeemTicketButton()}</p>
         </TypographicContext>
