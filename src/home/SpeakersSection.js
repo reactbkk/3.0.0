@@ -17,7 +17,7 @@ import KEYA from './speakers/keya.jpg'
 import NOTSU from './speakers/notsu.jpg'
 import PHOOM from './speakers/phoom.jpg'
 import VEHA from './speakers/veha.jpg'
-import WIN from './speakers/win.png'
+import WIN from './speakers/win.jpg'
 import Section from './Section'
 import { Colors, Fonts, fontSize, beat } from '../design'
 

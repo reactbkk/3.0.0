@@ -5,7 +5,7 @@ import styled from 'react-emotion'
 import LOGOMARK from './logomark.svg'
 import REACT_LOGO from './react.svg'
 import BANGKOK_LOGO from './bangkok.svg'
-import BACKGROUND from './evan-krause-443485-unsplash.jpg'
+import BACKGROUND from './evan-krause-443485-unsplash-1980w.jpg'
 
 export { LOGOMARK, REACT_LOGO, BANGKOK_LOGO, BACKGROUND }
 
@@ -95,11 +95,7 @@ export const Tracking = {
  */
 export class Layout extends React.Component {
   render () {
-    return (
-      <TypographicContext>
-        {this.props.children}
-      </TypographicContext>
-    )
+    return <TypographicContext>{this.props.children}</TypographicContext>
   }
 }
 
