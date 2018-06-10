@@ -97,16 +97,7 @@ export class Layout extends React.Component {
   render () {
     return (
       <TypographicContext>
-        <div>{this.props.children}</div>
-        <footer
-          css={{
-            padding: `${beat(1)} 0`,
-            textAlign: 'center',
-            opacity: 0.5,
-          }}
-        >
-          React Bangkok 3.0.0
-        </footer>
+        {this.props.children}
       </TypographicContext>
     )
   }
