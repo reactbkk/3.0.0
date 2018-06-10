@@ -93,11 +93,13 @@ export class SponsorsSection extends React.Component {
     >
       <img
         css={{
-          maxHeight: beat(size),
+          maxHeight: beat(size * 1.5),
           maxWidth: beat(size * 3),
           transition: 'all ease 0.2s',
+          opacity: 0.9,
           '&:hover': {
-            transform: 'scale(1.2)',
+            opacity: 1,
+            transform: 'scale(1.05)',
           },
         }}
         src={sponsor.logo}
@@ -125,7 +127,7 @@ export class SponsorsSection extends React.Component {
     return (
       <Section title="Sponsors" cssExtension={{ background: 'black' }}>
         {this.renderSponsorGroup(PLATINUM_SPONSORS, 3)}
-        {this.renderSponsorGroup(GOLD_SPONSORS, 2)}
+        {this.renderSponsorGroup(GOLD_SPONSORS, 1.5)}
         {this.renderSponsorGroup(SILVER_SPONSORS, 1)}
       </Section>
     )
