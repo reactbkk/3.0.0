@@ -23,7 +23,7 @@ export class HomePage extends React.Component {
     return (
       <div
         css={{
-          position: 'absolute',
+          position: 'fixed',
           right: beat(1),
           bottom: beat(1),
           fontSize: fontSize(-5),
