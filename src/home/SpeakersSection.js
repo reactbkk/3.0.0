@@ -9,6 +9,7 @@ import WebsiteIcon from 'react-icons/lib/fa/chain'
 import { SPEAKERS } from './Speakers'
 import { Section } from './Section'
 import { Colors, Fonts, fontSize, beat } from '../design'
+import { ActionButton } from './ActionButton'
 
 export class SpeakersSection extends React.Component {
   getIcon = type => {
@@ -169,6 +170,11 @@ export class SpeakersSection extends React.Component {
               {row.map(speaker => this.renderSpeaker(speaker))}
             </div>
           ))}
+        </div>
+        <div css={{ textAlign: 'center', marginTop: beat(1) }}>
+          <ActionButton href="https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199">
+            Speakers introduction
+          </ActionButton>
         </div>
       </Section>
     )
