@@ -20,72 +20,89 @@ import ThoughtWorks from './sponsors/thoughtworks.svg'
 const PLATINUM_SPONSORS = [
   {
     logo: TelenorDigital,
-    website: null,
+    website: 'https://telenordigital.com/',
+    title: 'Telenor Digital',
   },
 ]
 
 const GOLD_SPONSORS = [
   {
     logo: PttDigital,
-    website: null,
+    website: 'http://www.pttdigital.com/home/',
+    title: 'PTT Digital Solutions',
   },
   {
     logo: ThoughtWorks,
-    website: null,
+    website: 'https://www.thoughtworks.com/',
+    title: 'ThoughtWorks',
   },
   {
     logo: Taskworld,
-    website: null,
+    website: 'https://taskworld.com/',
+    title: 'Taskworld',
   },
   {
     logo: Odds,
-    website: null,
+    website: 'https://medium.com/odds-team',
+    title: 'ODDS',
   },
   {
     logo: AppMan,
-    website: null,
+    website: 'https://www.appman.co.th/',
+    title: 'AppMan',
   },
 ]
 
 const SILVER_SPONSORS = [
   {
     logo: SixNetwork,
-    website: null,
+    website: 'https://six.network/',
+    title: 'SIX Network',
   },
   {
     logo: Tencent,
-    website: null,
+    website: 'https://www.tencent.co.th/th/',
+    title: 'Tencent (Thailand)',
   },
   {
     logo: Nextzy,
-    website: null,
+    website: 'https://nextzy.me/',
+    title: 'Nextzy Technologies',
   },
   {
     logo: ProntoTools,
-    website: null,
+    website: 'https://www.prontotools.io/',
+    title: 'Pronto Tools',
   },
   {
     logo: Skooldio,
-    website: null,
+    website: 'https://www.skooldio.com/',
+    title: 'Skooldio',
   },
   {
     logo: Metromerce,
-    website: null,
+    website: 'https://www.metromerce.com/',
+    title: 'Metromerce',
   },
   {
     logo: EventPop,
-    website: null,
+    website: 'https://www.eventpop.me/',
+    title: 'Event Pop',
   },
   {
     logo: ThaiProgrammer,
-    website: null,
+    website: 'https://thaiprogrammer.org/',
+    title: 'Thai Programmer Association',
   },
 ]
 
 export class SponsorsSection extends React.Component {
   renderSponsor = (sponsor, size) => (
-    <div
+    <a
       key={sponsor.logo}
+      href={sponsor.website}
+      title={sponsor.title}
+      target="_blank"
       css={{
         padding: `${beat(0.25)} ${beat(1)}`,
         cursor: 'pointer',
@@ -103,7 +120,7 @@ export class SponsorsSection extends React.Component {
         src={sponsor.logo}
         alt=""
       />
-    </div>
+    </a>
   )
 
   renderSponsorGroup = (sponsors, size) => (
