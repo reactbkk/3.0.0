@@ -107,12 +107,6 @@ const SPEAKERS = [
     },
   },
   {
-    name: 'Pichet Itngam',
-    photo: NOTSU,
-    from: 'Head of R&D @Dek-D',
-    links: {},
-  },
-  {
     name: 'Pallop Chaoputhipuchong',
     photo: HAM,
     from: 'Software Engineer @Jitta',
