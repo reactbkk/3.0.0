@@ -164,7 +164,6 @@ export class SpeakersSection extends React.Component {
         css={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
           width: beat(0),
           overflow: 'hidden',
           opacity: 0,
@@ -185,25 +184,25 @@ export class SpeakersSection extends React.Component {
             <a href={link}>
               <div
                 css={{
-                  width: beat(2.5),
-                  height: beat(2.5),
+                  width: beat(2),
+                  height: beat(2),
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
                   background: Colors.white,
                   color: Colors.grey800,
-                  fontSize: fontSize(5),
+                  fontSize: type === 'github' ? fontSize(5) : fontSize(4),
                   transition: 'all ease 0.2s',
                   borderTopLeftRadius: beat(0.25),
                   borderBottomRightRadius: beat(0.25),
                   opacity: 0.9,
                   '.icon': {
+                    transition: 'all linear 0.2s',
                     transform: 'scale(0.8)',
                   },
                   '&:hover': {
                     opacity: 1,
                     '.icon': {
-                      transition: 'all ease-out 0.2s',
                       transform: 'scale(1)',
                     },
                   },
