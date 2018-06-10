@@ -20,6 +20,7 @@ export class HomePage extends React.Component {
         {icon}
       </a>
     )
+
     return (
       <div
         css={{

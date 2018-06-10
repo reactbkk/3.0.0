@@ -114,7 +114,7 @@ export class SponsorsSection extends React.Component {
         maxWidth: beat(25),
         justifyContent: 'center',
         alignItems: 'center',
-        margin: `${beat(1)} 0`,
+        margin: `${beat(0.5)} 0`,
       }}
     >
       {sponsors.map(sponsor => this.renderSponsor(sponsor, size))}
@@ -124,9 +124,9 @@ export class SponsorsSection extends React.Component {
   render () {
     return (
       <Section title="Sponsors" cssExtension={{ background: 'black' }}>
-        {this.renderSponsorGroup(PLATINUM_SPONSORS, 4)}
-        {this.renderSponsorGroup(GOLD_SPONSORS, 3)}
-        {this.renderSponsorGroup(SILVER_SPONSORS, 2)}
+        {this.renderSponsorGroup(PLATINUM_SPONSORS, 3)}
+        {this.renderSponsorGroup(GOLD_SPONSORS, 2)}
+        {this.renderSponsorGroup(SILVER_SPONSORS, 1)}
       </Section>
     )
   }

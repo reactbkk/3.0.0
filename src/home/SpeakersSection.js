@@ -174,7 +174,7 @@ export class SpeakersSection extends React.Component {
       css={{
         width: beat(4),
         background: `
-          linear-gradient(rgba(0, 88, 255, 0.5), rgba(0, 216, 255, 0.75)),
+          linear-gradient(rgba(0, 88, 255, 0.5) 45%, rgba(0, 216, 255, 0.75)),
           url(${photo}) no-repeat center
         `,
         backgroundSize: 'cover',
@@ -209,28 +209,29 @@ export class SpeakersSection extends React.Component {
       css={{
         position: 'relative',
         height: beat(6),
-        width: beat(6.5),
+        width: beat(7),
+        marginBottom: '1px',
         display: 'flex',
         justifyContent: 'center',
         textAlign: 'right',
-        '&:nth-child(3n-1)': {
+        '&:nth-child(3n+1)': {
           marginTop: beat(2),
         },
-        '&:nth-child(3n-2)': {
-          marginTop: beat(4),
+        '&:nth-child(3n+3)': {
+          marginTop: beat(-2),
         },
         transition: 'all ease 0.2s',
         '&:hover': {
-          width: beat(12),
+          width: beat(10),
           textAlign: 'left',
         },
       }}
     >
       {this.renderSpeakerPhoto(speaker.photo)}
       {this.renderSpeakerInfo(speaker.name, speaker.from)}
-      {this.renderLinks(speaker.links)}
     </div>
   )
+  // {this.renderLinks(speaker.links)}
 
   render () {
     return (
