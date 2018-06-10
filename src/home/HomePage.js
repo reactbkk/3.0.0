@@ -81,7 +81,7 @@ function HeadingSection () {
 
 function DescriptionSection () {
   return (
-    <p css={{ textAlign: 'center' }}>
+    <p css={{ textAlign: 'center' }} lang="th">
       กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
       ของโปรแกรมเมอร์สาย React ทุกคน<br />
       กับงาน “React Bangkok 3.0.0”<br />

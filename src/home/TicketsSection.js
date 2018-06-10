@@ -10,7 +10,7 @@ import { Interaction } from './Interaction'
 
 export class TicketsSection extends React.Component {
   renderDescription = () => (
-    <p>
+    <p lang="th">
       กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
       ของโปรแกรมเมอร์สาย React ทุกคน<br />
       กับงาน “React Bangkok 3.0.0”<br />
@@ -55,7 +55,10 @@ export class TicketsSection extends React.Component {
 
   render () {
     return (
-      <Section title="Get Tickets" cssExtension={{ background: Colors.grey900, textAlign: 'center' }}>
+      <Section
+        title="Get Tickets"
+        cssExtension={{ background: Colors.grey900, textAlign: 'center' }}
+      >
         {this.renderDescription()}
         <p>
           Tickets will be available on <strong>June 11th, 2018</strong> at <strong>18:00</strong>
