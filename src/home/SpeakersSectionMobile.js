@@ -6,11 +6,12 @@ import LinkedinIcon from 'react-icons/lib/fa/linkedin'
 import MediumIcon from 'react-icons/lib/fa/medium'
 import WebsiteIcon from 'react-icons/lib/fa/chain'
 
-import { SPEAKERS } from './Speakers'
+import { SPEAKERS } from './SpeakersData'
 import { Section } from './Section'
 import { Colors, Fonts, fontSize, beat } from '../design'
+import { ActionButton } from './ActionButton'
 
-export class MobileSpeakersSection extends React.Component {
+export class SpeakersSectionMobile extends React.Component {
   getIcon = type => {
     switch (type) {
       case 'facebook':
@@ -27,9 +28,11 @@ export class MobileSpeakersSection extends React.Component {
   }
 
   renderLinks = (name, links) => (
-    <div css={{
-      display: 'inline-flex',
-    }} >
+    <div
+      css={{
+        display: 'inline-flex',
+      }}
+    >
       {_.map(links, (link, type) => {
         const Icon = this.getIcon(type)
         return (
@@ -119,6 +122,11 @@ export class MobileSpeakersSection extends React.Component {
         }}
       >
         {SPEAKERS.map(speaker => this.renderSpeaker(speaker))}
+        <div css={{ textAlign: 'center', marginTop: beat(1), marginBottom: beat(1) }}>
+          <ActionButton href="https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199">
+            Speakers introduction
+          </ActionButton>
+        </div>
       </Section>
     )
   }
