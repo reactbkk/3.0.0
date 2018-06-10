@@ -3,13 +3,11 @@
   "editor.tabSize": 2,
   "editor.renderWhitespace": "boundary",
   "editor.insertSpaces": true,
-
   // Auto-format file on save.
-  "editor.formatOnSave": true,
+  // "editor.formatOnSave": true,
   "editor.formatOnSaveTimeout": 3000,
   "html.format.enable": false,
   "prettier.eslintIntegration": true,
-
   // Branding. This visual indication is useful when working on multiple projects.
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#222222",

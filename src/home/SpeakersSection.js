@@ -14,11 +14,10 @@ import CHRIS from './speakers/chris.jpg'
 import HAM from './speakers/ham.jpg'
 import HOLLY from './speakers/holly.jpg'
 import KEYA from './speakers/keya.jpg'
-import NOTSU from './speakers/notsu.jpg'
 import PHOOM from './speakers/phoom.jpg'
 import VEHA from './speakers/veha.jpg'
 import WIN from './speakers/win.jpg'
-import NAT from './speakers/nat.jpg'
+import NET from './speakers/net.jpg'
 import POND from './speakers/pond.jpg'
 import Section from './Section'
 import { Colors, Fonts, fontSize, beat } from '../design'
@@ -35,7 +34,7 @@ const SPEAKERS = [
   },
   {
     name: 'Jirat Kijlerdpornpailoj',
-    photo: NAT,
+    photo: NET,
     from: 'GuCode',
     links: {
       github: 'https://github.com/gucodelive',
@@ -159,61 +158,64 @@ export class SpeakersSection extends React.Component {
     }
   }
 
-  renderLinks = (name, links) => !_.isEmpty(links) ? (
-    <div
-      css={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: beat(0),
-        overflow: 'hidden',
-        opacity: 0,
-        transition: 'all ease 0.2s',
-        '>*': {
-          marginLeft: beat(0.25),
-          marginBottom: beat(0.25),
-        },
-        [`.${_.kebabCase(name)}:hover &`]: {
-          width: beat(3),
-          opacity: 1,
-        },
-      }}
-    >
-      {_.map(links, (link, type) => {
-        const Icon = this.getIcon(type)
-        return (
-          <a href={link}>
-            <div css={{
-              width: beat(2.5),
-              height: beat(2.5),
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              background: Colors.white,
-              color: Colors.grey800,
-              fontSize: fontSize(5),
-              transition: 'all ease 0.2s',
-              borderTopLeftRadius: beat(0.25),
-              borderBottomRightRadius: beat(0.25),
-              opacity: 0.9,
-              '.icon': {
-                transform: 'scale(0.8)',
-              },
-              '&:hover': {
-                opacity: 1,
-                '.icon': {
-                  transition: 'all ease-out 0.2s',
-                  transform: 'scale(1)',
-                },
-              },
-            }}>
-              <Icon key={link} className="icon" />
-            </div>
-          </a>
-        )
-      })}
-    </div>
-  ) : null
+  renderLinks = (name, links) =>
+    !_.isEmpty(links) ? (
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          width: beat(0),
+          overflow: 'hidden',
+          opacity: 0,
+          transition: 'all ease 0.2s',
+          '>*': {
+            marginLeft: beat(0.25),
+            marginBottom: beat(0.25),
+          },
+          [`.${_.kebabCase(name)}:hover &`]: {
+            width: beat(3),
+            opacity: 1,
+          },
+        }}
+      >
+        {_.map(links, (link, type) => {
+          const Icon = this.getIcon(type)
+          return (
+            <a href={link}>
+              <div
+                css={{
+                  width: beat(2.5),
+                  height: beat(2.5),
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  background: Colors.white,
+                  color: Colors.grey800,
+                  fontSize: fontSize(5),
+                  transition: 'all ease 0.2s',
+                  borderTopLeftRadius: beat(0.25),
+                  borderBottomRightRadius: beat(0.25),
+                  opacity: 0.9,
+                  '.icon': {
+                    transform: 'scale(0.8)',
+                  },
+                  '&:hover': {
+                    opacity: 1,
+                    '.icon': {
+                      transition: 'all ease-out 0.2s',
+                      transform: 'scale(1)',
+                    },
+                  },
+                }}
+              >
+                <Icon key={link} className="icon" />
+              </div>
+            </a>
+          )
+        })}
+      </div>
+    ) : null
 
   renderSpeakerPhoto = photo => (
     <div
