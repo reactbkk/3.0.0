@@ -19,7 +19,7 @@ WebFontConfig = {
 export default class HTML extends React.Component {
   render () {
     return (
-      <html lang="th" {...this.props.htmlAttributes}>
+      <html lang="en" {...this.props.htmlAttributes}>
         <head>
           <script dangerouslySetInnerHTML={{ __html: WEB_FONT_LOADER }} />
           {this.props.headComponents}
