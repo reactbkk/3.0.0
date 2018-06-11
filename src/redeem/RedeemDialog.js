@@ -8,7 +8,7 @@ import axios from 'axios'
 
 import { firebase } from '../firebase'
 
-export function RedeemDialog ({ onClose }) {
+export function RedeemDialog ({ onClose, initialState }) {
   return (
     <ModalDialog
       actions={[{ text: 'Close', onClick: onClose }]}
@@ -16,13 +16,13 @@ export function RedeemDialog ({ onClose }) {
       onCloseComplete={onClose}
       shouldCloseOnOverlayClick={false}
     >
-      <RedeemDialogContent />
+      <RedeemDialogContent initialState={initialState} />
     </ModalDialog>
   )
 }
 
 class RedeemDialogContent extends React.Component {
-  state = {
+  state = this.props.initialState || {
     status: 'initial',
     error: '',
     code: '',
