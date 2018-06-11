@@ -3,10 +3,11 @@ import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
 
 import LOGOMARK from './logomark.svg'
-import REACT from './react.svg'
-import BANGKOK from './bangkok.svg'
+import REACT_LOGO from './react.svg'
+import BANGKOK_LOGO from './bangkok.svg'
+import BACKGROUND from './evan-krause-443485-unsplash-1980w.jpg'
 
-export { LOGOMARK, REACT, BANGKOK }
+export { LOGOMARK, REACT_LOGO, BANGKOK_LOGO, BACKGROUND }
 
 /**
  * Usable fonts in this website.
@@ -25,6 +26,13 @@ export const Colors = {
   grey900: '#222',
   grey800: '#333',
   grey700: '#444',
+  grey600: '#555',
+  grey500: '#666',
+  grey400: '#888',
+  grey300: '#aaa',
+  grey200: '#bbb',
+  grey100: '#ddd',
+  grey50: '#eee',
   reactBlue: '#00d8ff',
 }
 
@@ -94,20 +102,7 @@ export const Tracking = {
  */
 export class Layout extends React.Component {
   render () {
-    return (
-      <TypographicContext>
-        <div>{this.props.children}</div>
-        <footer
-          css={{
-            padding: `${beat(1)} 0`,
-            textAlign: 'center',
-            opacity: 0.5,
-          }}
-        >
-          React Bangkok 3.0.0
-        </footer>
-      </TypographicContext>
-    )
+    return <TypographicContext>{this.props.children}</TypographicContext>
   }
 }
 
@@ -159,14 +154,14 @@ function injectGlobalStyles () {
       color: Colors.white,
       margin: 0,
       padding: 0,
-      background: Colors.grey900,
+      background: Colors.grey800,
       [MediaQueries.md]: {
         fontSize: BASE_FONT_SIZE_MD,
       },
     },
     a: {
       textDecoration: 'none',
-      color: Colors.reactBlue,
+      color: Colors.white,
     },
     'button, input, textarea': {
       fontFamily: 'inherit',

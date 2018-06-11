@@ -81,7 +81,7 @@ function HeadingSection () {
 
 function DescriptionSection () {
   return (
-    <p css={{ textAlign: 'center' }}>
+    <p css={{ textAlign: 'center' }} lang="th">
       กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
       ของโปรแกรมเมอร์สาย React ทุกคน<br />
       กับงาน “React Bangkok 3.0.0”<br />
@@ -113,7 +113,9 @@ function TicketsSection () {
             Details will be available soon!
           </p>
           <p>
-            <ActionButton href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3">Information</ActionButton>
+            <ActionButton href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3">
+              Information
+            </ActionButton>
           </p>
           <p>{renderRedeemTicketButton()}</p>
         </TypographicContext>

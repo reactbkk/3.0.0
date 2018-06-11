@@ -7,7 +7,8 @@
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "deploy": "gh-pages -d public -m \"Deploy $(git rev-parse HEAD) to GitHub pages [ci skip]\"",
-    "serve": "serve public -p 3000"
+    "serve": "serve public -p 3000",
+    "format": "prettier-eslint --write 'src/**/*.js'"
   },
   "dependencies": {
     "@atlaskit/button": "^8.0.1",
@@ -37,6 +38,8 @@
     "gatsby-plugin-offline": "^2.0.0-alpha.15",
     "gatsby-plugin-react-helmet": "^2.0.12-7",
     "gh-pages": "^1.2.0",
+    "prettier-eslint": "^8.8.1",
+    "prettier-eslint-cli": "^4.7.1",
     "serve": "^7.2.0"
   }
 }
