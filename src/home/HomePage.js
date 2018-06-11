@@ -1,6 +1,12 @@
 import React from 'react'
 import styled from 'react-emotion'
 import { Helmet } from 'react-helmet'
+import FacebookIcon from 'react-icons/lib/fa/facebook'
+import GithubIcon from 'react-icons/lib/fa/github'
+import LinkedinIcon from 'react-icons/lib/fa/linkedin'
+import MediumIcon from 'react-icons/lib/fa/medium'
+import WebsiteIcon from 'react-icons/lib/fa/chain'
+import _ from 'lodash'
 
 import { DynamicContent } from './DynamicContent'
 import { Interaction } from './Interaction'
@@ -14,6 +20,7 @@ import {
   TypographicContext,
   LOGOMARK,
 } from '../design'
+import { SPEAKERS } from './SpeakersData'
 
 /* eslint no-script-url: off */
 
@@ -160,10 +167,34 @@ function TicketsSection () {
 }
 
 function SpeakersSection () {
+  const getIcon = type => {
+    switch (type) {
+      case 'facebook':
+        return FacebookIcon
+      case 'github':
+        return GithubIcon
+      case 'linkedin':
+        return LinkedinIcon
+      case 'medium':
+        return MediumIcon
+      default:
+        return WebsiteIcon
+    }
+  }
   return (
     <ContentSection>
       <SectionHeader>Speakers</SectionHeader>
-      <p>TBA</p>
+      <div css={{ display: 'flex', justifyContent: 'center', textAlign: 'left' }}>
+        <ul css={{ listStyle: 'none', margin: 0, padding: 0 }}>
+          {SPEAKERS.map((speaker, i) => (
+            <li key={i} css={{ marginTop: beat(1) }}>
+              <strong>{speaker.name}</strong>
+              <br />
+              {speaker.from}
+            </li>
+          ))}
+        </ul>
+      </div>
     </ContentSection>
   )
 }
