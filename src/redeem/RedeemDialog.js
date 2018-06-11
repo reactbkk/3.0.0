@@ -22,14 +22,11 @@ export function RedeemDialog ({ onClose, initialState }) {
 }
 
 class RedeemDialogContent extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = props.initialState || {
-      status: 'initial',
-      error: '',
-      code: '',
-      admin: false,
-    }
+  state = this.props.initialState || {
+    status: 'initial',
+    error: '',
+    code: '',
+    admin: false,
   }
 
   render () {
