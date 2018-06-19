@@ -16,12 +16,13 @@ import {
   LOGOMARK,
 } from '../design'
 import { SPEAKERS } from './SpeakersData'
+import { SponsorsSectionContent } from './SponsorsSectionContent'
 
 /* eslint no-script-url: off */
 
 export function HomePage () {
   return (
-    <div>
+    <div css={{ marginBottom: beat(1) }}>
       <Helmet>
         <title>React Bangkok 3.0.0</title>
       </Helmet>
@@ -30,6 +31,7 @@ export function HomePage () {
       <DescriptionSection />
       <TicketsSection />
       <SpeakersSection />
+      <SponsorsSection />
       <CommunitySection />
     </div>
   )
@@ -165,6 +167,15 @@ function SpeakersSection () {
           ))}
         </ul>
       </div>
+    </ContentSection>
+  )
+}
+
+function SponsorsSection () {
+  return (
+    <ContentSection>
+      <SectionHeader>Sponsors</SectionHeader>
+      <SponsorsSectionContent />
     </ContentSection>
   )
 }
