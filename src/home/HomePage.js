@@ -26,6 +26,7 @@ export function HomePage () {
         <title>React Bangkok 3.0.0</title>
       </Helmet>
       <HeadingSection />
+      <CTASection />
       <DescriptionSection />
       <TicketsSection />
       <SpeakersSection />
@@ -81,6 +82,45 @@ function HeadingSection () {
   )
 }
 
+function CTASection () {
+  return <BelowHeadingSection>{renderCheckInButton()}</BelowHeadingSection>
+
+  function renderCheckInButton () {
+    return (
+      <DynamicContent>
+        {(dialogElement, setDialogElement) => (
+          <React.Fragment>
+            <Interaction
+              action={async () => {
+                const promise = import(/* webpackChunkName: "checkin", webpackPrefetch: true */ '../checkin')
+                const checkin = await promise
+                setDialogElement(
+                  checkin.renderDialog({
+                    onClose () {
+                      setDialogElement(null)
+                    },
+                  })
+                )
+              }}
+            >
+              {({ interactive, running, onClick }) => (
+                <ActionButton
+                  disabled={!interactive || running}
+                  href="javascript://checkin"
+                  onClick={onClick}
+                >
+                  {running ? 'Loading…' : interactive ? 'Check in' : '(Loading page)'}
+                </ActionButton>
+              )}
+            </Interaction>
+            {dialogElement}
+          </React.Fragment>
+        )}
+      </DynamicContent>
+    )
+  }
+}
+
 function DescriptionSection () {
   return (
     <p css={{ textAlign: 'center' }} lang="th">
@@ -106,59 +146,8 @@ function TicketsSection () {
           </ActionButton>
         </p>
       </TypographicContext>
-      <section id="free-tickets">
-        <SectionSubheader>Get free tickets</SectionSubheader>
-        <TypographicContext>
-          <p>
-            Win a free ticket by contributing to open-source community!
-            <br />
-            Details will be available soon!
-          </p>
-          <p>
-            <ActionButton href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3">
-              Information
-            </ActionButton>
-          </p>
-          <p>{renderRedeemTicketButton()}</p>
-        </TypographicContext>
-      </section>
     </ContentSection>
   )
-
-  function renderRedeemTicketButton () {
-    return (
-      <DynamicContent>
-        {(dialogElement, setDialogElement) => (
-          <React.Fragment>
-            <Interaction
-              action={async () => {
-                const promise = import(/* webpackChunkName: "redeem", webpackPrefetch: true */ '../redeem')
-                const redeem = await promise
-                setDialogElement(
-                  redeem.renderDialog({
-                    onClose () {
-                      setDialogElement(null)
-                    },
-                  })
-                )
-              }}
-            >
-              {({ interactive, running, onClick }) => (
-                <ActionButton
-                  disabled={!interactive || running}
-                  href="javascript://redeem"
-                  onClick={onClick}
-                >
-                  {running ? 'Loading…' : interactive ? 'Redeem ticket' : '(Loading page)'}
-                </ActionButton>
-              )}
-            </Interaction>
-            {dialogElement}
-          </React.Fragment>
-        )}
-      </DynamicContent>
-    )
-  }
 }
 
 function SpeakersSection () {
@@ -198,10 +187,16 @@ function CommunitySection () {
   )
 }
 
+const BelowHeadingSection = styled.section({
+  marginTop: beat(1),
+  textAlign: 'center',
+})
+
 const ContentSection = styled.section({
   marginTop: beat(3),
   textAlign: 'center',
 })
+
 const SectionHeader = styled.h2({
   color: Colors.reactBlue,
   fontSize: fontSize(7),
@@ -209,11 +204,12 @@ const SectionHeader = styled.h2({
   fontFamily: Fonts.display,
   margin: `${beat(1)} 0`,
 })
-const SectionSubheader = styled.h3({
-  color: Colors.reactBlue,
-  fontSize: fontSize(4),
-  fontWeight: 600,
-  fontFamily: Fonts.display,
-  margin: `${beat(1)} 0`,
-  paddingTop: beat(1),
-})
+
+// const SectionSubheader = styled.h3({
+//   color: Colors.reactBlue,
+//   fontSize: fontSize(4),
+//   fontWeight: 600,
+//   fontFamily: Fonts.display,
+//   margin: `${beat(1)} 0`,
+//   paddingTop: beat(1),
+// })
