@@ -1,15 +1,10 @@
 import React from 'react'
 import styled from 'react-emotion'
 import { Helmet } from 'react-helmet'
-import FacebookIcon from 'react-icons/lib/fa/facebook'
-import GithubIcon from 'react-icons/lib/fa/github'
-import LinkedinIcon from 'react-icons/lib/fa/linkedin'
-import MediumIcon from 'react-icons/lib/fa/medium'
-import WebsiteIcon from 'react-icons/lib/fa/chain'
-import _ from 'lodash'
 
 import { DynamicContent } from './DynamicContent'
 import { Interaction } from './Interaction'
+import { ActionButton } from './ActionButton'
 import {
   Fonts,
   fontSize,
@@ -167,20 +162,6 @@ function TicketsSection () {
 }
 
 function SpeakersSection () {
-  const getIcon = type => {
-    switch (type) {
-      case 'facebook':
-        return FacebookIcon
-      case 'github':
-        return GithubIcon
-      case 'linkedin':
-        return LinkedinIcon
-      case 'medium':
-        return MediumIcon
-      default:
-        return WebsiteIcon
-    }
-  }
   return (
     <ContentSection>
       <SectionHeader>Speakers</SectionHeader>
@@ -236,28 +217,3 @@ const SectionSubheader = styled.h3({
   margin: `${beat(1)} 0`,
   paddingTop: beat(1),
 })
-
-function ActionButton ({
-  href, disabled, primary, children, onClick,
-}) {
-  return (
-    <a
-      href={href || `javascript${':'}`}
-      onClick={onClick}
-      css={{
-        padding: beat(0.5),
-        display: 'inline-block',
-        border: `1px solid ${primary ? Colors.reactBlue : Colors.grey700}`,
-        background: primary ? Colors.reactBlue : Colors.grey800,
-        color: primary ? Colors.white : Colors.reactBlue,
-        fontWeight: primary ? 600 : 400,
-        opacity: disabled ? 0.25 : 1,
-        [MediaQueries.md]: {
-          width: beat(10),
-        },
-      }}
-    >
-      {children}
-    </a>
-  )
-}

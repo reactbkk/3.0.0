@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "babel-preset-env",
+      {
+        "modules": false
+      }
+    ],
+    "babel-preset-stage-2",
+    "babel-preset-react"
+  ],
+  "plugins": [
+    "babel-plugin-emotion"
+  ]
+}
