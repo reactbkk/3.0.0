@@ -140,9 +140,6 @@ function TicketsSection () {
       <SectionHeader>Tickets</SectionHeader>
       <TypographicContext>
         <p>
-          Tickets will be available on <strong>June 11th, 2018</strong> at <strong>18:00</strong>
-        </p>
-        <p>
           <ActionButton primary href="https://www.eventpop.me/e/3607-react-bangkok-3-0-0">
             Tickets on Event Pop
           </ActionButton>
@@ -176,6 +173,16 @@ function SponsorsSection () {
     <ContentSection>
       <SectionHeader>Sponsors</SectionHeader>
       <SponsorsSectionContent />
+      <section css={{ marginTop: beat(1) }}>
+        <TypographicContext>
+          <p>
+            <strong>Interested in sponsoring our future events?</strong>
+          </p>
+          <p>
+            <ActionButton href="https://airtable.com/shrHLwwtY80z3LvuR">Get in touch</ActionButton>
+          </p>
+        </TypographicContext>
+      </section>
     </ContentSection>
   )
 }
