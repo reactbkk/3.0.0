@@ -164,6 +164,11 @@ function SpeakersSection () {
           ))}
         </ul>
       </div>
+      <div css={{ textAlign: 'center', marginTop: beat(1) }}>
+        <ActionButton href="https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199">
+          Speakers introduction
+        </ActionButton>
+      </div>
     </ContentSection>
   )
 }
