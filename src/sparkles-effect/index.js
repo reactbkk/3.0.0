@@ -1,6 +1,6 @@
 import { css } from 'emotion'
 
-const images = [
+export const images = [
   require('./spark1.svg'),
   require('./spark2.svg'),
   require('./spark3.svg'),

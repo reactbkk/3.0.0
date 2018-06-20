@@ -21,6 +21,7 @@ export const Fonts = {
  * Usable colors in this website.
  */
 export const Colors = {
+  /* Old */
   white: 'white',
   black: 'black',
   grey900: '#222',
@@ -34,6 +35,14 @@ export const Colors = {
   grey100: '#ddd',
   grey50: '#eee',
   reactBlue: '#00d8ff',
+
+  /* New */
+  dark: '#222',
+  react: '#61dafb',
+  reactLight: '#99ebfd',
+  reactDark: '#282c34',
+  supportDark: '#5d5d81',
+  supportLight: '#bfcde0',
 }
 
 /**
@@ -95,6 +104,7 @@ export const Tracking = {
   tight: '-0.05em',
   normal: '0',
   wide: '0.05em',
+  extraWide: '0.1em',
 }
 
 /**
@@ -115,7 +125,10 @@ export class Layout extends React.Component {
  */
 export const TypographicContext = styled.div({
   fontSize: '1rem',
-  lineHeight: beat(1),
+  'button': {
+    textAlign: 'left',
+    border: 'none',
+  },
   '> p, > blockquote, > ul, > ol, > dl, > table, > pre': {
     marginTop: beat(1),
     marginBottom: 0,
@@ -154,7 +167,7 @@ function injectGlobalStyles () {
       color: Colors.white,
       margin: 0,
       padding: 0,
-      background: Colors.grey800,
+      background: Colors.reactDark,
       [MediaQueries.md]: {
         fontSize: BASE_FONT_SIZE_MD,
       },

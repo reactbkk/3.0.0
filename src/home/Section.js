@@ -10,7 +10,7 @@ function Header ({ title }) {
         fontFamily: Fonts.display,
         fontWeight: 600,
         fontSize: fontSize(6),
-        marginBottom: beat(1.5),
+        marginBottom: beat(1),
       }}
     >
       {title}
@@ -24,7 +24,7 @@ export function Section ({ cssExtension, title, children }) {
       css={{
         minHeight: '100vh',
         width: '100%',
-        padding: '10vh 0',
+        padding: beat(2),
         boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',
@@ -34,7 +34,7 @@ export function Section ({ cssExtension, title, children }) {
         ...cssExtension,
       }}
     >
-      <Header title={title} />
+      {title && <Header title={title} />}
       {children}
     </section>
   )

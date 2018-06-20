@@ -7,11 +7,12 @@ import GitHubIcon from 'react-icons/lib/fa/github'
 import { beat, fontSize } from '../design'
 
 import { HeaderSection } from './HeaderSection'
-import { TicketsSection } from './TicketsSection'
+import { InfoSection } from './InfoSection'
+import { ScheduleSection } from './ScheduleSection'
 import { SpeakersSection } from './SpeakersSection'
 import { SponsorsSection } from './SponsorsSection'
 
-const SECTIONS = [HeaderSection, TicketsSection, SpeakersSection, SponsorsSection]
+const SECTIONS = [HeaderSection, InfoSection, SpeakersSection, ScheduleSection, SponsorsSection]
 
 export class HomePage extends React.Component {
   renderSocial = () => {
