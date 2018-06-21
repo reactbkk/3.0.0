@@ -4,7 +4,7 @@ import FacebookIcon from 'react-icons/lib/fa/facebook-official'
 import TwitterIcon from 'react-icons/lib/fa/twitter'
 import GitHubIcon from 'react-icons/lib/fa/github'
 
-import { beat, fontSize } from '../design'
+import { beat, Colors, fontSize, Tracking } from '../design'
 
 import { HeaderSection } from './HeaderSection'
 import { InfoSection } from './InfoSection'
@@ -25,10 +25,10 @@ export class HomePage extends React.Component {
     return (
       <div
         css={{
-          position: 'fixed',
-          right: beat(1),
-          bottom: beat(1),
           fontSize: fontSize(-5),
+          '&>*': {
+            marginTop: beat(0.25),
+          },
         }}
       >
         {renderSocialIcon('Facebook', <FacebookIcon />, 'https://www.facebook.com/reactbkk')}
@@ -37,6 +37,53 @@ export class HomePage extends React.Component {
       </div>
     )
   }
+
+  renderLine = () => (
+    <div css={{
+      width: 1,
+      margin: `${beat(0.75)} 0`,
+      flex: '1 1 auto',
+      background: Colors.white,
+    }} />
+  )
+
+  renderBriefInfo = () => (
+    <div css={{
+      width: beat(1.5),
+      margin: `${beat(0.25)} 0`,
+      letterSpacing: Tracking.wide,
+      fontSize: fontSize(-5),
+      textAlign: 'center',
+      border: `solid 1px ${Colors.white}`,
+      cursor: 'pointer',
+    }}>
+      <div css={{ padding: `${beat(0.5)} 0`, borderBottom: `solid 1px ${Colors.white}` }}>
+        June<br />24
+      </div>
+      <div css={{ padding: `${beat(0.5)} 0` }}>
+        @<br />EnCo
+      </div>
+    </div>
+  )
+
+  renderSideBar = () => (
+    <div css={{
+      position: 'fixed',
+      top: beat(1),
+      right: beat(1),
+      bottom: beat(1),
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    }}>
+      x
+      {this.renderLine()}
+      {this.renderBriefInfo()}
+      {this.renderLine()}
+      {this.renderSocial()}
+    </div>
+  )
 
   render () {
     return (
@@ -49,7 +96,7 @@ export class HomePage extends React.Component {
           <title>React Bangkok 3.0.0</title>
         </Helmet>
         {SECTIONS.map(Component => <Component key={Component} />)}
-        {this.renderSocial()}
+        {this.renderSideBar()}
       </div>
     )
   }

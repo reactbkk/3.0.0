@@ -1,6 +1,5 @@
 import _ from 'lodash'
 import React from 'react'
-import { Parallax } from 'react-scroll-parallax'
 
 import {
   Colors,
@@ -11,31 +10,8 @@ import {
   LOGOMARK,
 } from '../design'
 import { Section } from './Section'
+import { ParallaxElement } from './ParallaxElement'
 import { images } from '../sparkles-effect'
-
-function ParallaxElement ({
-  z, x, y, opacity, children,
-}) {
-  return (
-    <Parallax
-      offsetYMax={z * z * 1000}
-      offsetYMin={-z * z * 1000}
-      slowerScrollRate={z < 0}
-      css={{
-        // pointerEvents: 'none',
-        zIndex: Math.round(z),
-        ...(x && y ? {
-          position: 'absolute',
-          left: `${x}vw`,
-          top: `${y}vh`,
-        }: {}),
-        opacity: opacity || 1,
-      }}
-    >
-      {children}
-    </Parallax>
-  )
-}
 
 export class HeaderSection extends React.Component {
   renderReactLogo = (height = 100) => {
@@ -96,7 +72,6 @@ export class HeaderSection extends React.Component {
     <button css={{
       height: beat(4),
       width: beat(4),
-      // padding: `0 ${beat(0.5)}`,
       borderRadius: '100%',
       border: `solid 1px ${Colors.white}`,
       backgroundColor: 'transparent',
