@@ -125,10 +125,6 @@ export class Layout extends React.Component {
  */
 export const TypographicContext = styled.div({
   fontSize: '1rem',
-  'button': {
-    textAlign: 'left',
-    border: 'none',
-  },
   '> p, > blockquote, > ul, > ol, > dl, > table, > pre': {
     marginTop: beat(1),
     marginBottom: 0,

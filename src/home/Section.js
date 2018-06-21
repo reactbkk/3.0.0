@@ -24,13 +24,12 @@ export function Section ({ cssExtension, title, children }) {
       css={{
         minHeight: '100vh',
         width: '100%',
-        padding: beat(2),
+        padding: beat(1),
         boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        overflow: 'hidden',
         ...cssExtension,
       }}
     >

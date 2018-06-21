@@ -13,6 +13,30 @@ import {
 import { Section } from './Section'
 import { images } from '../sparkles-effect'
 
+function ParallaxElement ({
+  z, x, y, opacity, children,
+}) {
+  return (
+    <Parallax
+      offsetYMax={z * z * 1000}
+      offsetYMin={-z * z * 1000}
+      slowerScrollRate={z < 0}
+      css={{
+        // pointerEvents: 'none',
+        zIndex: Math.round(z),
+        ...(x && y ? {
+          position: 'absolute',
+          left: `${x}vw`,
+          top: `${y}vh`,
+        }: {}),
+        opacity: opacity || 1,
+      }}
+    >
+      {children}
+    </Parallax>
+  )
+}
+
 export class HeaderSection extends React.Component {
   renderReactLogo = (height = 100) => {
     // TODO: Dynamic scale
@@ -70,30 +94,36 @@ export class HeaderSection extends React.Component {
 
   renderSelfCheckInButton = () => (
     <button css={{
-      height: beat(5),
-      width: beat(5),
-      padding: beat(0.5),
+      height: beat(4),
+      width: beat(4),
+      // padding: `0 ${beat(0.5)}`,
       borderRadius: '100%',
-      backgroundColor: Colors.react,
-      color: Colors.reactDark,
+      border: `solid 1px ${Colors.white}`,
+      backgroundColor: 'transparent',
+      color: Colors.react,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      fontSize: fontSize(3),
+      alignItems: 'center',
+      fontSize: fontSize(2),
       fontWeight: 600,
       cursor: 'pointer',
       zIndex: 20,
+      transition: 'all ease 0.2s',
+      '&:hover': {
+        backgroundColor: Colors.white,
+        transform: 'scale(1.1)',
+      },
     }}>
-      <span css={{ fontSize: fontSize(5) }}>Self</span>
+      <span css={{ fontWeight: 400 }}>Self</span>
       <span>Check-in</span>
+      .
     </button>
   )
 
   renderScrollGuide = () => (
     <div
       css={{
-        position: 'absolute',
-        bottom: beat(1),
         letterSpacing: Tracking.wide,
         fontSize: fontSize(-5),
       }}
@@ -110,60 +140,56 @@ export class HeaderSection extends React.Component {
     </div>
   )
 
-  renderParticle = (index, type, z, css) => (
-    <Parallax
-      key={`particle-${index}`}
-      offsetYMax={z * z * 1000}
-      offsetYMin={-z * z * 1000}
-      slowerScrollRate={z < 0}
-      css={{
-        position: 'absolute',
-        pointerEvents: 'none',
-        zIndex: z,
-        ...css,
-      }}
-    >
-      <img width={beat(z * 10)} src={images[type]} alt="particle-1" css={{
-        filter: `blur(${z / 2}px)`,
-      }} />
-    </Parallax>
-  )
+  renderParticle = index => {
+    // TODO: Number of particles should depends on area
+    // TODO: Particle size distribution
+    // TODO: Filter out center zone
+    const x = Math.round(Math.random() * 100)
+    const y = Math.round(Math.random() * 100)
+    const z = Math.random() * x * y / 500
+    const opacity = Math.random() > 0.5 ? 1 : 0.5
+    const type = Math.round(Math.random() * (images.length - 1))
+
+    return (
+      <ParallaxElement key={`particle-${index}`} z={z} x={x} y={y} opacity={opacity}>
+        <img width={beat(z * 10)} src={images[type]} alt="particle-1" css={{
+          filter: `blur(${z / 2}px)`,
+        }} />
+      </ParallaxElement>
+    )
+  }
 
   render () {
     return (
       <Section
         cssExtension={{
+          justifyContent: 'space-between',
           fontFamily: Fonts.display,
           color: 'white',
         }}
       >
-        {this.renderReactLogo()}
-        {this.renderBangkok()}
         <div css={{
-          paddingBottom: beat(1),
-          letterSpacing: Tracking.wide,
-          fontSize: fontSize(14),
-          fontWeight: 600,
-          zIndex: 20,
-        }} >
-          3.0.0
+          flex: '1 1 auto',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          {this.renderReactLogo()}
+          {this.renderBangkok()}
+          <div css={{
+            paddingBottom: beat(1),
+            letterSpacing: Tracking.wide,
+            fontSize: fontSize(14),
+            fontWeight: 600,
+            zIndex: 5,
+          }} >
+            3.0.0
+          </div>
+          {this.renderSelfCheckInButton()}
         </div>
-        {this.renderSelfCheckInButton()}
         {this.renderScrollGuide()}
-        {_.times(50, _.stubFalse).map((v, index) => {
-          // TODO: Number of particles should depends on area
-          // TODO: Particle size distribution
-          // TODO: Filter out center zone
-          const x = 1 + Math.random() * 100
-          const y = 1 + Math.random() * 100
-          const opacity = Math.random() > 0.5 ? 1 : 0.5
-          const type = Math.round(Math.random() * (images.length - 1))
-          return this.renderParticle(index, type, Math.random() * x * y / 500, {
-            left: `${x}%`,
-            top: `${y}%`,
-            opacity,
-          })
-        })}
+        {_.times(50, _.stubFalse).map((v, index) => this.renderParticle(index))}
       </Section>
     )
   }

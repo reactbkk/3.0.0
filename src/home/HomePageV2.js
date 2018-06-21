@@ -40,11 +40,15 @@ export class HomePage extends React.Component {
 
   render () {
     return (
-      <div>
+      <div css={{
+        position: 'relative',
+        maxWidth: '100vw',
+        overflow: 'hidden',
+      }}>
         <Helmet>
           <title>React Bangkok 3.0.0</title>
         </Helmet>
-        <div>{SECTIONS.map(Component => <Component key={Component} />)}</div>
+        {SECTIONS.map(Component => <Component key={Component} />)}
         {this.renderSocial()}
       </div>
     )

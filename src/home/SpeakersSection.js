@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import React from 'react'
 import { SpeakersSectionMobile } from './SpeakersSectionMobile'
 import { SpeakersSectionDesktop } from './SpeakersSectionDesktop'
