@@ -31,11 +31,13 @@ export class SpeakersSection extends React.Component {
       <Section
         cssExtension={{
           margin: 'auto',
-          padding: 0,
           maxWidth: beat(42),
           flexDirection: 'row',
           flexWrap: 'wrap',
           alignContent: 'center',
+          [ViewType.tablet]: {
+            padding: beat(0.5),
+          },
           [ViewType.mobile]: {
             padding: 0,
           },

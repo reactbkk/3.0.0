@@ -31,7 +31,7 @@ export function Section ({ cssExtension, title, children }) {
         justifyContent: 'center',
         alignItems: 'center',
         [ViewType.mobile]: {
-          padding: `${beat(0.25)} ${beat(1)}`,
+          padding: `${beat(1)} ${beat(1)}`,
         },
         ...cssExtension,
       }}

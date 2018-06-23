@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { beat, Colors, fontSize, LOGOMARK } from '../design'
+import { beat, Colors, fontSize, ViewType, LOGOMARK } from '../design'
 import { Section } from './Section'
 import { ParallaxElement } from './ParallaxElement'
 
@@ -26,9 +26,16 @@ export class InfoSection extends React.Component {
           fontWeight: 600,
           transform: 'translate(-50%, -50%)',
           textAlign: 'center',
+          [ViewType.mobile]: {
+            fontSize: fontSize(2),
+          },
         }}>
           <img src={LOGOMARK} alt="react-logo" css={{
+            width: beat(8),
             paddingBottom: beat(2),
+            [ViewType.mobile]: {
+              width: beat(6),
+            },
           }} />
           <br />
           กลับมาอีกครั้งกับงาน Conference ประจำปี<br />
