@@ -116,7 +116,7 @@ export class CheckinDialog extends React.Component {
       }
       if (result.error === 'ETOKEN') {
         this.setState({
-          error: 'refCode',
+          error: 'totp',
           errorText: 'TOTP code is incorrect. You can find the TOTP code at the checkin kiosk.',
         })
         return
