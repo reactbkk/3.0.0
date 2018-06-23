@@ -1,4 +1,5 @@
 import { SPEAKERS } from './SpeakersData'
+import { SPONSORS } from './SponsorsData'
 
 export const SCHEDULE_DATA = [
   {
@@ -9,7 +10,7 @@ export const SCHEDULE_DATA = [
   {
     type: 'fund',
     title: '🎉 Opening',
-    sponsor: { name: 'PTT' },
+    sponsor: SPONSORS.PTT,
     startTime: new Date('2018-06-24T09:20:00'),
   },
   {
@@ -50,7 +51,7 @@ export const SCHEDULE_DATA = [
   {
     type: 'fund',
     title: '🍕 Lunch',
-    sponsor: { name: 'ODDS' },
+    sponsor: SPONSORS.ODDS,
     startTime: new Date('2018-06-24T12:00:00'),
   },
   {
@@ -132,7 +133,7 @@ export const SCHEDULE_DATA = [
   {
     type: 'fund',
     title: 'Dinner and After Party',
-    sponsor: { name: 'Taskworld' },
+    sponsor: SPONSORS.TASKWORLD,
     duration: 9999,
   },
 ]

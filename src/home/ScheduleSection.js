@@ -38,12 +38,13 @@ export class ScheduleSection extends React.Component {
     </div>
   )
 
-  renderContent = ({ content, pullRight }) => (
+  renderContent = ({ content, pullRight, column }) => (
     <div
       css={{
         padding: `${beat(0.25)} 0`,
         display: 'flex',
-        flexDirection: pullRight ? 'row-reverse' : 'row',
+        flexDirection: column ? 'column' : pullRight ? 'row-reverse' : 'row',
+        alignItems: column && pullRight ? 'flex-end' : 'flex-start',
         flex: '1 1 auto',
         flexBasis: '33%',
         textAlign: pullRight ? 'right' : 'left',
@@ -55,25 +56,41 @@ export class ScheduleSection extends React.Component {
   )
 
   renderPeriod = ({
-    key, startTime, content, pinAtCenter, pullRight,
+    key, startTime, content, pinAtCenter, column, pullRight,
   }) => (
     <div
       key={key}
       css={{
-        width: '100%',
-        display: 'flex',
-        flexDirection: pullRight ? 'row-reverse' : 'row',
-        justifyContent: 'space-between',
-      }}
-    >
+          width: '100%',
+          display: 'flex',
+          flexDirection: pullRight ? 'row-reverse' : 'row',
+          justifyContent: 'space-between',
+        }}
+      >
       {this.renderTime({ startTime, pullRight })}
       {this.renderTimeline({ pinAtCenter })}
-      {this.renderContent({ content, pullRight })}
+      {this.renderContent({ content, column, pullRight })}
     </div>
   )
 
-  renderPoweredBy = sponsor =>
-    sponsor ? <div key={`powered_by_${sponsor.name}`}>Powered by {sponsor.name}</div> : null
+  renderPoweredBy = sponsor => sponsor ? (
+    <div key={`powered_by_${sponsor.name}`} css={{
+      padding: `0 ${beat(1)}`,
+      display: 'flex',
+      alignItems: 'center',
+      color: Colors.bright,
+      fontSize: fontSize(-3),
+      fontWeight: 600,
+      letterSpacing: Tracking.wide,
+    }}>
+      Powered by
+      <img src={sponsor.logo} alt={sponsor.name} css={{
+        height: beat(1.5),
+        paddingLeft: beat(0.5),
+        maxWidth: beat(3),
+      }} />
+    </div>
+  ) : null
 
   renderFundamental = (index, { title, sponsor, startTime }) =>
     this.renderPeriod({
@@ -82,8 +99,7 @@ export class ScheduleSection extends React.Component {
         <div
           key="title"
           css={{
-            flex: '1 1 auto',
-            alignSelf: 'flex-start',
+            width: '100%',
             padding: `${beat(0.1)} ${beat(0.5)}`,
             maxWidth: beat(12),
             backgroundColor: Colors.reactComplementary,
@@ -99,6 +115,7 @@ export class ScheduleSection extends React.Component {
       ],
       startTime,
       pinAtCenter: true,
+      column: true,
       pullRight: index % 2 === 1,
     })
 
@@ -127,23 +144,12 @@ export class ScheduleSection extends React.Component {
       key: `${index}_${title}_by_${speaker.name}`,
       content: [
         this.renderSpeakerPhoto(speaker.photo),
-        <div
-          key="info"
-          css={{
-            maxWidth: beat(12),
-          }}
-        >
+        <div key="info" css={{ maxWidth: beat(12) }} >
           <span css={{ fontSize: fontSize(0), fontWeight: 600 }}>{title}</span>
           <br />
           <span css={{ fontSize: fontSize(-2), color: Colors.react }}>by {speaker.name}</span>
           <br />
-          <div
-            css={{
-              marginTop: beat(0.25),
-              fontSize: fontSize(-4),
-              color: Colors.bright,
-            }}
-          >
+          <div css={{ marginTop: beat(0.25), fontSize: fontSize(-4), color: Colors.bright }}>
             {description}
           </div>
         </div>,
