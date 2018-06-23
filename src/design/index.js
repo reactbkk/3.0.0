@@ -56,6 +56,7 @@ export const Colors = {
   brightest: '#fff',
   bright: '#dedede',
   darkest: '#222',
+  dark: '#343334',
   react: '#61dafb',
   // react: '#00badc', // Try
   reactBright: '#99ebfd',

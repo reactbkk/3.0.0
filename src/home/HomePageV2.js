@@ -11,7 +11,6 @@ import { HeaderSection } from './HeaderSection'
 import { InfoSection } from './InfoSection'
 import { ScheduleSection } from './ScheduleSection'
 import { SpeakersSection } from './SpeakersSection'
-import { VenueSection } from './VenueSection'
 import { SponsorsSection } from './SponsorsSection'
 import { withViewType, DESKTOP } from './withViewType'
 
@@ -108,7 +107,6 @@ export const HomePage = enhance(class HomePage extends React.Component {
         <InfoSection />
         <SpeakersSection />
         <ScheduleSection viewType={this.props.viewType} />
-        <VenueSection />
         <SponsorsSection />
         {this.props.viewType === DESKTOP && this.renderSideBar()}
       </div>

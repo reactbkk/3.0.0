@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
-import { beat } from '../design'
+import { beat, Colors, fontSize } from '../design'
 
-import { PLATINUM_SPONSORS, GOLD_SPONSORS, SILVER_SPONSORS } from './SponsorsData'
+import { PLATINUM_SPONSORS, GOLD_SPONSORS, SILVER_SPONSORS, INDIVIDUAL_SPONSORS } from './SponsorsData'
 
+const HEARTS = ['❤️', '🧡', '💛', '💚', '💙', '💜']
 export class SponsorsSectionContent extends React.Component {
   renderSponsor = (sponsor, size) => (
     <a
@@ -11,20 +12,21 @@ export class SponsorsSectionContent extends React.Component {
       title={sponsor.title}
       target="_blank"
       css={{
+        height: beat(size * 2),
+        width: beat(size * 3),
+        margin: 1,
         padding: `${beat(0.25)} ${beat(1)}`,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         cursor: 'pointer',
+        backgroundColor: Colors.dark,
       }}
     >
       <img
         css={{
-          maxHeight: beat(size * 1.5),
-          maxWidth: beat(size * 3),
-          transition: 'all ease 0.2s',
-          opacity: 0.9,
-          '&:hover': {
-            opacity: 1,
-            transform: 'scale(1.05)',
-          },
+          maxHeight: '100%',
+          maxWidth: '100%',
         }}
         src={sponsor.logo}
         alt=""
@@ -47,12 +49,24 @@ export class SponsorsSectionContent extends React.Component {
     </div>
   )
 
-  render () {
+  render() {
     return (
       <Fragment>
         {this.renderSponsorGroup(PLATINUM_SPONSORS, 3)}
         {this.renderSponsorGroup(GOLD_SPONSORS, 1.5)}
         {this.renderSponsorGroup(SILVER_SPONSORS, 1)}
+        <ul css={{
+          padding: 0,
+          fontSize: fontSize(-5),
+          textAlign: 'center',
+          listStyleType: 'none',
+        }}>
+          {INDIVIDUAL_SPONSORS.map((sponsorName, index) => (
+            <div css={{ margin: beat(0.25) }}>
+              {HEARTS[index % (HEARTS.length)]} {sponsorName} {HEARTS[index % (HEARTS.length)]}
+            </div>
+          ))}
+        </ul>
       </Fragment>
     )
   }

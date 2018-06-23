@@ -109,3 +109,25 @@ export const SILVER_SPONSORS = [
   SPONSORS.EVENT_POP,
   SPONSORS.THAI_PROGRAMMER,
 ]
+
+export const INDIVIDUAL_SPONSORS = [
+  'nuttaya chutibuat',
+  'คณาวุฒิ เนตรพล',
+  'Thinnakrit Knoo-Aksorn',
+  'Pk',
+  'Kanathip Chankitisakoon',
+  'ลลิดา คำโมง',
+  'Nattaphat Laoharawee',
+  'GAMER.in.TH ( GAMER Co., Ltd. )',
+  'TOPTIER IT MANPOWER CO.,LTD.',
+  'Donkung',
+  'Weerapat Poosri',
+  'Pavinvat Vongton',
+  '20Scoops',
+  'adisak chaiyakul',
+  'https://devahoy.com',
+  '@nuttt',
+  'WhatTheFar',
+  'Gucode',
+  '่jamjann-',
+]

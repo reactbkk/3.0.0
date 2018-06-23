@@ -115,7 +115,7 @@ export const SCHEDULE_DATA = [
   {
     type: 'session',
     title: 'State Management in React Apps',
-    description: 'Redux, MobX, Flux pattern หรือ pure React? เรามีเครื่องมือจัดการ state ใน app มากมายให้เลือก ใน talk นี้ <br />เราจะมาเจาะลึกกันว่าทำไมบางคนชอบ Redux ทำไมบางคนชอบ MobX ทำไม Dan ถึงบอกว่าอย่ารีบใช้อะไรมากกว่า pure React​ ตกลงการใช้มันเป็นเรื่องความชอบส่วนบุคคล หรือเรื่องเลือกของให้เหมาะกับงานกันแน่นะ เราจะเจาะประเด็นนี้กัน',
+    description: 'Redux, MobX, Flux pattern หรือ pure React? เรามีเครื่องมือจัดการ state ใน app มากมายให้เลือก ใน talk นี้ เราจะมาเจาะลึกกันว่าทำไมบางคนชอบ Redux ทำไมบางคนชอบ MobX ทำไม Dan ถึงบอกว่าอย่ารีบใช้อะไรมากกว่า pure React​ ตกลงการใช้มันเป็นเรื่องความชอบส่วนบุคคล หรือเรื่องเลือกของให้เหมาะกับงานกันแน่นะ เราจะเจาะประเด็นนี้กัน',
     speaker: SPEAKERS.CHRIS,
     duration: 30,
   },
