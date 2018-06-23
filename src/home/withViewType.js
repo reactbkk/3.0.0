@@ -1,5 +1,5 @@
 import React from 'react'
-import { XS_MOBILE_BREAKPOINT, MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from '../design'
+import { MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from '../design'
 
 export const XS_MOBILE = 'xs-mobile'
 export const MOBILE = 'mobile'
@@ -12,9 +12,7 @@ export function withViewType (BaseComponent) {
 
     checkViewport = () => {
       const innerWidth = window.innerWidth
-      if (innerWidth <= XS_MOBILE_BREAKPOINT) {
-        this.setState({ viewType: XS_MOBILE, innerWidth })
-      } else if (innerWidth <= MOBILE_BREAKPOINT) {
+      if (innerWidth <= MOBILE_BREAKPOINT) {
         this.setState({ viewType: MOBILE, innerWidth })
       } else if (innerWidth <= TABLET_BREAKPOINT) {
         this.setState({ viewType: TABLET, innerWidth })

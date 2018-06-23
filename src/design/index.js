@@ -84,7 +84,7 @@ export const TABLET_BREAKPOINT = 1023
 
 export const ViewType = {
   xsMobile: `@media (max-width: ${XS_MOBILE_BREAKPOINT}px)`,
-  mobile: `@media (min-width: ${XS_MOBILE_BREAKPOINT + 1}px) and (max-width: ${MOBILE_BREAKPOINT}px)`,
+  mobile: `@media (max-width: ${MOBILE_BREAKPOINT}px)`,
   tablet: `@media (min-width: ${MOBILE_BREAKPOINT + 1}px) and (max-width: ${TABLET_BREAKPOINT}px)`,
 }
 

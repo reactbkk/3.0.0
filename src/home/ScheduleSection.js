@@ -5,7 +5,7 @@ import { beat, Colors, Fonts, fontSize, Tracking, ViewType, PLUS } from '../desi
 
 import { Section } from './Section'
 import { SCHEDULE_DATA } from './ScheduleData'
-import { DESKTOP, MOBILE } from './withViewType'
+import { DESKTOP, TABLET, MOBILE } from './withViewType'
 
 const HEADER_SIZE = 1
 export class ScheduleSection extends React.Component {
@@ -38,11 +38,13 @@ export class ScheduleSection extends React.Component {
   renderTime = ({ startTime, pullRight }) => (
     <div
       css={{
-        width: beat(1),
+        width: this.props.viewType === MOBILE ? 'auto' : beat(1),
         marginTop: beat(HEADER_SIZE / 2),
+        marginBottom: this.props.viewType === MOBILE ? beat(HEADER_SIZE / 2) : 0,
         display: 'flex',
         justifyContent: pullRight ? 'flex-start' : 'flex-end',
-        flex: this.props.viewType === DESKTOP ? '1 1 33%' : '0 0 16%',
+        alignSelf: 'flex-start',
+        flex: this.props.viewType === DESKTOP ? '1 1 33%' : this.props.viewType === TABLET ? '0 0 16%' : '1 1 auto',
         fontFamily: Fonts.display,
         fontSize: fontSize(-3),
       }}
@@ -73,7 +75,8 @@ export class ScheduleSection extends React.Component {
 
   renderPeriod = ({
     key, startTime, content, pinAtCenter, column, pullRight,
-  }) => (
+  }) => [
+    startTime && this.props.viewType === MOBILE && this.renderTime({ startTime }),
     <div
       key={key}
       css={{
@@ -85,8 +88,8 @@ export class ScheduleSection extends React.Component {
       {this.props.viewType !== MOBILE && this.renderTime({ startTime, pullRight })}
       {this.renderTimeline({ pinAtCenter })}
       {this.renderContent({ content, column, pullRight })}
-    </div>
-  )
+    </div>,
+  ]
 
   renderPoweredBy = sponsor => sponsor ? (
     <div key={`powered_by_${sponsor.name}`} css={{
