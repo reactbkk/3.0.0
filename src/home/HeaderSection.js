@@ -135,7 +135,6 @@ export class HeaderSection extends React.Component {
   )
 
   renderParticle = index => {
-    // TODO: Number of particles should depends on area
     const x = Math.round(((Math.random() + Math.random() + 1) % 2) * 50)
     const y = Math.round(Math.random() * 100)
     const z = Math.random() * x * y / 800
