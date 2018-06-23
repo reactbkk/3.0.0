@@ -4,9 +4,6 @@ import styled from 'react-emotion'
 
 import LOGO from './logo.svg'
 import LOGOMARK from './logomark.svg'
-import REACT_LOGO from './react.svg'
-import BANGKOK_LOGO from './bangkok.svg'
-import BACKGROUND from './evan-krause-443485-unsplash-1980w.jpg'
 import PARTICLE_1A from './particle_1a.svg'
 import PARTICLE_1B from './particle_1b.svg'
 import PARTICLE_2A from './particle_2a.svg'
@@ -18,7 +15,7 @@ import PARTICLE_4A from './particle_4a.svg'
 import PARTICLE_5A from './particle_5a.svg'
 import PARTICLE_5B from './particle_5b.svg'
 
-export { LOGO, LOGOMARK, REACT_LOGO, BANGKOK_LOGO, BACKGROUND }
+export { LOGO, LOGOMARK }
 export const PARTICLES = [
   PARTICLE_1A,
   PARTICLE_1A,
