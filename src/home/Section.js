@@ -24,7 +24,7 @@ export function Section ({ cssExtension, title, children }) {
       css={{
         minHeight: '100vh',
         width: '100%',
-        padding: beat(1),
+        padding: `${beat(1)} ${beat(3.5)}`,
         boxSizing: 'border-box',
         display: 'flex',
         flexDirection: 'column',

@@ -9,7 +9,8 @@ import WebsiteIcon from 'react-icons/lib/fa/chain'
 import { SPEAKERS } from './SpeakersData'
 import { Section } from './Section'
 import { Colors, Fonts, fontSize, beat } from '../design'
-import { ActionButton } from './ActionButton'
+// import { ActionButton } from './ActionButton'
+// import { ParallaxElement } from './ParallaxElement'
 
 export class SpeakersSectionDesktop extends React.Component {
   getIcon = type => {
@@ -50,7 +51,7 @@ export class SpeakersSectionDesktop extends React.Component {
         {_.map(links, (link, type) => {
           const Icon = this.getIcon(type)
           return (
-            <a href={link}>
+            <a key={`${type}_${link}`} href={link}>
               <div
                 css={{
                   width: beat(2),
@@ -58,7 +59,7 @@ export class SpeakersSectionDesktop extends React.Component {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  background: Colors.white,
+                  background: Colors.brightest,
                   color: Colors.grey800,
                   fontSize: type === 'github' ? fontSize(5) : fontSize(4),
                   transition: 'all ease 0.2s',
@@ -88,16 +89,13 @@ export class SpeakersSectionDesktop extends React.Component {
   renderSpeakerPhoto = photo => (
     <div
       css={{
-        width: beat(4),
+        width: beat(6),
         background: `
-          linear-gradient(rgba(0, 88, 255, 0.5) 45%, rgba(0, 216, 255, 0.75)),
-          url(${photo}) no-repeat center
+          url(${photo}) no-repeat center,
+          linear-gradient(rgba(0, 88, 255, 0.9), rgba(0, 216, 255, 1) 150%)
         `,
         backgroundSize: 'cover',
-        backgroundBlendMode: 'hard-light',
-        borderTopLeftRadius: beat(0.25),
-        borderBottomRightRadius: beat(0.25),
-        boxShadow: `${beat(0.75)} ${beat(0.5)} 0 1px ${Colors.grey900}`,
+        backgroundBlendMode: 'overlay',
       }}
     />
   )
@@ -106,9 +104,7 @@ export class SpeakersSectionDesktop extends React.Component {
     <div
       css={{
         position: 'absolute',
-        left: 0,
         bottom: beat(0.25),
-        width: beat(6),
         fontFamily: Fonts.display,
         lineHeight: 1.2,
         mixBlendMode: 'difference',
@@ -122,69 +118,55 @@ export class SpeakersSectionDesktop extends React.Component {
   renderSpeaker = speaker => (
     <div
       key={speaker.name}
-      className="speaker-item"
       css={{
-        position: 'relative',
-        height: beat(6),
         width: beat(7),
-        marginBottom: beat(0.25),
-        display: 'flex',
-        justifyContent: 'center',
-        textAlign: 'right',
-        '&:nth-child(1)': {
-          marginTop: beat(0),
-        },
-        '&:nth-child(2)': {
-          marginTop: beat(-2),
-        },
-        '&:nth-child(3)': {
-          marginTop: beat(-4),
-        },
-        '&:only-child': {
-          marginTop: beat(-2),
-        },
-        transition: 'all ease 0.2s',
-        '&:hover, &:focus-within': {
-          width: beat(10),
-          textAlign: 'left',
-        },
+        height: beat(7),
+        background: `
+            url(${speaker.photo}) no-repeat center,
+            ${Colors.dark}
+          `,
+        backgroundSize: 'cover',
+        backgroundBlendMode: 'luminosity',
       }}
-    >
-      {this.renderSpeakerPhoto(speaker.photo)}
-      {this.renderSpeakerInfo(speaker.name, speaker.from)}
-      {this.renderLinks(speaker.name, speaker.links)}
-    </div>
+    />
   )
+  // linear-gradient(rgba(0, 88, 255, 0.9), rgba(0, 216, 255, 1) 150%)
 
   render () {
     return (
       <Section
-        title="Speakers"
         cssExtension={{
-          background: `linear-gradient(${Colors.grey800}, ${Colors.grey900})`,
+          margin: 'auto',
+          maxWidth: beat(42),
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          alignContent: 'center',
+          // background: 'rgba(250, 100, 100, 0.1)',
         }}
       >
-        <div css={{ paddingTop: beat(4) }}>
-          {sliceArrayRepeatedly(SPEAKERS, 3).map((row, i) => (
-            <div key={i} css={{ display: 'flex', justifyContent: 'center' }}>
-              {row.map(speaker => this.renderSpeaker(speaker))}
-            </div>
-          ))}
-        </div>
-        <div css={{ textAlign: 'center', marginTop: beat(1) }}>
-          <ActionButton href="https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199">
-            Speakers introduction
-          </ActionButton>
-        </div>
+        {_.values(SPEAKERS).map(this.renderSpeaker)}
       </Section>
     )
   }
 }
 
-function sliceArrayRepeatedly (a, n) {
-  const out = []
-  for (let i = 0; i < a.length; i += n) {
-    out.push(a.slice(i, i + n))
-  }
-  return out
-}
+// <div css={{ paddingTop: beat(4) }}>
+//   {sliceArrayRepeatedly(SPEAKERS, 4).map((row, i) => (
+//     <div key={i} css={{ display: 'flex', justifyContent: 'center' }}>
+//       {row.map(speaker => this.renderSpeaker(speaker))}
+//     </div>
+//   ))}
+// </div>
+// <div css={{ textAlign: 'center', marginTop: beat(1) }}>
+//   <ActionButton href="https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199">
+//     Speakers introduction
+//   </ActionButton>
+// </div>
+
+// function sliceArrayRepeatedly (a, n) {
+//   const out = []
+//   for (let i = 0; i < a.length; i += n) {
+//     out.push(a.slice(i, i + n))
+//   }
+//   return out
+// }

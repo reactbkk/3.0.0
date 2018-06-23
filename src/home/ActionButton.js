@@ -27,7 +27,7 @@ export function ActionButton ({
         border: `1px solid ${primary ? Colors.reactBlue : Colors.grey600}`,
         borderTopLeftRadius: beat(0.25),
         borderBottomRightRadius: beat(0.25),
-        color: primary ? Colors.white : Colors.grey200,
+        color: primary ? Colors.brightest : Colors.grey200,
         fontSize: fontSize(-2),
         fontWeight: 600,
         opacity: disabled ? 0.25 : 1,

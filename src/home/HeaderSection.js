@@ -46,7 +46,7 @@ export class HeaderSection extends React.Component {
               cx="92%"
               cy="200%"
               r={height * 4.5 - height / 4.5 * (index + 1)}
-              stroke={Colors.reactLight}
+              stroke={Colors.reactBright}
               strokeWidth={height / 20 + height / 100 * (index + 1)}
               fill="none"
             />
@@ -73,7 +73,7 @@ export class HeaderSection extends React.Component {
       height: beat(4),
       width: beat(4),
       borderRadius: '100%',
-      border: `solid 1px ${Colors.white}`,
+      border: `solid 1px ${Colors.brightest}`,
       backgroundColor: 'transparent',
       color: Colors.react,
       display: 'flex',
@@ -86,7 +86,7 @@ export class HeaderSection extends React.Component {
       zIndex: 20,
       transition: 'all ease 0.2s',
       '&:hover': {
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.brightest,
         transform: 'scale(1.1)',
       },
     }}>
@@ -108,7 +108,7 @@ export class HeaderSection extends React.Component {
           width: 1,
           height: beat(3),
           margin: `${beat(1)} auto`,
-          background: Colors.white,
+          background: Colors.brightest,
         }}
       />
       S C R O L L

@@ -1,7 +1,7 @@
 import React from 'react'
-import { beat } from '../design'
+import { beat, Colors } from '../design'
 
-import Section from './Section'
+import { Section } from './Section'
 import AppMan from './sponsors/appman.svg'
 import EventPop from './sponsors/eventpop.svg'
 import Metromerce from './sponsors/metromerce.svg'
@@ -142,7 +142,7 @@ export class SponsorsSection extends React.Component {
 
   render () {
     return (
-      <Section title="Sponsors" cssExtension={{ background: 'black' }}>
+      <Section title="Sponsors" cssExtension={{ background: Colors.darkest }}>
         {this.renderSponsorGroup(PLATINUM_SPONSORS, 3)}
         {this.renderSponsorGroup(GOLD_SPONSORS, 1.5)}
         {this.renderSponsorGroup(SILVER_SPONSORS, 1)}

@@ -36,7 +36,7 @@ export class SpeakersSectionMobile extends React.Component {
       {_.map(links, (link, type) => {
         const Icon = this.getIcon(type)
         return (
-          <a href={link}>
+          <a key={`${type}_${link}`} href={link}>
             <div
               css={{
                 width: beat(1.5),
@@ -45,7 +45,7 @@ export class SpeakersSectionMobile extends React.Component {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                background: Colors.white,
+                background: Colors.brightest,
                 color: Colors.grey800,
                 fontSize: type === 'github' ? fontSize(1.5) : fontSize(1),
               }}
@@ -121,7 +121,7 @@ export class SpeakersSectionMobile extends React.Component {
           paddingBottom: 0,
         }}
       >
-        {SPEAKERS.map(speaker => this.renderSpeaker(speaker))}
+        {_.values(SPEAKERS).map(speaker => this.renderSpeaker(speaker))}
         <div css={{ textAlign: 'center', marginTop: beat(1), marginBottom: beat(1) }}>
           <ActionButton href="https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199">
             Speakers introduction

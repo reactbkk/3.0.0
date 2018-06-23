@@ -218,7 +218,7 @@ function ActionButton ({
         display: 'inline-block',
         border: `1px solid ${primary ? Colors.reactBlue : Colors.grey700}`,
         background: primary ? Colors.reactBlue : Colors.grey800,
-        color: primary ? Colors.white : Colors.reactBlue,
+        color: primary ? Colors.brightest : Colors.reactBlue,
         fontWeight: primary ? 600 : 400,
         opacity: disabled ? 0.25 : 1,
         [MediaQueries.md]: {

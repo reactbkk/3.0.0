@@ -10,9 +10,17 @@ import { HeaderSection } from './HeaderSection'
 import { InfoSection } from './InfoSection'
 import { ScheduleSection } from './ScheduleSection'
 import { SpeakersSection } from './SpeakersSection'
+import { VenueSection } from './VenueSection'
 import { SponsorsSection } from './SponsorsSection'
 
-const SECTIONS = [HeaderSection, InfoSection, SpeakersSection, ScheduleSection, SponsorsSection]
+const SECTIONS = [
+  HeaderSection,
+  InfoSection,
+  SpeakersSection,
+  ScheduleSection,
+  VenueSection,
+  SponsorsSection,
+]
 
 export class HomePage extends React.Component {
   renderSocial = () => {
@@ -43,7 +51,7 @@ export class HomePage extends React.Component {
       width: 1,
       margin: `${beat(0.75)} 0`,
       flex: '1 1 auto',
-      background: Colors.white,
+      background: Colors.brightest,
     }} />
   )
 
@@ -54,10 +62,10 @@ export class HomePage extends React.Component {
       letterSpacing: Tracking.wide,
       fontSize: fontSize(-5),
       textAlign: 'center',
-      border: `solid 1px ${Colors.white}`,
+      border: `solid 1px ${Colors.brightest}`,
       cursor: 'pointer',
     }}>
-      <div css={{ padding: `${beat(0.5)} 0`, borderBottom: `solid 1px ${Colors.white}` }}>
+      <div css={{ padding: `${beat(0.5)} 0`, borderBottom: `solid 1px ${Colors.brightest}` }}>
         June<br />24
       </div>
       <div css={{ padding: `${beat(0.5)} 0` }}>
@@ -85,7 +93,7 @@ export class HomePage extends React.Component {
     </div>
   )
 
-  render () {
+  render() {
     return (
       <div css={{
         position: 'relative',

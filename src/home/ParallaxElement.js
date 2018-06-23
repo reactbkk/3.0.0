@@ -8,17 +8,17 @@ export function ParallaxElement ({
     <Parallax
       offsetYMax={z * z * 1000}
       offsetYMin={-z * z * 1000}
-      // slowerScrollRate={z < 0}
+      slowerScrollRate={z < 0}
       css={{
         // pointerEvents: 'none',
-        zIndex: Math.round(z),
+        zIndex: Math.round(z) + 100,
         ...(x && y ? {
           position: 'absolute',
           left: `${x}vw`,
           top: `${y}vh`,
         }: {}),
         opacity: opacity || 1,
-        ...cssExtension
+        ...cssExtension,
       }}
     >
       {children}

@@ -22,8 +22,8 @@ export const Fonts = {
  */
 export const Colors = {
   /* Old */
-  white: 'white',
-  black: 'black',
+  // white: 'white',
+  // black: 'black',
   grey900: '#222',
   grey800: '#333',
   grey700: '#444',
@@ -37,12 +37,16 @@ export const Colors = {
   reactBlue: '#00d8ff',
 
   /* New */
-  dark: '#222',
+  brightest: '#fff',
+  bright: '#dedede',
+  darkest: '#222',
+  dark: '#dedede',
   react: '#61dafb',
-  reactLight: '#99ebfd',
+  reactBright: '#99ebfd',
   reactDark: '#282c34',
+  reactComplementary: '#ff8a19',
   supportDark: '#5d5d81',
-  supportLight: '#bfcde0',
+  supportBright: '#bfcde0',
 }
 
 /**
@@ -160,17 +164,17 @@ function injectGlobalStyles () {
       fontFamily: Fonts.body,
       fontWeight: 300,
       fontSize: BASE_FONT_SIZE_XS,
-      color: Colors.white,
+      color: Colors.brightest,
       margin: 0,
       padding: 0,
-      background: Colors.reactDark,
+      background: `linear-gradient(${Colors.reactDark}, ${Colors.reactBright})`,
       [MediaQueries.md]: {
         fontSize: BASE_FONT_SIZE_MD,
       },
     },
     a: {
       textDecoration: 'none',
-      color: Colors.white,
+      color: Colors.brightest,
     },
     'button, input, textarea': {
       fontFamily: 'inherit',
