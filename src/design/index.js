@@ -2,12 +2,38 @@ import React from 'react'
 import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
 
+import LOGO from './logo.svg'
 import LOGOMARK from './logomark.svg'
 import REACT_LOGO from './react.svg'
 import BANGKOK_LOGO from './bangkok.svg'
 import BACKGROUND from './evan-krause-443485-unsplash-1980w.jpg'
+import PARTICLE_1A from './particle_1a.svg'
+import PARTICLE_1B from './particle_1b.svg'
+import PARTICLE_2A from './particle_2a.svg'
+import PARTICLE_2B from './particle_2b.svg'
+import PARTICLE_3A from './particle_3a.svg'
+// import PARTICLE_3B from './particle_3b.svg'
+import PARTICLE_4A from './particle_4a.svg'
+// import PARTICLE_4B from './particle_4b.svg'
+import PARTICLE_5A from './particle_5a.svg'
+import PARTICLE_5B from './particle_5b.svg'
 
-export { LOGOMARK, REACT_LOGO, BANGKOK_LOGO, BACKGROUND }
+export { LOGO, LOGOMARK, REACT_LOGO, BANGKOK_LOGO, BACKGROUND }
+export const PARTICLES = [
+  PARTICLE_1A,
+  PARTICLE_1A,
+  PARTICLE_1B,
+  PARTICLE_2A,
+  PARTICLE_2A,
+  PARTICLE_2B,
+  PARTICLE_3A,
+  // PARTICLE_3B,
+  PARTICLE_4A,
+  // PARTICLE_4B,
+  PARTICLE_5A,
+  PARTICLE_5A,
+  PARTICLE_5B,
+]
 
 /**
  * Usable fonts in this website.
@@ -41,7 +67,8 @@ export const Colors = {
   bright: '#dedede',
   darkest: '#222',
   dark: '#dedede',
-  react: '#61dafb',
+  // react: '#61dafb',
+  react: '#00badc', // Try
   reactBright: '#99ebfd',
   reactDark: '#282c34',
   reactComplementary: '#ff8a19',
@@ -167,7 +194,7 @@ function injectGlobalStyles () {
       color: Colors.brightest,
       margin: 0,
       padding: 0,
-      background: `linear-gradient(${Colors.reactDark}, ${Colors.reactBright})`,
+      background: `linear-gradient(${Colors.darkest}, ${Colors.reactBright})`,
       [MediaQueries.md]: {
         fontSize: BASE_FONT_SIZE_MD,
       },

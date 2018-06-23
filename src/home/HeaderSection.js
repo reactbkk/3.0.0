@@ -1,5 +1,6 @@
 import _ from 'lodash'
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import {
   Colors,
@@ -7,24 +8,33 @@ import {
   fontSize,
   beat,
   Tracking,
-  LOGOMARK,
+  LOGO,
+  PARTICLES,
 } from '../design'
 import { Section } from './Section'
 import { ParallaxElement } from './ParallaxElement'
-import { images } from '../sparkles-effect'
+import { withViewType } from './withViewType'
 
-export class HeaderSection extends React.Component {
+const LINE_SPACING = 30
+
+const enhance = withViewType
+
+export const HeaderSection = enhance(class HeaderSection extends React.Component {
+  static propTypes = {
+    innerWidth: PropTypes.number,
+  }
+
   renderReactLogo = (height = 100) => {
     // TODO: Dynamic scale
-    const width = (height * (761 - 20 * 5) / 200) + 20 * 5
+    const width = (height * (761 - LINE_SPACING * 5) / 200) + LINE_SPACING * 5
     return (
       <svg width={width} height={height} css={{
         height,
         display: 'block',
         fontFamily: Fonts.display,
         fontSize: height,
-        letterSpacing: '20px',
-        fontWeight: 600,
+        letterSpacing: `${LINE_SPACING}px`,
+        fontWeight: 800,
         zIndex: 20,
       }}>
         <defs>
@@ -32,7 +42,7 @@ export class HeaderSection extends React.Component {
             <text x="50%" y="50%" mask="url(#logo)" fill="none" textAnchor="middle" alignmentBaseline="middle">
               RE<tspan fill="white" alignmentBaseline="middle">A</tspan>CT
             </text>
-            <image x="14%" y="20%" height={height * 2.4} xlinkHref={LOGOMARK} />
+            <image x="16%" y="20%" height={height * 2.4} xlinkHref={LOGO} />
             <text x="50%" y="50%" mask="url(#logo)" fill="white" textAnchor="middle" alignmentBaseline="middle">
               RE<tspan fill="none" alignmentBaseline="middle">A</tspan>CT
             </text>
@@ -43,9 +53,9 @@ export class HeaderSection extends React.Component {
           {_.times(15, _.stubFalse).map((v, index) => (
             <circle
               key={`circle-${index}`}
-              cx="92%"
+              cx="95%"
               cy="200%"
-              r={height * 4.5 - height / 4.5 * (index + 1)}
+              r={height * 5 - height / 4 * (index + 1)}
               stroke={Colors.reactBright}
               strokeWidth={height / 20 + height / 100 * (index + 1)}
               fill="none"
@@ -62,9 +72,21 @@ export class HeaderSection extends React.Component {
       // TODO: Make global
       letterSpacing: '0.5rem',
       fontSize: fontSize(7),
-      fontWeight: 800,
+      fontWeight: 600,
     }} >
       BANGKOK
+    </div>
+  )
+
+  renderThreePointZeroPointZero = () => (
+    <div css={{
+      paddingBottom: beat(1),
+      letterSpacing: Tracking.wide,
+      fontSize: fontSize(14),
+      fontWeight: 600,
+      zIndex: 5,
+    }} >
+      3.0.0
     </div>
   )
 
@@ -117,17 +139,15 @@ export class HeaderSection extends React.Component {
 
   renderParticle = index => {
     // TODO: Number of particles should depends on area
-    // TODO: Particle size distribution
-    // TODO: Filter out center zone
-    const x = Math.round(Math.random() * 100)
+    const x = Math.round(((Math.random() + Math.random() + 1) % 2) * 50)
     const y = Math.round(Math.random() * 100)
-    const z = Math.random() * x * y / 500
+    const z = Math.random() * x * y / 800
     const opacity = Math.random() > 0.5 ? 1 : 0.5
-    const type = Math.round(Math.random() * (images.length - 1))
+    const type = Math.round(Math.random() * (PARTICLES.length - 1))
 
     return (
       <ParallaxElement key={`particle-${index}`} z={z} x={x} y={y} opacity={opacity}>
-        <img width={beat(z * 10)} src={images[type]} alt="particle-1" css={{
+        <img width={beat(z * 10)} src={PARTICLES[type]} alt="particle-1" css={{
           filter: `blur(${z / 2}px)`,
         }} />
       </ParallaxElement>
@@ -135,6 +155,8 @@ export class HeaderSection extends React.Component {
   }
 
   render () {
+    console.log(this.props.innerWidth)
+
     return (
       <Section
         cssExtension={{
@@ -152,20 +174,12 @@ export class HeaderSection extends React.Component {
         }}>
           {this.renderReactLogo()}
           {this.renderBangkok()}
-          <div css={{
-            paddingBottom: beat(1),
-            letterSpacing: Tracking.wide,
-            fontSize: fontSize(14),
-            fontWeight: 600,
-            zIndex: 5,
-          }} >
-            3.0.0
-          </div>
+          {this.renderThreePointZeroPointZero()}
           {this.renderSelfCheckInButton()}
         </div>
         {this.renderScrollGuide()}
-        {_.times(50, _.stubFalse).map((v, index) => this.renderParticle(index))}
+        {_.times(this.props.innerWidth / 30, _.stubFalse).map((v, index) => this.renderParticle(index))}
       </Section>
     )
   }
-}
+})
