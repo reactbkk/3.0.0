@@ -49,32 +49,18 @@ export const Fonts = {
  */
 export const Colors = {
   /* Old */
-  // white: 'white',
-  // black: 'black',
-  grey900: '#222',
-  grey800: '#333',
-  grey700: '#444',
   grey600: '#555',
-  grey500: '#666',
-  grey400: '#888',
-  grey300: '#aaa',
-  grey200: '#bbb',
-  grey100: '#ddd',
-  grey50: '#eee',
   reactBlue: '#00d8ff',
 
   /* New */
   brightest: '#fff',
   bright: '#dedede',
   darkest: '#222',
-  dark: '#dedede',
-  // react: '#61dafb',
-  react: '#00badc', // Try
+  react: '#61dafb',
+  // react: '#00badc', // Try
   reactBright: '#99ebfd',
   reactDark: '#282c34',
   reactComplementary: '#ff8a19',
-  supportDark: '#5d5d81',
-  supportBright: '#bfcde0',
 }
 
 /**
@@ -97,8 +83,8 @@ export const TABLET_BREAKPOINT = 1023
 
 export const ViewType = {
   xsMobile: `@media (max-width: ${XS_MOBILE_BREAKPOINT}px)`,
-  mobile: `@media (max-width: ${MOBILE_BREAKPOINT}px)`,
-  tablet: `@media (max-width: ${TABLET_BREAKPOINT}px)`,
+  mobile: `@media (min-width: ${XS_MOBILE_BREAKPOINT + 1}px) and (max-width: ${MOBILE_BREAKPOINT}px)`,
+  tablet: `@media (min-width: ${MOBILE_BREAKPOINT + 1}px) and (max-width: ${TABLET_BREAKPOINT}px)`,
 }
 
 /**

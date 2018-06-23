@@ -146,7 +146,7 @@ export class ScheduleSection extends React.Component {
         flexShrink: 0,
         background: `
           url(${photo}) no-repeat center,
-          ${Colors.dark}
+          ${Colors.bright}
         `,
         backgroundSize: 'cover',
         backgroundBlendMode: 'luminosity',

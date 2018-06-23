@@ -24,10 +24,10 @@ export function ActionButton ({
       css={{
         padding: beat(0.5),
         display: 'inline-block',
-        border: `1px solid ${primary ? Colors.reactBlue : Colors.grey600}`,
+        border: `1px solid ${primary ? Colors.react : Colors.grey600}`,
         borderTopLeftRadius: beat(0.25),
         borderBottomRightRadius: beat(0.25),
-        color: primary ? Colors.brightest : Colors.grey200,
+        color: primary ? Colors.brightest : Colors.bright,
         fontSize: fontSize(-2),
         fontWeight: 600,
         opacity: disabled ? 0.25 : 1,
@@ -37,7 +37,7 @@ export function ActionButton ({
         },
         transition: 'all ease 0.2s',
         '&:hover': {
-          background: primary ? Colors.reactBlue : Colors.grey600,
+          background: primary ? Colors.react : Colors.grey600,
         },
       }}
     >

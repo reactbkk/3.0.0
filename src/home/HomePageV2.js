@@ -104,7 +104,7 @@ export const HomePage = enhance(class HomePage extends React.Component {
         <Helmet>
           <title>React Bangkok 3.0.0</title>
         </Helmet>
-        <HeaderSection innerWidth={this.props.innerWidth} />
+        <HeaderSection innerWidth={this.props.innerWidth} viewType={this.props.viewType} />
         <InfoSection />
         <SpeakersSection />
         <ScheduleSection viewType={this.props.viewType} />

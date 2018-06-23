@@ -13,16 +13,18 @@ import {
 } from '../design'
 import { Section } from './Section'
 import { ParallaxElement } from './ParallaxElement'
+import { MOBILE } from './withViewType'
 
 const LINE_SPACING = 30
 
 export class HeaderSection extends React.Component {
   static propTypes = {
     innerWidth: PropTypes.number,
+    viewType: PropTypes.string,
   }
 
-  renderReactLogo = (height = 100) => {
-    // TODO: Dynamic scale
+  renderReactLogo = ({ small } = {}) => {
+    const height = small ? 50 : 100
     const width = (height * (761 - LINE_SPACING * 5) / 200) + LINE_SPACING * 5
     return (
       <svg width={width} height={height} css={{
@@ -39,7 +41,7 @@ export class HeaderSection extends React.Component {
             <text x="50%" y="50%" mask="url(#logo)" fill="none" textAnchor="middle" alignmentBaseline="middle">
               RE<tspan fill="white" alignmentBaseline="middle">A</tspan>CT
             </text>
-            <image x="16%" y="20%" height={height * 2.4} xlinkHref={LOGO} />
+            <image x={small ? '24.5%' : '16%'} y="20%" height={height * 2.4} xlinkHref={LOGO} />
             <text x="50%" y="50%" mask="url(#logo)" fill="white" textAnchor="middle" alignmentBaseline="middle">
               RE<tspan fill="none" alignmentBaseline="middle">A</tspan>CT
             </text>
@@ -47,14 +49,14 @@ export class HeaderSection extends React.Component {
         </defs>
         <g mask="url(#logo)">
           <rect width="100%" height="100%" fill={Colors.react} />
-          {_.times(15, _.stubFalse).map((v, index) => (
+          {_.times(15, index => (
             <circle
               key={`circle-${index}`}
               cx="95%"
               cy="200%"
-              r={height * 5 - height / 4 * (index + 1)}
+              r={width - (width * (index + 1) / 15) + 20}
               stroke={Colors.reactBright}
-              strokeWidth={height / 20 + height / 100 * (index + 1)}
+              strokeWidth={width / 400 * (index + 1) + height / 50 + 5}
               fill="none"
             />
           ))}
@@ -166,13 +168,13 @@ export class HeaderSection extends React.Component {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-          {this.renderReactLogo()}
+          {this.renderReactLogo({ small: this.props.viewType === MOBILE })}
           {this.renderBangkok()}
           {this.renderThreePointZeroPointZero()}
           {this.renderSelfCheckInButton()}
         </div>
         {this.renderScrollGuide()}
-        {_.times(this.props.innerWidth / 30, _.stubFalse).map((v, index) => this.renderParticle(index))}
+        {_.times(this.props.innerWidth / 30, this.renderParticle)}
       </Section>
     )
   }

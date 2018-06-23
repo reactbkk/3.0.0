@@ -14,7 +14,7 @@ export class SpeakersSection extends React.Component {
         height: beat(7),
         background: `
           url(${speaker.photo}) no-repeat center,
-          ${Colors.dark}
+          ${Colors.bright}
         `,
         backgroundSize: 'cover',
         backgroundBlendMode: 'luminosity',
