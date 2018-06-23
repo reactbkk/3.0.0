@@ -4,7 +4,7 @@ import FacebookIcon from 'react-icons/lib/fa/facebook-official'
 import TwitterIcon from 'react-icons/lib/fa/twitter'
 import GitHubIcon from 'react-icons/lib/fa/github'
 
-import { beat, fontSize } from '../design'
+import { beat, fontSize, Fonts } from '../design'
 
 import { HeaderSection } from './HeaderSection'
 import { TicketsSection } from './TicketsSection'
@@ -45,6 +45,22 @@ export class HomePage extends React.Component {
         </Helmet>
         <div>{SECTIONS.map(Component => <Component key={Component} />)}</div>
         {this.renderSocial()}
+
+        <div
+          css={{
+            position: 'absolute',
+            top: 50,
+            left: 50,
+            transform: 'rotate(-10deg)',
+            border: '1px solid rgba(255,255,255,0.5)',
+            padding: beat(0.5),
+            fontWeight: 600,
+            fontFamily: Fonts.display,
+            textTransform: 'uppercase',
+          }}
+        >
+          Work in progress
+        </div>
       </div>
     )
   }

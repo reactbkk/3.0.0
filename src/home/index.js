@@ -1,4 +1,3 @@
-export { HomePage } from './HomePage'
+// export { HomePage } from './HomePage'
 
-// New design is coming soon!! Stay tuned!!!!!!!!!
-// export { HomePage } from './HomePageV2'
+export { HomePage } from './HomePageV2'
