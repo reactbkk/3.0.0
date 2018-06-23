@@ -21,7 +21,7 @@ export class InfoSection extends React.Component {
           }} />
         </ParallaxElement>
         <ParallaxElement z={10} x={50} y={5} cssExtension={{
-          color: Colors.reactDark,
+          color: Colors.dark,
           fontSize: fontSize(3),
           fontWeight: 600,
           transform: 'translate(-50%, -50%)',

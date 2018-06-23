@@ -12,6 +12,7 @@ import {
   PARTICLES,
 } from '../design'
 import { Section } from './Section'
+import { SelfCheckInButton } from './SelfCheckInButton'
 import { ParallaxElement } from './ParallaxElement'
 import { MOBILE } from './withViewType'
 
@@ -89,34 +90,6 @@ export class HeaderSection extends React.Component {
     </div>
   )
 
-  renderSelfCheckInButton = () => (
-    <button css={{
-      height: beat(4),
-      width: beat(4),
-      borderRadius: '100%',
-      border: `solid 1px ${Colors.brightest}`,
-      backgroundColor: 'transparent',
-      color: Colors.react,
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      fontSize: fontSize(2),
-      fontWeight: 600,
-      cursor: 'pointer',
-      zIndex: 20,
-      transition: 'all ease 0.2s',
-      '&:hover': {
-        backgroundColor: Colors.brightest,
-        transform: 'scale(1.1)',
-      },
-    }}>
-      <span css={{ fontWeight: 400 }}>Self</span>
-      <span>Check-in</span>
-      .
-    </button>
-  )
-
   renderScrollGuide = () => (
     <div
       css={{
@@ -171,7 +144,7 @@ export class HeaderSection extends React.Component {
           {this.renderReactLogo({ small: this.props.viewType === MOBILE })}
           {this.renderBangkok()}
           {this.renderThreePointZeroPointZero()}
-          {this.renderSelfCheckInButton()}
+          <SelfCheckInButton />
         </div>
         {this.renderScrollGuide()}
         {_.times(this.props.innerWidth / 30, this.renderParticle)}

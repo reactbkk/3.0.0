@@ -12,9 +12,12 @@ import { InfoSection } from './InfoSection'
 import { ScheduleSection } from './ScheduleSection'
 import { SpeakersSection } from './SpeakersSection'
 import { SponsorsSection } from './SponsorsSection'
+import { ActionButton } from './ActionButton'
 import { withViewType, DESKTOP } from './withViewType'
 
 const enhance = withViewType
+
+const MAP_LINK = "https://www.google.co.th/maps/place/Energy+Complex+Company+Limited./@13.8193932,100.5550525,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29c593b6914c7:0x686cce3b970b6f75!8m2!3d13.8193932!4d100.5572412"
 
 export const HomePage = enhance(class HomePage extends React.Component {
   static propTypes = {
@@ -55,14 +58,15 @@ export const HomePage = enhance(class HomePage extends React.Component {
   )
 
   renderBriefInfo = () => (
-    <div css={{
+    <ActionButton href={MAP_LINK} target="_blank" cssExtension={{
       width: beat(1.5),
       margin: `${beat(0.25)} 0`,
-      letterSpacing: Tracking.wide,
       fontSize: fontSize(-5),
-      textAlign: 'center',
-      border: `solid 1px ${Colors.brightest}`,
-      cursor: 'pointer',
+      '&:hover': {
+        color: Colors.darkest,
+        backgroundColor: Colors.brightest,
+        fontWeight: 600,
+      },
     }}>
       <div css={{ padding: `${beat(0.5)} 0`, borderBottom: `solid 1px ${Colors.brightest}` }}>
         June<br />24
@@ -70,21 +74,20 @@ export const HomePage = enhance(class HomePage extends React.Component {
       <div css={{ padding: `${beat(0.5)} 0` }}>
         @<br />EnCo
       </div>
-    </div>
+    </ActionButton>
   )
 
   renderSideBar = () => (
     <div css={{
       position: 'fixed',
-      top: beat(1),
+      top: beat(2),
       right: beat(1),
-      bottom: beat(1),
+      bottom: beat(2),
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
       alignItems: 'center',
     }}>
-      x
       {this.renderLine()}
       {this.renderBriefInfo()}
       {this.renderLine()}

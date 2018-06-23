@@ -49,7 +49,7 @@ export class SponsorsSectionContent extends React.Component {
     </div>
   )
 
-  render() {
+  render () {
     return (
       <Fragment>
         {this.renderSponsorGroup(PLATINUM_SPONSORS, 3)}

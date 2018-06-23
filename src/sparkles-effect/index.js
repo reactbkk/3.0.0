@@ -1,12 +1,5 @@
 import { css } from 'emotion'
-
-export const images = [
-  require('./spark1.svg'),
-  require('./spark2.svg'),
-  require('./spark3.svg'),
-  require('./spark4.svg'),
-  require('./spark5.svg'),
-]
+import { PARTICLES } from '../design'
 
 const transform = (x, y, rot) =>
   `translateX(-50%) translateY(-50%) translateZ(0) translateX(${x}px) translateY(${y}px) rotate(${rot}rad)`
@@ -33,7 +26,7 @@ function show (x, y) {
     const count = Math.round(Math.random() * 3 + 5)
     for (let i = 0; i < count; i++) {
       const rotation = Math.random() * Math.PI * 2
-      const image = images[Math.floor(Math.random() * images.length)]
+      const image = PARTICLES[Math.floor(Math.random() * PARTICLES.length)]
       const el = document.createElement('div')
       el.className = sparkleStyle
       el.style.left = `${x}px`
