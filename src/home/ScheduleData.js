@@ -10,7 +10,6 @@ export const SCHEDULE_DATA = [
   {
     type: 'fund',
     title: '🎉 Opening',
-    sponsor: SPONSORS.PTT,
     startTime: new Date('2018-06-24T09:20:00'),
   },
   {
