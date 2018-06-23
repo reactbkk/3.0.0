@@ -1,5 +1,4 @@
 import React from 'react'
-import { Colors } from '../design'
 
 import { Section } from './Section'
 

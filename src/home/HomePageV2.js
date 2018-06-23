@@ -93,7 +93,7 @@ export class HomePage extends React.Component {
     </div>
   )
 
-  render() {
+  render () {
     return (
       <div css={{
         position: 'relative',
