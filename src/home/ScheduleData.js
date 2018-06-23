@@ -89,7 +89,7 @@ export const SCHEDULE_DATA = [
   {
     type: 'session',
     title: 'React for a 5 million user app',
-    speaker: SPEAKERS.TELENOR,
+    speaker: SPEAKERS.TOON,
     description: 'How we use React and other React tools/technologies with Wowbox in the present and in the future.',
     duration: 10,
   },

@@ -10,13 +10,13 @@ import KEYA from './speakers/keya.jpg'
 import PHOOM from './speakers/phoom.jpg'
 import VEHA from './speakers/veha.jpg'
 import WIN from './speakers/win.jpg'
-import POND from './speakers/pond.jpg'
+import GUCODE from './speakers/gucode.png'
+import TOON from './speakers/toon.jpg'
 
 export const SPEAKERS = {
   GUCODE: {
-    name: 'Jirat Kijlerdpornpailoj & Suwitcha Sugthana',
-    // TODO: Change photo
-    photo: POND,
+    name: 'GuCode (Jirat Kijlerdpornpailoj & Suwitcha Sugthana)',
+    photo: GUCODE,
     from: 'GuCode',
     links: {
       github: 'https://github.com/gucodelive',
@@ -122,9 +122,9 @@ export const SPEAKERS = {
       facebook: 'https://www.facebook.com/MicroBenz',
     },
   },
-  TELENOR: {
+  TOON: {
     name: 'Suphareuk Theamparn',
-    photo: BENZ,
+    photo: TOON,
     from: 'Frontend Developer @Telenor Digital Asia',
     links: {},
   },
