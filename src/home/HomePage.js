@@ -1,9 +1,11 @@
+import _ from 'lodash'
 import React from 'react'
 import styled from 'react-emotion'
 import { Helmet } from 'react-helmet'
 
 import { DynamicContent } from './DynamicContent'
 import { Interaction } from './Interaction'
+import { ActionButton } from './ActionButton'
 import {
   Fonts,
   fontSize,
@@ -14,19 +16,23 @@ import {
   TypographicContext,
   LOGOMARK,
 } from '../design'
+import { SPEAKERS } from './SpeakersData'
+import { SponsorsSectionContent } from './SponsorsSectionContent'
 
 /* eslint no-script-url: off */
 
 export function HomePage () {
   return (
-    <div>
+    <div css={{ marginBottom: beat(1) }}>
       <Helmet>
         <title>React Bangkok 3.0.0</title>
       </Helmet>
       <HeadingSection />
+      <CTASection />
       <DescriptionSection />
       <TicketsSection />
       <SpeakersSection />
+      <SponsorsSection />
       <CommunitySection />
     </div>
   )
@@ -79,6 +85,45 @@ function HeadingSection () {
   )
 }
 
+function CTASection () {
+  return <BelowHeadingSection>{renderCheckInButton()}</BelowHeadingSection>
+
+  function renderCheckInButton () {
+    return (
+      <DynamicContent>
+        {(dialogElement, setDialogElement) => (
+          <React.Fragment>
+            <Interaction
+              action={async () => {
+                const promise = import(/* webpackChunkName: "checkin", webpackPrefetch: true */ '../checkin')
+                const checkin = await promise
+                setDialogElement(
+                  checkin.renderDialog({
+                    onClose () {
+                      setDialogElement(null)
+                    },
+                  })
+                )
+              }}
+            >
+              {({ interactive, running, onClick }) => (
+                <ActionButton
+                  disabled={!interactive || running}
+                  href="javascript://checkin"
+                  onClick={onClick}
+                >
+                  {running ? 'Loading…' : interactive ? 'Check in' : '(Loading page)'}
+                </ActionButton>
+              )}
+            </Interaction>
+            {dialogElement}
+          </React.Fragment>
+        )}
+      </DynamicContent>
+    )
+  }
+}
+
 function DescriptionSection () {
   return (
     <p css={{ textAlign: 'center' }} lang="th">
@@ -96,74 +141,54 @@ function TicketsSection () {
       <SectionHeader>Tickets</SectionHeader>
       <TypographicContext>
         <p>
-          Tickets will be available on <strong>June 11th, 2018</strong> at <strong>18:00</strong>
-        </p>
-        <p>
           <ActionButton primary href="https://www.eventpop.me/e/3607-react-bangkok-3-0-0">
             Tickets on Event Pop
           </ActionButton>
         </p>
       </TypographicContext>
-      <section id="free-tickets">
-        <SectionSubheader>Get free tickets</SectionSubheader>
-        <TypographicContext>
-          <p>
-            Win a free ticket by contributing to open-source community!
-            <br />
-            Details will be available soon!
-          </p>
-          <p>
-            <ActionButton href="https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3">
-              Information
-            </ActionButton>
-          </p>
-          <p>{renderRedeemTicketButton()}</p>
-        </TypographicContext>
-      </section>
     </ContentSection>
   )
-
-  function renderRedeemTicketButton () {
-    return (
-      <DynamicContent>
-        {(dialogElement, setDialogElement) => (
-          <React.Fragment>
-            <Interaction
-              action={async () => {
-                const promise = import(/* webpackChunkName: "redeem", webpackPrefetch: true */ '../redeem')
-                const redeem = await promise
-                setDialogElement(
-                  redeem.renderDialog({
-                    onClose () {
-                      setDialogElement(null)
-                    },
-                  })
-                )
-              }}
-            >
-              {({ interactive, running, onClick }) => (
-                <ActionButton
-                  disabled={!interactive || running}
-                  href="javascript://redeem"
-                  onClick={onClick}
-                >
-                  {running ? 'Loading…' : interactive ? 'Redeem ticket' : '(Loading page)'}
-                </ActionButton>
-              )}
-            </Interaction>
-            {dialogElement}
-          </React.Fragment>
-        )}
-      </DynamicContent>
-    )
-  }
 }
 
 function SpeakersSection () {
   return (
     <ContentSection>
       <SectionHeader>Speakers</SectionHeader>
-      <p>TBA</p>
+      <div css={{ display: 'flex', justifyContent: 'center', textAlign: 'left' }}>
+        <ul css={{ listStyle: 'none', margin: 0, padding: 0 }}>
+          {_.values(SPEAKERS).map((speaker, i) => (
+            <li key={i} css={{ marginTop: beat(1) }}>
+              <strong>{speaker.name}</strong>
+              <br />
+              {speaker.from}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div css={{ textAlign: 'center', marginTop: beat(1) }}>
+        <ActionButton href="https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199">
+          Speakers introduction
+        </ActionButton>
+      </div>
+    </ContentSection>
+  )
+}
+
+function SponsorsSection () {
+  return (
+    <ContentSection>
+      <SectionHeader>Sponsors</SectionHeader>
+      <SponsorsSectionContent />
+      <section css={{ marginTop: beat(1) }}>
+        <TypographicContext>
+          <p>
+            <strong>Interested in sponsoring our future events?</strong>
+          </p>
+          <p>
+            <ActionButton href="https://airtable.com/shrHLwwtY80z3LvuR">Get in touch</ActionButton>
+          </p>
+        </TypographicContext>
+      </section>
     </ContentSection>
   )
 }
@@ -186,10 +211,16 @@ function CommunitySection () {
   )
 }
 
+const BelowHeadingSection = styled.section({
+  marginTop: beat(1),
+  textAlign: 'center',
+})
+
 const ContentSection = styled.section({
   marginTop: beat(3),
   textAlign: 'center',
 })
+
 const SectionHeader = styled.h2({
   color: Colors.reactBlue,
   fontSize: fontSize(7),
@@ -197,36 +228,12 @@ const SectionHeader = styled.h2({
   fontFamily: Fonts.display,
   margin: `${beat(1)} 0`,
 })
-const SectionSubheader = styled.h3({
-  color: Colors.reactBlue,
-  fontSize: fontSize(4),
-  fontWeight: 600,
-  fontFamily: Fonts.display,
-  margin: `${beat(1)} 0`,
-  paddingTop: beat(1),
-})
 
-function ActionButton ({
-  href, disabled, primary, children, onClick,
-}) {
-  return (
-    <a
-      href={href || `javascript${':'}`}
-      onClick={onClick}
-      css={{
-        padding: beat(0.5),
-        display: 'inline-block',
-        border: `1px solid ${primary ? Colors.reactBlue : Colors.grey700}`,
-        background: primary ? Colors.reactBlue : Colors.grey800,
-        color: primary ? Colors.brightest : Colors.reactBlue,
-        fontWeight: primary ? 600 : 400,
-        opacity: disabled ? 0.25 : 1,
-        [MediaQueries.md]: {
-          width: beat(10),
-        },
-      }}
-    >
-      {children}
-    </a>
-  )
-}
+// const SectionSubheader = styled.h3({
+//   color: Colors.reactBlue,
+//   fontSize: fontSize(4),
+//   fontWeight: 600,
+//   fontFamily: Fonts.display,
+//   margin: `${beat(1)} 0`,
+//   paddingTop: beat(1),
+// })

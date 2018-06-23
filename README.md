@@ -6,17 +6,18 @@ Using Gatsby with Emotion.
 
 ## Free tickets?!
 
-**Want a free ticket to React Bangkok 3.0.0?** [Check this out!](https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3)
+**Want a free ticket to React Bangkok 3.0.0?**
+[Check this out!](https://www.facebook.com/reactbkk/photos/a.161749477831615.1073741828.161742341165662/172068550133041/?type=3)
 
 ## Development
 
 ### Preparation
 
-* Please install latest version of **Node.js**.
+- Please install latest version of **Node.js**.
 
-* Please install latest version of **Yarn**.
+- Please install latest version of **Yarn**.
 
-* Please use **Visual Studio Code** to edit this project. This repo contains
+- Please use **Visual Studio Code** to edit this project. This repo contains
   [VS Code settings](.vscode) that is optimized for this project.
 
 ### Setup project
@@ -45,3 +46,18 @@ Using Gatsby with Emotion.
     You should see: `You can now view reactbkk3 in the browser.`.
 
 3.  Go to http://localhost:8000 to view your site!
+
+### Coding standard
+
+- Based on
+  [eslint-config-react-tools](https://github.com/react-tools/eslint-config-react-tools/blob/master/index.js).
+
+- Code for the app lives inside `src` folder. They are grouped by feature /
+  domain to encourage
+  [screaming architecture](https://8thlight.com/blog/uncle-bob/2011/09/30/Screaming-Architecture.html).
+
+- We don't use `export default`, but use named exports, so that VS Code can
+  auto-import and auto-rename better
+
+- Take a look at the [`src/design`](src/design) folder which establishes the
+  typographic scale and rhythm.
