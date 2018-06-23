@@ -1,24 +1,48 @@
+import _ from 'lodash'
 import React from 'react'
-import { SpeakersSectionMobile } from './SpeakersSectionMobile'
-import { SpeakersSectionDesktop } from './SpeakersSectionDesktop'
 
-export class SpeakersSection extends React.PureComponent {
-  state = { mobile: true }
-  checkViewport = () => {
-    const mobile = window.innerWidth < 768
-    if (mobile !== this.state.mobile) {
-      this.setState({ mobile })
-    }
-  }
-  componentDidMount () {
-    this.timeout = setTimeout(this.checkViewport)
-    window.addEventListener('resize', this.checkViewport)
-  }
-  componentWillUnmount () {
-    clearTimeout(this.timeout)
-    window.removeEventListener('resize', this.checkViewport)
-  }
+import { SPEAKERS } from './SpeakersData'
+import { Section } from './Section'
+import { beat, Colors, ViewType } from '../design'
+
+export class SpeakersSection extends React.Component {
+  renderSpeaker = speaker => (
+    <div
+      key={speaker.name}
+      css={{
+        width: beat(7),
+        height: beat(7),
+        background: `
+          url(${speaker.photo}) no-repeat center,
+          ${Colors.dark}
+        `,
+        backgroundSize: 'cover',
+        backgroundBlendMode: 'luminosity',
+        [ViewType.mobile]: {
+          width: '33.33vw',
+          height: '33.33vw',
+        },
+      }}
+    />
+  )
+
   render () {
-    return this.state.mobile ? <SpeakersSectionMobile /> : <SpeakersSectionDesktop />
+    return (
+      <Section
+        cssExtension={{
+          margin: 'auto',
+          padding: 0,
+          maxWidth: beat(42),
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          alignContent: 'center',
+          [ViewType.mobile]: {
+            padding: 0,
+          },
+        }}
+      >
+        {_.values(SPEAKERS).map(this.renderSpeaker)}
+      </Section>
+    )
   }
 }

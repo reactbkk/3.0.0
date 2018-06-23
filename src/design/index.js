@@ -91,6 +91,16 @@ export const MediaQueries = {
   xl: '@media (min-width: 1200px)',
 }
 
+export const XS_MOBILE_BREAKPOINT = 350
+export const MOBILE_BREAKPOINT = 767
+export const TABLET_BREAKPOINT = 1023
+
+export const ViewType = {
+  xsMobile: `@media (max-width: ${XS_MOBILE_BREAKPOINT}px)`,
+  mobile: `@media (max-width: ${MOBILE_BREAKPOINT}px)`,
+  tablet: `@media (max-width: ${TABLET_BREAKPOINT}px)`,
+}
+
 /**
  * The base font size for mobile phones.
  */
@@ -191,13 +201,13 @@ function injectGlobalStyles () {
     'html, body': {
       fontFamily: Fonts.body,
       fontWeight: 300,
-      fontSize: BASE_FONT_SIZE_XS,
+      fontSize: BASE_FONT_SIZE_MD,
       color: Colors.brightest,
       margin: 0,
       padding: 0,
       background: `linear-gradient(${Colors.darkest}, ${Colors.reactBright})`,
-      [MediaQueries.md]: {
-        fontSize: BASE_FONT_SIZE_MD,
+      [ViewType.mobile]: {
+        fontSize: BASE_FONT_SIZE_XS,
       },
     },
     a: {

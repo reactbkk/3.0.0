@@ -51,14 +51,14 @@ export const SCHEDULE_DATA = [
     type: 'fund',
     title: '🍕 Lunch',
     sponsor: SPONSORS.ODDS,
-    startTime: new Date('2018-06-24T12:00:00'),
+    startTime: new Date('2018-06-24T11:30:00'),
   },
   {
     type: 'session',
     title: 'State Management with MobX',
     description: 'ใครว่า React มีแค่ Redux? มารู้จักกับ MobX ที่จะทำให้ state management ในแอพของคุณเป็นเรื่องง่ายยย',
     speaker: SPEAKERS.WIN,
-    duration: 25,
+    startTime: new Date('2018-06-24T13:00:00'),
   },
   {
     type: 'session',
@@ -121,18 +121,18 @@ export const SCHEDULE_DATA = [
   },
   {
     type: 'fund',
-    title: 'Panel discussion',
+    title: 'Panel Discussion: Transition to React in Large-scale Codebase',
     duration: 30,
   },
   {
     type: 'fund',
     title: 'Closing',
-    duration: 20,
+    startTime: new Date('2018-06-24T17:50:00'),
   },
   {
     type: 'fund',
-    title: 'Dinner and After Party',
+    title: 'Dinner and Networking Party',
     sponsor: SPONSORS.TASKWORLD,
-    duration: 9999,
+    startTime: new Date('2018-06-24T18:00:00'),
   },
 ]

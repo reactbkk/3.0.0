@@ -10,8 +10,8 @@ export function ParallaxElement ({
       offsetYMin={-z * z * 1000}
       slowerScrollRate={z < 0}
       css={{
-        // pointerEvents: 'none',
-        zIndex: Math.round(z) + 100,
+        pointerEvents: 'none',
+        zIndex: Math.round(z),
         ...(x && y ? {
           position: 'absolute',
           left: `${x}vw`,

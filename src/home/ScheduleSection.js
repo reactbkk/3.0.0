@@ -1,47 +1,60 @@
 import _ from 'lodash'
 import React from 'react'
-import { beat, Colors, Fonts, fontSize, Tracking, PLUS } from '../design'
+import PropTypes from 'prop-types'
+import { beat, Colors, Fonts, fontSize, Tracking, ViewType, PLUS } from '../design'
 
 import { Section } from './Section'
 import { SCHEDULE_DATA } from './ScheduleData'
+import { DESKTOP, MOBILE } from './withViewType'
 
+const HEADER_SIZE = 1
 export class ScheduleSection extends React.Component {
-  renderTimeline = ({ pinAtCenter } = {}) => (
+  static propTypes = {
+    viewType: PropTypes.string,
+  }
+
+  renderTimeline = () => (
     <div
       css={{
         display: 'flex',
         justifyContent: 'center',
-        alignItems: pinAtCenter ? 'center' : 'flex-start',
+        alignItems: 'flex-start',
         width: 1,
         margin: `0 ${beat(1)}`,
         background: Colors.brightest,
         flex: '0 0 auto',
+        [ViewType.mobile]: {
+          margin: `0 ${beat(0.5)}`,
+        },
       }}
     >
-      <img width={15} src={PLUS} alt="pin" />
+      <img width={15} src={PLUS} alt="pin" css={{
+        marginTop: beat(HEADER_SIZE / 2 + HEADER_SIZE / 4),
+        transform: 'translateY(-50%)',
+      }} />
     </div>
   )
 
   renderTime = ({ startTime, pullRight }) => (
     <div
       css={{
+        width: beat(1),
+        marginTop: beat(HEADER_SIZE / 2),
         display: 'flex',
-        alignItems: 'center',
         justifyContent: pullRight ? 'flex-start' : 'flex-end',
-        flex: '1 1 auto',
-        flexBasis: '33%',
+        flex: this.props.viewType === DESKTOP ? '1 1 33%' : '0 0 16%',
         fontFamily: Fonts.display,
         fontSize: fontSize(-3),
       }}
     >
-      {startTime ? startTime.toLocaleString() : ''}
+      {startTime ? startTime.toLocaleTimeString('en-US', { second: undefined }) : ''}
     </div>
   )
 
   renderContent = ({ content, pullRight, column }) => (
     <div
       css={{
-        padding: `${beat(0.25)} 0`,
+        padding: `${beat(HEADER_SIZE / 4)} 0`,
         display: 'flex',
         flexDirection: column ? 'column' : pullRight ? 'row-reverse' : 'row',
         alignItems: column && pullRight ? 'flex-end' : 'flex-start',
@@ -49,6 +62,9 @@ export class ScheduleSection extends React.Component {
         flexBasis: '33%',
         textAlign: pullRight ? 'right' : 'left',
         overflow: 'hidden',
+        [ViewType.mobile]: {
+          paddingBottom: beat(HEADER_SIZE),
+        },
       }}
     >
       {content}
@@ -64,10 +80,9 @@ export class ScheduleSection extends React.Component {
           width: '100%',
           display: 'flex',
           flexDirection: pullRight ? 'row-reverse' : 'row',
-          justifyContent: 'space-between',
         }}
       >
-      {this.renderTime({ startTime, pullRight })}
+      {this.props.viewType !== MOBILE && this.renderTime({ startTime, pullRight })}
       {this.renderTimeline({ pinAtCenter })}
       {this.renderContent({ content, column, pullRight })}
     </div>
@@ -99,12 +114,14 @@ export class ScheduleSection extends React.Component {
         <div
           key="title"
           css={{
+            height: beat(HEADER_SIZE),
             width: '100%',
-            padding: `${beat(0.1)} ${beat(0.5)}`,
+            padding: `0 ${beat(0.5)}`,
             maxWidth: beat(12),
             backgroundColor: Colors.reactComplementary,
             fontSize: fontSize(-2),
             fontWeight: 600,
+            lineHeight: beat(HEADER_SIZE),
             letterSpacing: Tracking.wide,
             textTransform: 'uppercase',
           }}
@@ -116,7 +133,7 @@ export class ScheduleSection extends React.Component {
       startTime,
       pinAtCenter: true,
       column: true,
-      pullRight: index % 2 === 1,
+      pullRight: this.props.viewType === DESKTOP ? index % 2 === 1 : false,
     })
 
   renderSpeakerPhoto = photo => (
@@ -133,6 +150,14 @@ export class ScheduleSection extends React.Component {
         `,
         backgroundSize: 'cover',
         backgroundBlendMode: 'luminosity',
+        [ViewType.mobile]: {
+          margin: `0 ${beat(0.5)}`,
+        },
+        [ViewType.xsMobile]: {
+          width: beat(2),
+          height: beat(2),
+        },
+        float: 'left',
       }}
     />
   )
@@ -155,7 +180,7 @@ export class ScheduleSection extends React.Component {
         </div>,
       ],
       startTime,
-      pullRight: index % 2 === 1,
+      pullRight: this.props.viewType === DESKTOP ? index % 2 === 1 : false,
     })
 
   render () {

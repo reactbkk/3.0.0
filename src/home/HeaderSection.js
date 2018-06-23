@@ -13,13 +13,10 @@ import {
 } from '../design'
 import { Section } from './Section'
 import { ParallaxElement } from './ParallaxElement'
-import { withViewType } from './withViewType'
 
 const LINE_SPACING = 30
 
-const enhance = withViewType
-
-export const HeaderSection = enhance(class HeaderSection extends React.Component {
+export class HeaderSection extends React.Component {
   static propTypes = {
     innerWidth: PropTypes.number,
   }
@@ -155,8 +152,6 @@ export const HeaderSection = enhance(class HeaderSection extends React.Component
   }
 
   render () {
-    console.log(this.props.innerWidth)
-
     return (
       <Section
         cssExtension={{
@@ -182,4 +177,4 @@ export const HeaderSection = enhance(class HeaderSection extends React.Component
       </Section>
     )
   }
-})
+}

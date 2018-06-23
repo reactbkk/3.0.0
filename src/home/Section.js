@@ -1,5 +1,5 @@
 import React from 'react'
-import { Fonts, fontSize, beat, Tracking } from '../design'
+import { Fonts, fontSize, beat, Tracking, ViewType } from '../design'
 
 function Header ({ title }) {
   return (
@@ -30,6 +30,9 @@ export function Section ({ cssExtension, title, children }) {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        [ViewType.mobile]: {
+          padding: `${beat(0.25)} ${beat(1)}`,
+        },
         ...cssExtension,
       }}
     >

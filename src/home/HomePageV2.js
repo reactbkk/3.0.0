@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import FacebookIcon from 'react-icons/lib/fa/facebook-official'
 import TwitterIcon from 'react-icons/lib/fa/twitter'
@@ -12,17 +13,16 @@ import { ScheduleSection } from './ScheduleSection'
 import { SpeakersSection } from './SpeakersSection'
 import { VenueSection } from './VenueSection'
 import { SponsorsSection } from './SponsorsSection'
+import { withViewType, DESKTOP } from './withViewType'
 
-const SECTIONS = [
-  HeaderSection,
-  InfoSection,
-  SpeakersSection,
-  ScheduleSection,
-  VenueSection,
-  SponsorsSection,
-]
+const enhance = withViewType
 
-export class HomePage extends React.Component {
+export const HomePage = enhance(class HomePage extends React.Component {
+  static propTypes = {
+    innerWidth: PropTypes.number.isRequired,
+    viewType: PropTypes.string.isRequired,
+  }
+
   renderSocial = () => {
     const renderSocialIcon = (title, icon, href) => (
       <a css={{ display: 'block' }} title={title} href={href}>
@@ -94,6 +94,7 @@ export class HomePage extends React.Component {
   )
 
   render () {
+    console.log(this.props.viewType)
     return (
       <div css={{
         position: 'relative',
@@ -103,9 +104,14 @@ export class HomePage extends React.Component {
         <Helmet>
           <title>React Bangkok 3.0.0</title>
         </Helmet>
-        {SECTIONS.map(Component => <Component key={Component} />)}
-        {this.renderSideBar()}
+        <HeaderSection innerWidth={this.props.innerWidth} />
+        <InfoSection />
+        <SpeakersSection />
+        <ScheduleSection viewType={this.props.viewType} />
+        <VenueSection />
+        <SponsorsSection />
+        {this.props.viewType === DESKTOP && this.renderSideBar()}
       </div>
     )
   }
-}
+})
