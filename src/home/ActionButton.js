@@ -1,5 +1,6 @@
 import React from 'react'
-import { Colors, beat, fontSize, MediaQueries } from '../design'
+import { Colors, Tracking } from '../design'
+
 import { showSparklesEffectOnElement } from '../sparkles-effect'
 
 /**
@@ -12,33 +13,28 @@ function sparkle (e) {
 }
 
 export function ActionButton ({
-  href, disabled, primary, children, onClick,
+  href, target, cssExtension, children, onClick,
 }) {
   return (
     <a
       href={href || `javascript${':'}`}
+      target={target}
       onClick={onClick}
       onMouseOver={sparkle}
       onTouchStart={sparkle}
       onFocus={sparkle}
       css={{
-        padding: beat(0.5),
-        display: 'inline-block',
-        border: `1px solid ${primary ? Colors.reactBlue : Colors.grey600}`,
-        borderTopLeftRadius: beat(0.25),
-        borderBottomRightRadius: beat(0.25),
-        color: primary ? Colors.white : Colors.grey200,
-        fontSize: fontSize(-2),
-        fontWeight: 600,
-        opacity: disabled ? 0.25 : 1,
-        pointerEvents: disabled ? 'none' : undefined,
-        [MediaQueries.md]: {
-          width: beat(10),
-        },
+        cursor: 'pointer',
+        color: Colors.bright,
+        letterSpacing: Tracking.wide,
+        textAlign: 'center',
+        border: `solid 1px ${Colors.brightest}`,
         transition: 'all ease 0.2s',
         '&:hover': {
-          background: primary ? Colors.reactBlue : Colors.grey600,
+          color: Colors.react,
+          backgroundColor: Colors.brightest,
         },
+        ...cssExtension,
       }}
     >
       {children}

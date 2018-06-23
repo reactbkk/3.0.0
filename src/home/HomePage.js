@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React from 'react'
 import styled from 'react-emotion'
 import { Helmet } from 'react-helmet'
@@ -155,7 +156,7 @@ function SpeakersSection () {
       <SectionHeader>Speakers</SectionHeader>
       <div css={{ display: 'flex', justifyContent: 'center', textAlign: 'left' }}>
         <ul css={{ listStyle: 'none', margin: 0, padding: 0 }}>
-          {SPEAKERS.map((speaker, i) => (
+          {_.values(SPEAKERS).map((speaker, i) => (
             <li key={i} css={{ marginTop: beat(1) }}>
               <strong>{speaker.name}</strong>
               <br />

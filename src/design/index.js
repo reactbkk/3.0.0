@@ -2,12 +2,36 @@ import React from 'react'
 import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
 
+import LOGO from './logo.svg'
 import LOGOMARK from './logomark.svg'
-import REACT_LOGO from './react.svg'
-import BANGKOK_LOGO from './bangkok.svg'
-import BACKGROUND from './evan-krause-443485-unsplash-1980w.jpg'
+import PARTICLE_1A from './particle_1a.svg'
+import PARTICLE_1B from './particle_1b.svg'
+import PARTICLE_2A from './particle_2a.svg'
+import PARTICLE_2B from './particle_2b.svg'
+import PARTICLE_3A from './particle_3a.svg'
+// import PARTICLE_3B from './particle_3b.svg'
+import PARTICLE_4A from './particle_4a.svg'
+// import PARTICLE_4B from './particle_4b.svg'
+import PARTICLE_5A from './particle_5a.svg'
+import PARTICLE_5B from './particle_5b.svg'
 
-export { LOGOMARK, REACT_LOGO, BANGKOK_LOGO, BACKGROUND }
+export { LOGO, LOGOMARK }
+export const PARTICLES = [
+  PARTICLE_1A,
+  PARTICLE_1A,
+  PARTICLE_1B,
+  PARTICLE_2A,
+  PARTICLE_2A,
+  PARTICLE_2B,
+  PARTICLE_3A,
+  // PARTICLE_3B,
+  PARTICLE_4A,
+  // PARTICLE_4B,
+  PARTICLE_5A,
+  PARTICLE_5A,
+  PARTICLE_5B,
+]
+export const PLUS = PARTICLE_3A
 
 /**
  * Usable fonts in this website.
@@ -21,19 +45,20 @@ export const Fonts = {
  * Usable colors in this website.
  */
 export const Colors = {
-  white: 'white',
-  black: 'black',
-  grey900: '#222',
-  grey800: '#333',
-  grey700: '#444',
+  /* Old */
   grey600: '#555',
-  grey500: '#666',
-  grey400: '#888',
-  grey300: '#aaa',
-  grey200: '#bbb',
-  grey100: '#ddd',
-  grey50: '#eee',
   reactBlue: '#00d8ff',
+
+  /* New */
+  brightest: '#fff',
+  bright: '#dedede',
+  darkest: '#222',
+  dark: '#343334',
+  react: '#61dafb',
+  // react: '#00badc', // Try
+  reactBright: '#99ebfd',
+  reactDark: '#282c34',
+  reactComplementary: '#ff8a19',
 }
 
 /**
@@ -48,6 +73,16 @@ export const MediaQueries = {
   lg: '@media (min-width: 992px)',
   /** Desktop and above. */
   xl: '@media (min-width: 1200px)',
+}
+
+export const XS_MOBILE_BREAKPOINT = 350
+export const MOBILE_BREAKPOINT = 767
+export const TABLET_BREAKPOINT = 1023
+
+export const ViewType = {
+  xsMobile: `@media (max-width: ${XS_MOBILE_BREAKPOINT}px)`,
+  mobile: `@media (max-width: ${MOBILE_BREAKPOINT}px)`,
+  tablet: `@media (min-width: ${MOBILE_BREAKPOINT + 1}px) and (max-width: ${TABLET_BREAKPOINT}px)`,
 }
 
 /**
@@ -95,6 +130,7 @@ export const Tracking = {
   tight: '-0.05em',
   normal: '0',
   wide: '0.05em',
+  extraWide: '0.1em',
 }
 
 /**
@@ -115,7 +151,6 @@ export class Layout extends React.Component {
  */
 export const TypographicContext = styled.div({
   fontSize: '1rem',
-  lineHeight: beat(1),
   '> p, > blockquote, > ul, > ol, > dl, > table, > pre': {
     marginTop: beat(1),
     marginBottom: 0,
@@ -150,18 +185,18 @@ function injectGlobalStyles () {
     'html, body': {
       fontFamily: Fonts.body,
       fontWeight: 300,
-      fontSize: BASE_FONT_SIZE_XS,
-      color: Colors.white,
+      fontSize: BASE_FONT_SIZE_MD,
+      color: Colors.brightest,
       margin: 0,
       padding: 0,
-      background: Colors.grey800,
-      [MediaQueries.md]: {
-        fontSize: BASE_FONT_SIZE_MD,
+      background: `linear-gradient(${Colors.darkest}, ${Colors.reactBright})`,
+      [ViewType.mobile]: {
+        fontSize: BASE_FONT_SIZE_XS,
       },
     },
     a: {
       textDecoration: 'none',
-      color: Colors.white,
+      color: Colors.brightest,
     },
     'button, input, textarea': {
       fontFamily: 'inherit',

@@ -10,29 +10,20 @@ import KEYA from './speakers/keya.jpg'
 import PHOOM from './speakers/phoom.jpg'
 import VEHA from './speakers/veha.jpg'
 import WIN from './speakers/win.jpg'
-import NET from './speakers/net.jpg'
-import POND from './speakers/pond.jpg'
+import GUCODE from './speakers/gucode.png'
+import TOON from './speakers/toon.jpg'
 
-export const SPEAKERS = [
-  {
-    name: 'Suwitcha Sugthana',
-    photo: POND,
+export const SPEAKERS = {
+  GUCODE: {
+    name: 'GuCode (Jirat Kijlerdpornpailoj & Suwitcha Sugthana)',
+    photo: GUCODE,
     from: 'GuCode',
     links: {
       github: 'https://github.com/gucodelive',
       facebook: 'https://www.facebook.com/gucodelive/',
     },
   },
-  {
-    name: 'Jirat Kijlerdpornpailoj',
-    photo: NET,
-    from: 'GuCode',
-    links: {
-      github: 'https://github.com/gucodelive',
-      facebook: 'https://www.facebook.com/gucodelive/',
-    },
-  },
-  {
+  KEYA: {
     name: 'Keya Desai',
     photo: KEYA,
     from: 'Lead Consultant Developer @ThoughtWorks',
@@ -41,7 +32,7 @@ export const SPEAKERS = [
       website: 'https://keyadesai.com',
     },
   },
-  {
+  WIN: {
     name: 'Manatsawin Hanmongkolchai',
     photo: WIN,
     from: 'Junior Architect @Wongnai',
@@ -50,7 +41,7 @@ export const SPEAKERS = [
       facebook: 'https://www.facebook.com/whs.in.th',
     },
   },
-  {
+  PHOOM: {
     name: 'Phoomparin Mano',
     photo: PHOOM,
     from: 'Developer @iTAX',
@@ -59,7 +50,7 @@ export const SPEAKERS = [
       website: 'https://phoom.in.th',
     },
   },
-  {
+  AUN: {
     name: 'Jessada Trirongkit',
     photo: AUN,
     from: 'Software Engineer @Oozou',
@@ -68,7 +59,7 @@ export const SPEAKERS = [
       facebook: 'https://www.facebook.com/JessaAun',
     },
   },
-  {
+  VEHA: {
     name: 'Veha Suwatphisankij',
     photo: VEHA,
     from: 'Full Stack Engineer @AppSmiths Thailand ',
@@ -77,7 +68,7 @@ export const SPEAKERS = [
       facebook: 'https://www.facebook.com/vehas',
     },
   },
-  {
+  BABE: {
     name: 'Christopher Ng',
     photo: BABE,
     from: 'Mobile Developer @EventPop',
@@ -86,7 +77,7 @@ export const SPEAKERS = [
       facebook: 'https://www.facebook.com/babedev',
     },
   },
-  {
+  CAL: {
     name: 'Komkanit Sujautra',
     photo: CAL,
     from: 'Intern @Jitta',
@@ -95,7 +86,7 @@ export const SPEAKERS = [
       facebook: 'https://www.facebook.com/komcal',
     },
   },
-  {
+  HOLLY: {
     name: 'Rujira Aksornsin',
     photo: HOLLY,
     from: 'Frontend Web Lead @ AppMan',
@@ -104,7 +95,7 @@ export const SPEAKERS = [
       medium: 'https://medium.com/@HollyJira',
     },
   },
-  {
+  CHRIS: {
     name: 'Chakrit Likitkhajorn',
     photo: CHRIS,
     from: 'Vice President @Taskworld',
@@ -113,7 +104,7 @@ export const SPEAKERS = [
       facebook: 'https://www.facebook.com/chakrit.likitkhajorn',
     },
   },
-  {
+  HAM: {
     name: 'Pallop Chaoputhipuchong',
     photo: HAM,
     from: 'Software Engineer @Jitta',
@@ -122,7 +113,7 @@ export const SPEAKERS = [
       facebook: 'https://www.facebook.com/pallop.chao',
     },
   },
-  {
+  BENZ: {
     name: 'Tananan Tangthanachaikul',
     photo: BENZ,
     from: 'Full-stack Developer @TakeMeTour',
@@ -131,4 +122,10 @@ export const SPEAKERS = [
       facebook: 'https://www.facebook.com/MicroBenz',
     },
   },
-]
+  TOON: {
+    name: 'Suphareuk Theamparn',
+    photo: TOON,
+    from: 'Frontend Developer @Telenor Digital Asia',
+    links: {},
+  },
+}
