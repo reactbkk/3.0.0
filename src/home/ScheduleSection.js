@@ -1,10 +1,9 @@
 import _ from 'lodash'
 import React from 'react'
-import { beat, Colors, Fonts, fontSize, Tracking } from '../design'
+import { beat, Colors, Fonts, fontSize, Tracking, PLUS } from '../design'
 
 import { Section } from './Section'
 import { SCHEDULE_DATA } from './ScheduleData'
-import { images } from '../sparkles-effect'
 
 export class ScheduleSection extends React.Component {
   renderTimeline = ({ pinAtCenter } = {}) => (
@@ -19,7 +18,7 @@ export class ScheduleSection extends React.Component {
         flex: '0 0 auto',
       }}
     >
-      <img width={15} src={images[2]} alt="pin" />
+      <img width={15} src={PLUS} alt="pin" />
     </div>
   )
 
@@ -136,13 +135,13 @@ export class ScheduleSection extends React.Component {
         >
           <span css={{ fontSize: fontSize(0), fontWeight: 600 }}>{title}</span>
           <br />
-          <span css={{ fontSize: fontSize(-2), color: Colors.grey100 }}>by {speaker.name}</span>
+          <span css={{ fontSize: fontSize(-2), color: Colors.react }}>by {speaker.name}</span>
           <br />
           <div
             css={{
               marginTop: beat(0.25),
               fontSize: fontSize(-4),
-              color: Colors.grey200,
+              color: Colors.bright,
             }}
           >
             {description}
@@ -162,7 +161,6 @@ export class ScheduleSection extends React.Component {
               return this.renderFundamental(index, data)
             case 'session':
               return this.renderSession(index, data)
-            // case 'sponsorSession': return this.renderSponsorSession()
             default:
               return null
           }

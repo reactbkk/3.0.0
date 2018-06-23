@@ -34,6 +34,7 @@ export const PARTICLES = [
   PARTICLE_5A,
   PARTICLE_5B,
 ]
+export const PLUS = PARTICLE_3A
 
 /**
  * Usable fonts in this website.
