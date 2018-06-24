@@ -49,7 +49,7 @@ export class ScheduleSection extends React.Component {
         fontSize: fontSize(-3),
       }}
     >
-      {startTime ? startTime.toLocaleTimeString('en-US', { second: undefined }) : ''}
+      {startTime || ''}
     </div>
   )
 
