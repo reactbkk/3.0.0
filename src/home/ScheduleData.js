@@ -5,12 +5,12 @@ export const SCHEDULE_DATA = [
   {
     type: 'fund',
     title: '👋🏻 Registration',
-    startTime: new Date('2018-06-24T08:30:00'),
+    startTime: '08:30',
   },
   {
     type: 'fund',
     title: '🎉 Opening',
-    startTime: new Date('2018-06-24T09:20:00'),
+    startTime: '09:20',
   },
   {
     type: 'session',
@@ -51,14 +51,14 @@ export const SCHEDULE_DATA = [
     type: 'fund',
     title: '🍕 Lunch',
     sponsor: SPONSORS.ODDS,
-    startTime: new Date('2018-06-24T11:30:00'),
+    startTime: '11:30',
   },
   {
     type: 'session',
     title: 'State Management with MobX',
     description: 'ใครว่า React มีแค่ Redux? มารู้จักกับ MobX ที่จะทำให้ state management ในแอพของคุณเป็นเรื่องง่ายยย',
     speaker: SPEAKERS.WIN,
-    startTime: new Date('2018-06-24T13:00:00'),
+    startTime: '13:00',
   },
   {
     type: 'session',
@@ -127,12 +127,12 @@ export const SCHEDULE_DATA = [
   {
     type: 'fund',
     title: 'Closing',
-    startTime: new Date('2018-06-24T17:50:00'),
+    startTime: '17:50',
   },
   {
     type: 'fund',
     title: 'Dinner and Networking Party',
     sponsor: SPONSORS.TASKWORLD,
-    startTime: new Date('2018-06-24T18:00:00'),
+    startTime: '18:00',
   },
 ]
