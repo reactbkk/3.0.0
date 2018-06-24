@@ -10,8 +10,8 @@ export class GetInTouchSection extends React.Component {
       <Section
         cssExtension={{
           minHeight: 'auto',
-          background: Colors.reactDark,
-          boxShadow: `0 0 ${beat(10)} 0 rgba(153, 235, 253, 0.75)`,
+          background: 'black',
+          boxShadow: `0 0 ${beat(10)} 0 rgba(153, 235, 253, 0.5)`,
         }}
       >
         <p
