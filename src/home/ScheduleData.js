@@ -134,18 +134,18 @@ export const SCHEDULE_DATA = [
   },
   {
     type: 'fund',
-    title: 'Panel Discussion:',
+    title: '🎤 Panel Discussion:',
     topic: '"Transition to React in Large-scale Codebase"',
     duration: 30,
   },
   {
     type: 'fund',
-    title: 'Closing',
+    title: '👋🏻 Closing',
     startTime: '17:50',
   },
   {
     type: 'fund',
-    title: 'Dinner and Networking Party',
+    title: '🍸 Dinner and Networking Party',
     sponsor: SPONSORS.TASKWORLD,
     startTime: '18:00',
   },
