@@ -31,8 +31,8 @@ const SILVER = {
 }
 
 const INDIVIDUAL = {
-  color: Colors.brightest,
-  baseColor: Colors.anotherReact,
+  color: Colors.darkest,
+  baseColor: Colors.react,
   highlightColor: Colors.reactBright,
   name: 'Individual Sponsors',
 }
