@@ -104,10 +104,10 @@ export class ScheduleSection extends React.Component {
   renderTopic = topic => (
     <div
       css={{
-        padding: `${beat(0)} ${beat(1)}`,
+        padding: `${beat(0.25)} ${beat(1)}`,
         display: 'flex',
         alignItems: 'center',
-        fontSize: fontSize(-2),
+        fontSize: fontSize(-4),
         letterSpacing: Tracking.wide,
         [ViewType.mobile]: {
           padding: `${beat(0.25)} ${beat(0.5)}`,
