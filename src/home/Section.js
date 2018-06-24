@@ -1,15 +1,14 @@
 import React from 'react'
-import { Fonts, fontSize, beat, Tracking, ViewType } from '../design'
+import { Colors, Fonts, fontSize, beat, Tracking, ViewType } from '../design'
 
 function Header ({ title }) {
   return (
     <div
       css={{
-        textTransform: 'uppercase',
         letterSpacing: Tracking.wide,
         fontFamily: Fonts.display,
-        fontWeight: 600,
-        fontSize: fontSize(6),
+        fontSize: fontSize(5),
+        color: Colors.bright,
         marginBottom: beat(1),
       }}
     >

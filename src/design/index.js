@@ -55,10 +55,18 @@ export const Colors = {
   darkest: '#222',
   dark: '#343334',
   react: '#61dafb',
-  // react: '#00badc', // Try
+  anotherReact: '#00badc', // Try
   reactBright: '#99ebfd',
   reactDark: '#282c34',
   reactComplementary: '#ff8a19',
+
+  gold: '#e7d371',
+  goldHighlight: '#f8f3d6',
+  silver: '#bdbdbd',
+  silverHighlight: '#fff',
+  platinum: '#fff',
+  platinumHighlight: '#dadada',
+  platinumGlow: '#dadada',
 }
 
 /**
