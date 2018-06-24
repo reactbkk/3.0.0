@@ -28,10 +28,15 @@ export class ScheduleSection extends React.Component {
         },
       }}
     >
-      <img width={15} src={PLUS} alt="pin" css={{
-        marginTop: beat(HEADER_SIZE / 2 + HEADER_SIZE / 4),
-        transform: 'translateY(-50%)',
-      }} />
+      <img
+        width={15}
+        src={PLUS}
+        alt="pin"
+        css={{
+          marginTop: beat(HEADER_SIZE / 2 + HEADER_SIZE / 4),
+          transform: 'translateY(-50%)',
+        }}
+      />
     </div>
   )
 
@@ -44,7 +49,12 @@ export class ScheduleSection extends React.Component {
         display: 'flex',
         justifyContent: pullRight ? 'flex-start' : 'flex-end',
         alignSelf: 'flex-start',
-        flex: this.props.viewType === DESKTOP ? '1 1 33%' : this.props.viewType === TABLET ? '0 0 16%' : '1 1 auto',
+        flex:
+          this.props.viewType === DESKTOP
+            ? '1 1 33%'
+            : this.props.viewType === TABLET
+              ? '0 0 16%'
+              : '1 1 auto',
         fontFamily: Fonts.display,
         fontSize: fontSize(-3),
       }}
@@ -80,37 +90,66 @@ export class ScheduleSection extends React.Component {
     <div
       key={key}
       css={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: pullRight ? 'row-reverse' : 'row',
-        }}
-      >
+        width: '100%',
+        display: 'flex',
+        flexDirection: pullRight ? 'row-reverse' : 'row',
+      }}
+    >
       {this.props.viewType !== MOBILE && this.renderTime({ startTime, pullRight })}
       {this.renderTimeline({ pinAtCenter })}
       {this.renderContent({ content, column, pullRight })}
     </div>,
   ]
 
-  renderPoweredBy = sponsor => sponsor ? (
-    <div key={`powered_by_${sponsor.name}`} css={{
-      padding: `0 ${beat(1)}`,
-      display: 'flex',
-      alignItems: 'center',
-      color: Colors.bright,
-      fontSize: fontSize(-3),
-      fontWeight: 600,
-      letterSpacing: Tracking.wide,
-    }}>
-      Powered by
-      <img src={sponsor.logo} alt={sponsor.name} css={{
-        height: beat(1.5),
-        paddingLeft: beat(0.5),
-        maxWidth: beat(3),
-      }} />
+  renderTopic = topic => (
+    <div
+      css={{
+        padding: `${beat(0)} ${beat(1)}`,
+        display: 'flex',
+        alignItems: 'center',
+        fontSize: fontSize(-2),
+        letterSpacing: Tracking.wide,
+        [ViewType.mobile]: {
+          padding: `${beat(0.25)} ${beat(0.5)}`,
+        },
+      }}
+    >
+      {topic}
     </div>
-  ) : null
+  )
 
-  renderFundamental = (index, { title, sponsor, startTime }) =>
+  renderPoweredBy = sponsor => (
+    <div
+      key={`powered_by_${sponsor.name}`}
+      css={{
+        padding: `0 ${beat(1)}`,
+        display: 'flex',
+        alignItems: 'center',
+        color: Colors.bright,
+        fontSize: fontSize(-3),
+        fontWeight: 600,
+        letterSpacing: Tracking.wide,
+        [ViewType.mobile]: {
+          padding: `0 ${beat(0.5)}`,
+        },
+      }}
+    >
+      Powered by
+      <img
+        src={sponsor.logo}
+        alt={sponsor.name}
+        css={{
+          height: beat(1.5),
+          paddingLeft: beat(0.5),
+          maxWidth: beat(3),
+        }}
+      />
+    </div>
+  )
+
+  renderFundamental = (index, {
+    title, topic, sponsor, startTime,
+  }) =>
     this.renderPeriod({
       key: `${index}_${title}${sponsor ? `_by_${sponsor.name}` : ''}`,
       content: [
@@ -131,7 +170,8 @@ export class ScheduleSection extends React.Component {
         >
           {title}
         </div>,
-        this.renderPoweredBy(sponsor),
+        topic ? this.renderTopic(topic) : null,
+        sponsor ? this.renderPoweredBy(sponsor) : null,
       ],
       startTime,
       pinAtCenter: true,
@@ -172,7 +212,7 @@ export class ScheduleSection extends React.Component {
       key: `${index}_${title}_by_${speaker.name}`,
       content: [
         this.renderSpeakerPhoto(speaker.photo),
-        <div key="info" css={{ maxWidth: beat(12) }} >
+        <div key="info" css={{ maxWidth: beat(12) }}>
           <span css={{ fontSize: fontSize(0), fontWeight: 600 }}>{title}</span>
           <br />
           <span css={{ fontSize: fontSize(-2), color: Colors.react }}>by {speaker.name}</span>
