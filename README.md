@@ -16,7 +16,7 @@ Using Gatsby with Emotion.
 | Ticket checkin & fulfillment system | https://github.com/dtinth/ticket-checkin |
 | Tweetboard | https://github.com/reactbkk/tweetboard-frontend |
 | Countdown timer | https://github.com/reactbkk/countdown-timer |
-| React Bangkok connect | TBA |
+| React Bangkok connect | https://github.com/WiNloSt/react-bangkok-connect-cloned |
 
 ## Development
 
