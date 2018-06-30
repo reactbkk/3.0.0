@@ -5,6 +5,9 @@
 Using Gatsby with Emotion.
 
 ## Sessions
+
+Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199
+
 | Session Name | Speakers(s) | Materials
 | --- | --- | --- |
 | Build Awesome Static Website with Gatsby.js | [Jirat Kijlerdpornpailoj](https://www.facebook.com/imn3tr) & [Suwitcha Sugthana](https://www.facebook.com/suwitcha.sugthana) aka. [Gucode](https://www.facebook.com/gucodelive/) | [Code](https://github.com/GucodeLive/gucodelive.github.io)
