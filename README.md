@@ -8,7 +8,7 @@ Using Gatsby with Emotion.
 | Session Name | Speakers(s) | Materials
 | --- | --- | --- |
 | Build Awesome Static Website with Gatsby.js | Jirat Kijlerdpornpailoj & Suwitcha Sugthana aka. Gucode | [Code](https://github.com/GucodeLive/gucodelive.github.io)
-| It's Next.js but it's static and it's fast | Jessada Trirongkit | [Code](https://docs.google.com/presentation/u/1/d/15H-UyC3VEgokT3jiG1X2k96kq5xcPhkS9GGxHmzw3ew/edit#slide=id.p)
+| It's Next.js but it's static and it's fast | Jessada Trirongkit | [Slides](https://docs.google.com/presentation/u/1/d/15H-UyC3VEgokT3jiG1X2k96kq5xcPhkS9GGxHmzw3ew/edit#slide=id.p)
 | My First Time with GraphQL on Production | Komkanit Sujautra | [Slides](https://docs.google.com/presentation/d/1m7SifdTbGMLVHurVIuwqiHnHPyWzrPSfiIgQkWYZq3w/edit?usp=sharing)
 | KotlinJS ❤️ React | Christopher Ng | [Slides](https://www.slideshare.net/ChristopherNg29/kotlin-react-bkk-300)
 | React, Redux’s core idea with Clojurescript | Veha Suwatphisankij | [Slides](http://slides.com/vehas/re-in-cljs)
@@ -17,8 +17,8 @@ Using Gatsby with Emotion.
 | Fast and Furious Development with React Design Patterns 🔥🔥🔥 | Phoomparin Mano | [Slides](https://drive.google.com/file/d/1IeKPBLndmxhOanl6MNmF8wdnJFiioLh2/view?usp=sharing)
 | Experience from building a mobile app in a month using Expo & GraphQL | Tananan Tangthanachaikul | [Slides](https://drive.google.com/open?id=1uudT8NdCWl8AkbR35y4S5CmyaLtkfHuQ)
 | React for a 5 million user app | Suphareuk Theamparn | [Slides](https://www.slideshare.net/siwakornsittileardpisal1/react-for-a-5-million-user-app)
-| React Performance Tuning | Rujira Aksornsin | [Code](https://github.com/acebo/sweet-got) [Slides](https://docs.google.com/presentation/d/1oGHNjsUc5LJxT5Cc3VzpOQTO-BRwUYjzFXXJE0f-MmI/)
-| Testing React Applications | Pallop Chaoputhipuchong | [Code](https://github.com/vannizer/react-testing-bkk)  [Slides](https://www.dropbox.com/s/1dv6gdjl80rcxt7/Testing%20React%20Application%20BKK.pdf?dl=0)
+| React Performance Tuning | Rujira Aksornsin | [Slides](https://docs.google.com/presentation/d/1oGHNjsUc5LJxT5Cc3VzpOQTO-BRwUYjzFXXJE0f-MmI/) [Code](https://github.com/acebo/sweet-got) 
+| Testing React Applications | Pallop Chaoputhipuchong | [Slides](https://www.dropbox.com/s/1dv6gdjl80rcxt7/Testing%20React%20Application%20BKK.pdf?dl=0) [Code](https://github.com/vannizer/react-testing-bkk) 
 | State Management in React Apps | Chakrit Likitkhajorn | [Slides](https://docs.google.com/presentation/d/1hyynLecj9vzXymlGbZfOqOI1mPEyYKxyQgWmkjkSv2k/edit?usp=sharing)
 | Panel Discussion: Transitioning to React in Large-scale Codebase | Suranart Niamcome, Pichet Itngam, Panjamapong Sermsawatsri | [Dek-D's Blog](https://making.dek-d.com/dek-d-new-stack-graphql-nodejs-reactjs-c745bfbec493) [Sanook's Blog](https://medium.com/tencent-thailand/tech-stack-%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%8B%E0%B8%95%E0%B9%8C-sanook-com-5526320a965f)
 
