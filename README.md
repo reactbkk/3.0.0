@@ -4,6 +4,24 @@
 
 Using Gatsby with Emotion.
 
+## Sessions
+| Session Name | Speakers(s) | Materials
+| --- | --- | --- |
+| Build Awesome Static Website with Gatsby.js | Jirat Kijlerdpornpailoj & Suwitcha Sugthana aka. Gucode |
+| It's Next.js but it's static and it's fast | Jessada Trirongkit |
+| My First Time with GraphQL on Production | Komkanit Sujautra |
+| KotlinJS ❤️ React | Christopher Ng |
+| React, Redux’s core idea with Clojurescript | Veha Suwatphisankij |
+| Simple state container with MobX | Manatsawin Hanmongkolchai |
+| Animating in React | Keya Desai |
+| Fast and Furious Development with React Design Patterns 🔥🔥🔥 | Phoomparin Mano |
+| Experience from building a mobile app in a month using Expo & GraphQL | Tananan Tangthanachaikul |
+| React for a 5 million user app | Suphareuk Theamparn |
+| React Performance Tuning | Rujira Aksornsin | 
+| Testing React Applications | Pallop Chaoputhipuchong | 
+| State Management in React Apps | Chakrit Likitkhajorn | 
+| Panel Discussion: Transitioning to React in Large-scale Codebase | Suranart Niamcome, Pichet Itngam, Panjamapong Sermsawatsri |
+
 ## Other projects
 
 | Project | Link |
