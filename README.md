@@ -6,7 +6,7 @@ Using Gatsby with Emotion.
 
 ## Sessions
 
-Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199
+Photo Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199
 
 | Session Name | Speakers(s) | Materials
 | --- | --- | --- |
