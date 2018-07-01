@@ -15,7 +15,7 @@ Photo Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=1726
 | My First Time with GraphQL on Production | [Komkanit Sujautra](https://www.facebook.com/komcal) | [Slides](https://docs.google.com/presentation/d/1m7SifdTbGMLVHurVIuwqiHnHPyWzrPSfiIgQkWYZq3w/edit?usp=sharing)
 | KotlinJS ❤️ React | [Christopher Ng](https://www.facebook.com/babedev) | [Slides](https://www.slideshare.net/ChristopherNg29/kotlin-react-bkk-300)
 | React, Redux’s core idea with Clojurescript | [Veha Suwatphisankij](https://www.facebook.com/vehas) | [Slides](http://slides.com/vehas/re-in-cljs)
-| Simple state container with MobX | [Manatsawin Hanmongkolchai](https://www.facebook.com/whs.in.th) | [Slides](https://speakerdeck.com/whs/state-management-with-mobx)
+| Simple state container with MobX | [Manatsawin Hanmongkolchai](https://www.facebook.com/whs.in.th) | [Slides](https://speakerdeck.com/whs/state-management-with-mobx) [Blog](https://life.wongnai.com/mobx-simplify-your-react-79f82f10502e)
 | Animating in React | [Keya Desai](https://keyadesai.com/) |
 | Fast and Furious Development with React Design Patterns 🔥🔥🔥 | [Phoomparin Mano](https://www.facebook.com/phoomparin.mano) | [Slides](https://drive.google.com/file/d/1IeKPBLndmxhOanl6MNmF8wdnJFiioLh2/view?usp=sharing)
 | Experience from building a mobile app in a month using Expo & GraphQL | [Tananan Tangthanachaikul](https://www.facebook.com/MicroBenz) | [Slides](https://drive.google.com/open?id=1uudT8NdCWl8AkbR35y4S5CmyaLtkfHuQ)
