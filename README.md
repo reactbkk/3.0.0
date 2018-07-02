@@ -6,11 +6,11 @@ Using Gatsby with Emotion.
 
 ## Sessions
 
-Photo Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199
+Session Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199
 
 | Session Name | Speakers(s) | Materials
 | --- | --- | --- |
-| Build Awesome Static Website with Gatsby.js | [Jirat Kijlerdpornpailoj](https://www.facebook.com/imn3tr) & [Suwitcha Sugthana](https://www.facebook.com/suwitcha.sugthana) aka. [Gucode](https://www.facebook.com/gucodelive/) | [Code](https://github.com/GucodeLive/gucodelive.github.io)
+| Build Awesome Static Website with Gatsby.js | [Jirat Kijlerdpornpailoj](https://www.facebook.com/imn3tr) & [Suwitcha Sugthana](https://www.facebook.com/suwitcha.sugthana) aka. [Gucode](https://www.facebook.com/gucodelive/) | [Code](https://github.com/GucodeLive/gucodelive.github.io) [Demo](https://gucodelive.github.io/)
 | It's Next.js but it's static and it's fast | [Jessada Trirongkit](https://www.facebook.com/JessaAun) | [Slides](https://docs.google.com/presentation/u/1/d/15H-UyC3VEgokT3jiG1X2k96kq5xcPhkS9GGxHmzw3ew/edit#slide=id.p)
 | My First Time with GraphQL on Production | [Komkanit Sujautra](https://www.facebook.com/komcal) | [Slides](https://docs.google.com/presentation/d/1m7SifdTbGMLVHurVIuwqiHnHPyWzrPSfiIgQkWYZq3w/edit?usp=sharing)
 | KotlinJS ❤️ React | [Christopher Ng](https://www.facebook.com/babedev) | [Slides](https://www.slideshare.net/ChristopherNg29/kotlin-react-bkk-300)
@@ -38,6 +38,9 @@ Photo Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=1726
 | Tweetboard | https://github.com/reactbkk/tweetboard-frontend |
 | Countdown timer | https://github.com/reactbkk/countdown-timer |
 | React Bangkok connect | https://github.com/WiNloSt/react-bangkok-connect-cloned |
+
+## Event Photos
+https://1drv.ms/f/s!AilPyesObOIVga1I0s9xatt41lfTZg
 
 ## Development
 
