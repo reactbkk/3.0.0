@@ -6,10 +6,12 @@ Using Gatsby with Emotion.
 
 ## Sessions
 
-Session Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199
+- Session Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=172683636738199
+- Session Videos https://www.youtube.com/playlist?list=PLlL4JXpXTSi82BrlytDY0HOUdkhesusmC
 
 | Session Name | Speakers(s) | Materials
 | --- | --- | --- |
+| A Breif Summary of React in 2018 | [Ranatchai Chernbamrung](https://www.facebook.com/12chg0d) | [Slides](https://www.dropbox.com/s/0bd0o6e5ym3aeae/ReactBKK-3.0.0-opening-keynote-v3.pptx?dl=0) [Video](https://www.youtube.com/watch?v=T2S304wdNVA&index=2&t=0s&list=PLlL4JXpXTSi82BrlytDY0HOUdkhesusmC)
 | Build Awesome Static Website with Gatsby.js | [Jirat Kijlerdpornpailoj](https://www.facebook.com/imn3tr) & [Suwitcha Sugthana](https://www.facebook.com/suwitcha.sugthana) aka. [Gucode](https://www.facebook.com/gucodelive/) | [Code](https://github.com/GucodeLive/gucodelive.github.io) [Demo](https://gucodelive.github.io/) [Video](https://www.youtube.com/watch?v=-9EpZk1IYu4&index=3&t=0s&list=PLlL4JXpXTSi82BrlytDY0HOUdkhesusmC)
 | It's Next.js but it's static and it's fast | [Jessada Trirongkit](https://www.facebook.com/JessaAun) | [Slides](https://docs.google.com/presentation/u/1/d/15H-UyC3VEgokT3jiG1X2k96kq5xcPhkS9GGxHmzw3ew/edit#slide=id.p) [Video](https://www.youtube.com/watch?v=z5ykiC17hm8&index=4&t=0s&list=PLlL4JXpXTSi82BrlytDY0HOUdkhesusmC)
 | My First Time with GraphQL on Production | [Komkanit Sujautra](https://www.facebook.com/komcal) | [Slides](https://docs.google.com/presentation/d/1m7SifdTbGMLVHurVIuwqiHnHPyWzrPSfiIgQkWYZq3w/edit?usp=sharing) [Video](https://www.youtube.com/watch?v=-CM9Rs7Y1EA&index=5&t=0s&list=PLlL4JXpXTSi82BrlytDY0HOUdkhesusmC)
@@ -22,7 +24,7 @@ Session Album https://www.facebook.com/pg/reactbkk/photos/?tab=album&album_id=17
 | React for a 5 million user app | [Suphareuk Theamparn](https://www.linkedin.com/in/suphareuk-theamparn-0b0a75163) | [Slides](https://www.slideshare.net/siwakornsittileardpisal1/react-for-a-5-million-user-app) [Video](https://www.youtube.com/watch?v=Su49BSp2PyY&index=12&t=0s&list=PLlL4JXpXTSi82BrlytDY0HOUdkhesusmC)
 | React Performance Tuning | [Rujira Aksornsin](https://facebook.com/HollyJira) | [Slides](https://docs.google.com/presentation/d/1oGHNjsUc5LJxT5Cc3VzpOQTO-BRwUYjzFXXJE0f-MmI/) [Code](https://github.com/acebo/sweet-got) [Video](https://www.youtube.com/watch?v=IfK8-aldo48&index=13&t=0s&list=PLlL4JXpXTSi82BrlytDY0HOUdkhesusmC)
 | Testing React Applications | [Pallop Chaoputhipuchong](https://www.facebook.com/pallop.chao) | [Slides](https://www.dropbox.com/s/1dv6gdjl80rcxt7/Testing%20React%20Application%20BKK.pdf?dl=0) [Code](https://github.com/vannizer/react-testing-bkk) [Video](https://www.youtube.com/watch?v=wycDuchnAcg&index=15&t=0s&list=PLlL4JXpXTSi82BrlytDY0HOUdkhesusmC)
-| State Management in React Apps | [Chakrit Likitkhajorn](https://www.facebook.com/chakrit.likitkhajorn) | [Slides](https://docs.google.com/presentation/d/1hyynLecj9vzXymlGbZfOqOI1mPEyYKxyQgWmkjkSv2k/edit?usp=sharing)
+| State Management in React Apps | [Chakrit Likitkhajorn](https://www.facebook.com/chakrit.likitkhajorn) | [Slides](https://docs.google.com/presentation/d/1hyynLecj9vzXymlGbZfOqOI1mPEyYKxyQgWmkjkSv2k/edit?usp=sharing) [Video](https://www.youtube.com/watch?v=qC-uad_ZBtA&index=14&t=0s&list=PLlL4JXpXTSi82BrlytDY0HOUdkhesusmC)
 | Panel Discussion: Transitioning to React in Large-scale Codebase | [Suranart Niamcome](https://www.facebook.com/suranart.niamcome), [Pichet Itngam](https://www.facebook.com/notsu), [Panjamapong Sermsawatsri](https://www.facebook.com/panjmp) | [Dek-D's Blog](https://making.dek-d.com/dek-d-new-stack-graphql-nodejs-reactjs-c745bfbec493) [Sanook's Blog](https://medium.com/tencent-thailand/tech-stack-%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%8B%E0%B8%95%E0%B9%8C-sanook-com-5526320a965f)
 
 ## Other projects
